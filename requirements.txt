@@ -1,0 +1,11 @@
+langgraph
+langchain-core
+requests
+pandas
+numpy
+scikit-learn
+openai-whisper
+librosa
+soundfile
+torch
+pillow

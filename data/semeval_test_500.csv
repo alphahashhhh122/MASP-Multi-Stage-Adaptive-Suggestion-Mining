@@ -1,0 +1,529 @@
+entry_id,domain,raw_text,has_image,image_description,gold_image_description,has_audio,audio_description,gold_audio_description,modality_combo,is_suggestion,suggestion_type,suggestion_text,extraction_path
+SEMEVAL_2360,tech_software,This would result in smaller memory usage faster performance smaller cpu overhead / power usage longer battery life.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1212_4,tech_software,Another option is to do this with the featured apps in the marketplace.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1712_2,tech_software,Tombstoning and FAS paradigms are non-trivial to many new WP7 developers and error prone due to many developers not understanding it completely.,False,,,False,,,T,False,,,HN
+SEMEVAL_948_6,tech_software,"Or add and implement an AppResLib.dll.xxxx.mui for the ""ru"" language culture In the documentation AppResLib.dll.xxxx.mui exist only for ""ru-ru"" and not for ""ru"" culture: http://msdn.microsoft.com/en-us/library/windowsphone/develop/ff967550(v=vs.105).aspx Tom If you ever selected ""ru"" and ""ru-ru"" laguages then it causes Tile localization show the en-us(default) tile localization to show.",False,,,False,,,T,True,explicit,,P1
+SEMEVAL_9310,tech_software,Having said these I propose such feature of prompting to do a language pack installation to be on the Windows Phone OS level when user switches language.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_7496,tech_software,Please release compiler SDK and tools for developing traditional desktop Windows API (and MFC and .net) application on ARM Windows RT devices.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1287_8,tech_software,I would like the option to schedule my mail synchronization.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_868_4,tech_software,The Photo app on Windows 8 is not nearly good enough.,False,,,False,,,T,False,,,HN
+SEMEVAL_3273,tech_software,It could be really good to hot reload the app when changing C# or XAML code.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1840_1,tech_software,"Still only partners can have a ""Xbox live"" mark on their game icon, but having a one place for achievements, leader boards and friends would be great (WP7 Live?)",False,,,False,,,T,False,,,HN
+SEMEVAL_665_8,tech_software,"Provide a workaround for removing the ""ru"" language from the language history (I have no need for ""ru"" culture just for ""ru-ru"", but there is no way to remove ""ru"" from the language history if you ever posted your app with ""ru"" language support) 2.",False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1707_1,tech_software,Are you guys taking this serious?,False,,,False,,,T,False,,,HN
+SEMEVAL_0_1494,tech_software,So far this is the best feed reader I've tried.,False,,,False,,,T,False,,,HN
+SEMEVAL_4021,tech_software,For me personally it would be much more convenient to be able to enter my privacy policy content directly into a text field when submitting/updating my app rather than having to provide a URL so I think this should be an option.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1811,tech_software,Could you add this to the list of UWP APIs supported in Desktop Bridge?,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_977_2,tech_software,this feature is very annoying as it keeps changing my words for me and i don't want that.,False,,,False,,,T,False,,,HN
+SEMEVAL_5381,tech_software,Would be nice to have a market place of beautifully designed apps submitted by independent developers.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_5492,tech_software,Something that would really give the MapControl a leg up over ESRI would be the ability to create a ShapeFile object and pass it as a parameter to something like: MapElement.CreateElementsFromShapefile(shapefile) and get a list of MapElements that could be added to the map.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1784_11,tech_software,I wish I could select connection speed for debugging in the emulator.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_911_11,tech_software,"When a notification appears, you have 3 options: swipe it from the left to right and brings the notifications area, or swipe the notification from bottom to up to ignore it, or press it to open the application related to the notification.",False,,,False,,,T,False,,,HN
+SEMEVAL_4842,tech_software,Use file playback sample or custom effects sample.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1797_1,tech_software,If you entered long lines of text that take up the width of the TextBox then you will likely instinctively find you can scroll up and down through the text by dragging the cursor above and below the TextBox.,False,,,False,,,T,False,,,HN
+SEMEVAL_0_1944,tech_software,"It would be great if there was a way to see all of the content I'd see in google+ via the API, and present it in feedly.",False,,,False,,,T,True,explicit,,P1
+SEMEVAL_2348,tech_software, set depth writes enabled or disabled set other state changes make the draw call,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1514_9,tech_software,"Even though default keyboard is nice, I'd like to see a swipe version.",False,,,False,,,T,True,explicit,,P1
+SEMEVAL_7789,tech_software,For this I hope you could add the uninstall rate usage (how often how long a user uses my app) etc.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_0_38,tech_software,"At the moment, it is impractical for me as a developer to keep asking my boss for his Microsoft account just to create app packages.",False,,,False,,,T,False,,,HN
+SEMEVAL_9358,tech_software,Please provide a PhotoCropTask that takes an Image(Byte[]) and provides the same crop tool.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_0_395,tech_software,"Currently Windows OS decides the best Internet connection and uses it automatically (If I have more than one connection like WiFi and Network cable).
+
+Need user setting option to override the same and assign one or more app to use specific network connection (WiFi) and others to use other possible network connection (3g/4g).
+
+This way the already paid for (3g/4g, WiFi, Network cable, etc.) or for that matter I can take more than one provider's internet with variable speeds at home and connect to one PC and use it optimally/efficiently.",False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1682_2,tech_software,It would be very helpfull to have an abbility to copy a part of text out of a message.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1782_9,tech_software,"I would like to be able to convert my individual account in the Marketplace into a company one without losing my publisher name, my brand, my app portfolio and my user base.",False,,,False,,,T,True,explicit,,P1
+SEMEVAL_0_181,tech_software,The problem is we can't put try/catch everywhere and we would like to understand crashes but without a stacktrace it is difficult.,False,,,False,,,T,False,,,HN
+SEMEVAL_0_954,tech_software,I think having 3 variations (did I forget any?),False,,,False,,,T,False,,,HN
+SEMEVAL_781_2,tech_software,2) Mute option does not work smoothly.,False,,,False,,,T,False,,,HN
+SEMEVAL_5157,tech_software,There should be an option if the busness store settings that if checked will send the updated app to the New LOB apps section under manage apps.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1713_13,tech_software,option to delete all conversations at once.,False,,,False,,,T,False,,,HN
+SEMEVAL_0_2056,tech_software,"If author isn't available, than set author to name of the site or blog?",False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1358_8,tech_software,"It would be great if I could display an option to lock the screen, which would basically lock the screen, but show my own page as the lock screen.",False,,,False,,,T,True,explicit,,P1
+SEMEVAL_4359,tech_software,Hello All,False,,,False,,,T,False,,,HN
+SEMEVAL_0_1908,tech_software,At some point can we get Google Keep integration to go along side Pocket?,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1417,tech_software,I'd like to add ItemClick event to the Carousel control to be able to use it as Item listing control with the ability to click on items like in the GridView and ListView.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_926_9,tech_software,start at the specified time!,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1474_1,tech_software,The current developer ecosystem for WindowsPhone apps is focused on individual developers or corporate developer accounts that typically distribute apps to the masses via the Marketplace.,False,,,False,,,T,False,,,HN
+SEMEVAL_8771,tech_software,We should be able to use descriptive text overlays in our screenshots it allows us to better point out what the screenshot is showing.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1257_2,tech_software,"It would be nice to schedule a reminder to repeat at ""X"" hours",False,,,False,,,T,True,explicit,,P1
+SEMEVAL_967_5,tech_software,"In BYOD concept , block the user from the OS update.",False,,,False,,,T,True,explicit,,P1
+SEMEVAL_0_993,tech_software,I apologise if there are better or more appropriate places to post this idea.,False,,,False,,,T,False,,,HN
+SEMEVAL_896_1,tech_software,"All other steps are working really smooth but the ""pending certification"" is taking up to 5 days without showing any progress.",False,,,False,,,T,False,,,HN
+SEMEVAL_0_1317,tech_software,Is this a recent change or something I've just seen ?	,False,,,False,,,T,False,,,HN
+SEMEVAL_3242,tech_software,It is available on the PC though.,False,,,False,,,T,False,,,HN
+SEMEVAL_1297_1,tech_software,With the PhoneToolkit I can Instantiate polygons or other UI with an template that I can give to my more artistic gifted friends for making my map symbols stylish.,False,,,False,,,T,False,,,HN
+SEMEVAL_4569,tech_software,Windows should allow users to freely redirect media (Audio MIDI even Video someday I guess) from/to the Hardware(audio interface webcam etc) and/or Applications (even considering The Desktop as a video+audio media generator).,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_5179,tech_software,I wish that garbage collection was optional for C# UWP apps.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_2018,tech_software,Don't fake the page navigation using Storyboard.,False,,,False,,,T,False,,,HN
+SEMEVAL_2021,tech_software,It now gets a number of linker problems that are being caused by Microsoft components.,False,,,False,,,T,False,,,HN
+SEMEVAL_1594_2,tech_software,"I really need this and i can't call every day custommer care support to see my balance, to buy net and etc.",False,,,False,,,T,True,explicit,,P1
+SEMEVAL_817_5,tech_software,they shouldn't be restricted like this.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1468_1,tech_software,Or if the search finds___ more,False,,,False,,,T,False,,,HN
+SEMEVAL_76,tech_software,I have seen api recording and streaming and previewing the capture from the video.,False,,,False,,,T,False,,,HN
+SEMEVAL_4056,tech_software,I would be beyond excited to get a response.,False,,,False,,,T,False,,,HN
+SEMEVAL_8755,tech_software,It would be nice if more recent reviews would have more weight in the total score of the app.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_0_1669,tech_software,"Maybe the press to save could change the item color until saved, and the save icon could be disabled until it is saved",False,,,False,,,T,True,explicit,,P1
+SEMEVAL_3204,tech_software,I have reported sales information from many other sources.,False,,,False,,,T,False,,,HN
+SEMEVAL_1514_14,tech_software,I love being able to share short text messages quickly by ShareStatusTask.,False,,,False,,,T,False,,,HN
+SEMEVAL_1462_3,tech_software,Is that in the upcoming roadmap?,False,,,False,,,T,False,,,HN
+SEMEVAL_8343,tech_software,I would like to have better access to Lockscreen so that I can completely customize it which includes how the time is displayed any custom content like photos or news wallpaper.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1776_2,tech_software,Provide a viewer for viewing office documents (e.g.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1635_8,tech_software,_______________________________________________________________ WP7_____________________________________________________________________________________ ________________________________________________________________________________________________________________________________ _____________________________________________________________________________________________________________________________________________________________,False,,,False,,,T,False,,,HN
+SEMEVAL_0_155,tech_software,"It is frustrated for a devoloper then an app is'nt Show in any category and the app can only find per direct search by Name.
+",False,,,False,,,T,False,,,HN
+SEMEVAL_0_556,tech_software,Feel free to add the ability for extra apps as that's a requested feature and please keep adding performance improvements to make things run lighter.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_681_10,tech_software,To provide lockscreen text its necessary to use the WideBackContent attribute on the Flip tile.,False,,,False,,,T,False,,,HN
+SEMEVAL_8052,tech_software,It would be much less frustrating for Windows/Windows Phone developers to have hints sent with the certification failed reports which make it easier to tackle obvious issues that arise because of the restrictions of Windows/ Windows Phone.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_2883,tech_software,My suggestion/idea is to reduce the development time & effort needed for ASP.NET web application.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_995_19,tech_software,"This capability was essential for certain low-level tasks like native crash investigation, debugging stack clobbering scenarios, deep optimization with inline assembly (e. g. for NEON) and such.",False,,,False,,,T,False,,,HN
+SEMEVAL_849_1,tech_software,"Extend the ScheduledNotification.RecurrenceType options beyond Daily, Weekly, Monthly, EndOfMonth, Yearly to allow more options: For example, every 4 days, every 2 weeks, every Quarter, every 6 month, etc.",False,,,False,,,T,True,explicit,,P1
+SEMEVAL_994_3,tech_software,"Manually renaming the file extension to .wma on PC will allow us to play the file properly in Windows Media Player I discussed this issue in dev forum and Eric from Microsoft dev team was able to reproduce this issue http://social.msdn.microsoft.com/Forums/wpapps/en-US/096675a1-1759-4125-9cd0-0ac4e2eeb146/medialibraryextensions-savesong-forces-file-extension-to-mp3 .wma files copied/moved to Music library using MediaLibraryExtensions.SaveSong() API from a windows phone app are stored in Music library with .mp3 extension, though the audio file itself will play properly from Music library When you share it via email - you can notice that file attached has a .mp3 extension Or connect phone to PC with usb cable and browse through windows explorer to Music folder - you will find the file with .mp3 extension.",False,,,False,,,T,False,,,HN
+SEMEVAL_7495,tech_software,You should officially support Windows Template Library (WTL) and make it the first class native Windows API framework replacing the aging MFC.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_0_2016,tech_software,i just wish i could archive and group or send to another read later app from there to organize,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_4285,tech_software,The only option for now would be to make a separate 'Pro' app.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_0_274,tech_software,"My idea to add a feature of ... ""apps to be given permission by the user to run in background whenever required"" prompting the user that ""enabling an app to run in background may cause battery drainage""...",False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1348,tech_software,Actually we can't because the same notification would be send too if the user is closing the application.,False,,,False,,,T,False,,,HN
+SEMEVAL_0_620,tech_software,"see http://stackoverflow.com/questions/33615542/error-not-enough-storage-using-fileloggingsession Writing to a FileLoggingSession that has a LgoFileGenerated event atttached via a LoggingChannel in a loop without pausing throw exception ""Not enough storage"".",False,,,False,,,T,False,,,HN
+SEMEVAL_1558_4,tech_software,There are really a number of ways MS could address this limitation: 1.,False,,,False,,,T,False,,,HN
+SEMEVAL_964_7,tech_software,"Can we have an API to enroll the device through an app, or allow mdm enrollment to initiate through a browser download.",False,,,False,,,T,True,explicit,,P1
+SEMEVAL_2216,tech_software,A previous uservoice API to control screen brightness https://wpdev.uservoice.com/forums/110705-universal-windows-platform/suggestions/2359006-api-to-control-screen-brightness was marked closed after Creators update with Brightness control being introduced.,False,,,False,,,T,False,,,HN
+SEMEVAL_0_2125,tech_software,"When you tap the Pocket or Instapaper icon, there isn't much of a visual induction that the article has been saved",False,,,False,,,T,False,,,HN
+SEMEVAL_1719_6,tech_software,would be nice to have the same notification in the headset only when in vibrate only mode.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1767_3,tech_software,"A event that triggers after a call has ended with: Phone nr and Call Length, also giving an opportunity to display an app screen.",False,,,False,,,T,False,,,HN
+SEMEVAL_0_2077,tech_software,"If I could add individual users as a feed, then I could see their updates without having to scroll through Facebook's ridiculous ""wall"".",False,,,False,,,T,True,explicit,,P1
+SEMEVAL_2509,tech_software,What would be really helpful is to provide an event (maybe something like DirectManipulationCompleting) that would fire as soon as the pointer is released (e.g.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_7235,tech_software,I'd like to see the ability to re-order my related apps so I can choose which related apps get promoted first to users.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_954_2,tech_software,"Please provide full access to the ContactStore, eg, updating, deleting etc.",False,,,False,,,T,True,explicit,,P1
+SEMEVAL_2260,tech_software,Both problems could be solved by adding GroupStyle.ItemTemplate.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_3217,tech_software,It appears that the MapIcon rendering by the MapControl has changed significantly with the Windows 10 Creators update.,False,,,False,,,T,False,,,HN
+SEMEVAL_0_634,tech_software,Allows C++ developers to produce components with a well-known ABI avoid the messing to recompile tons of sources every time,False,,,False,,,T,False,,,HN
+SEMEVAL_723,tech_software,It is pretty annoying having to duplicate lots or resources just becase the same command has now moved to a different control.,False,,,False,,,T,False,,,HN
+SEMEVAL_939_8,tech_software,"1 week, 2 weeks, 3 weeks, 4 weeks, up to 12 weeks from a selected day.",False,,,False,,,T,False,,,HN
+SEMEVAL_1663_2,tech_software,Please release ShellTile.TileData() function in next build.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_0_859,tech_software,This feature was planned for WP7 but was removed for RTM**.,False,,,False,,,T,False,,,HN
+SEMEVAL_1267_2,tech_software,Please make an option to mark messages for windows phone 7.8,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_0_1553,tech_software,Beyond Pod is my main feed reader when I'm not on my computer.	,False,,,False,,,T,False,,,HN
+SEMEVAL_1012,tech_software,I'm not a developer.,False,,,False,,,T,False,,,HN
+SEMEVAL_400,tech_software,Could you add the link for the feedback hub to the store's app review form?,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_8885,tech_software,It would be extremely helpful if the reminder/alarm API supported creating a reminder for specific days of the week.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1690,tech_software,In my opinion UWP is too much APP centric.,False,,,False,,,T,False,,,HN
+SEMEVAL_9078,tech_software,Please to have competitive advantage i would like you to provide an expedite package for app certification for developers who wants their apps to be published fast.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1274_1,tech_software,Windows Phone 8 includes a new Map control.,False,,,False,,,T,False,,,HN
+SEMEVAL_0_849,tech_software,I would like to see an improvement on Windows.ApplicationModel.Calls.PhoneCallManager when launched the UI for call with ShowPhoneCallUI mehtod.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_909_9,tech_software,Allow downloading of submissioned .xap files in Windows Phone application publish submission process.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_0_2063,tech_software,"Since Google Reader is going away on July 1st, I think it would be an awesome if Feedly sync's with TheOldReader, it would be a great partnership for both of you.",False,,,False,,,T,True,explicit,,P1
+SEMEVAL_4962,tech_software,I would like the ability in XAML to conditionally have my XAML output be compile with flags like you can currently with c#.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_7806,tech_software,Show download percentage,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_947_2,tech_software,We would like a WiFi CSP so we can configure users WiFi - this is useful from an IT tech user perspective.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_8595,tech_software,Please add the From To options right after Download new email under each email account to specify when the phone is allowed to check emails.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1701_7,tech_software,while tried to integrate through wcf its not responding.,False,,,False,,,T,False,,,HN
+SEMEVAL_1655_1,tech_software,"I think of marketplace, voice navigation, maps (possibility to search for closest restaurant etc.",False,,,False,,,T,False,,,HN
+SEMEVAL_2614,tech_software,We are talking page load times of several minutes in many cases.,False,,,False,,,T,False,,,HN
+SEMEVAL_1843_3,tech_software,"Why can we not just have a ""store manifest"" that includes all localized descriptions, screenshots, etc.",False,,,False,,,T,True,explicit,,P1
+SEMEVAL_0_1888,tech_software,So my suggestion is to offer developers a switch to turn on/off pro features in the sandbox.	,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1841_17,tech_software,"At the moment you have to open the reviews for every app, one at the time.",False,,,False,,,T,False,,,HN
+SEMEVAL_8017,tech_software,It will be useful if we can set the reminder tone to vibrate so that not every reminder would beep when you're in a meeting.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_0_939,tech_software,"It would be awesome if for every app on the store instead of doing the traditional feedback system, we could do a collaborative system along the lines of uservoice.
+
+That way users with similar thoughts would be grouped together, the developer would get a better idea of what people want, and users can see when developers have considered their feedback.",False,,,False,,,T,True,explicit,,P1
+SEMEVAL_796_10,tech_software,Reasons to transfer an app: - Transfer ownership to a different person or group + Ex: An app is purchased by a different company.,False,,,False,,,T,False,,,HN
+SEMEVAL_0_1954,tech_software,Worked perfectly in Google Reader.,False,,,False,,,T,False,,,HN
+SEMEVAL_1760_3,tech_software,_________________________________________________________________________________________________________________Git___Subversion_______________Eclipse___NetBeans____________IDE_________________________________________Visual Studio 2010 Express for Windows Phone_______________________________________________________________,False,,,False,,,T,False,,,HN
+SEMEVAL_0_1637,tech_software,"My feature request is rather straightforward, add a similar shortcut for Save to Pocket.",False,,,False,,,T,True,explicit,,P1
+SEMEVAL_3104,tech_software,There needs to be a way to define new XAML Controls/Properties/Etc. as currently if you want to add these with a lower Minimum version it has to be from code-behind.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1741_7,tech_software,A general use case___ more,False,,,False,,,T,False,,,HN
+SEMEVAL_0_1313,tech_software,want to still be able to subscribe to Twitter feeds without having to create Twitter account,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_0_564,tech_software,Feel free to add the ability for extra apps as that's a requested feature and please keep adding_____ more,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_624,tech_software,And if you release mouse button from ScrollBar,False,,,False,,,T,False,,,HN
+SEMEVAL_7581,tech_software,Bring back support for IPX/SPX or at the very least provide compatible drivers (either through the Microsoft Website or as a legacy feature) that can be installed on Windows 10.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1718_7,tech_software,"i will lost all my games.I really be happy if i can download them from a virtual saving platform to my new device,or for a technical problem i have to reboot my phone,i would like to have those games back without download it again",False,,,False,,,T,False,,,HN
+SEMEVAL_0_1876,tech_software,I'd like to be able to save articles to MindSky similar to other integrations.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1809_23,tech_software,"Allow apps with the interop capabilty flag in the manifest, perhaps via custom certificate, like Microsoft Office Digital Certificate for VBA Projects.",False,,,False,,,T,True,explicit,,P1
+SEMEVAL_3735,tech_software,This burden would be eliminated would MP3 Frames be available by the FrameOutputNode.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_4144,tech_software,It'd be fantastic if it could be possible to access such data from the converted classic apps.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_3119,tech_software,b) It draws MapPolygons blurred with jagged borders.,False,,,False,,,T,False,,,HN
+SEMEVAL_30,tech_software,Furthermore Age Ratings in Dev Center Dashboard can be set per app according to the content in the app.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_0_909,tech_software,"Please support SMIL animations in XAML.
+
+SMIL is the best declarative language for animations in the world, there is nothing like it.",False,,,False,,,T,True,explicit,,P1
+SEMEVAL_0_452,tech_software,A case in point being the ContentDialog which lays itself out differently depending on what the text scaling value is set to.,False,,,False,,,T,False,,,HN
+SEMEVAL_3953,tech_software,I'd love a control that would be a sibling to ListView or GridView only it was backed by a 2D Canvas instead of an ItemsStackPanel.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_994_5,tech_software,"If NavigationService.Navigate() would let us pass a parameter of type object along with the URI, it will help us to keep less states objects in the App class which will become a mess as project grows.",False,,,False,,,T,False,,,HN
+SEMEVAL_1693_1,tech_software,Also let us open the call-history page Both are usefull for smart-dialing apps.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_958_3,tech_software,"Developers should be able to create WP images that are tailored to be in a specific state, and manage those image snapshots.",False,,,False,,,T,True,explicit,,P1
+SEMEVAL_2838,tech_software,The SerialDevice implementation appears to be very unstable in general but doubly so when compiling as Native.,False,,,False,,,T,False,,,HN
+SEMEVAL_0_161,tech_software,The WrapPanel behavior is how items flow in HTML.,False,,,False,,,T,False,,,HN
+SEMEVAL_2008,tech_software,So come on all the APIs are already there :) Give Windows Ink a boost.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_2280,tech_software,Apps must be found by keywords.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_0_1967,tech_software,Should just be able to click the icon and (assuming the account link is active/signed-in) send to Readability.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_2270,tech_software,But it causes a context switch from native->.net and back for each item whichâ¦ more,False,,,False,,,T,False,,,HN
+SEMEVAL_2715,tech_software,I *think* this is a bug in the way the UI components deal with the NotifyCollectionChangedEventArgs instance.,False,,,False,,,T,False,,,HN
+SEMEVAL_0_1727,tech_software,Feedly could re-invent the way we consume articles in the same way how Amazons Kindle Unlimited did with the book market.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1791_1,tech_software,"They should never pass certification, and should never be published.",False,,,False,,,T,True,explicit,,P1
+SEMEVAL_0_1894,tech_software,"I drag the url to my feedly bookmark, and Feedly adds the feed to my account (even better would be the ability to categorize the feed as I add it).",False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1035_3,tech_software,"Please, add SAP (Sim Access Protocol) Bluetooth protocol.",False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1227,tech_software,On UWP for x86-64 ARM and ARM64 it's not possible to comply with the Windows ABI when generating code at runtime because you cannot generate the mandatory exception table data for the dynamically-generated code.,False,,,False,,,T,False,,,HN
+SEMEVAL_0_366,tech_software,"As AES 256 encryption in PDF's is commonplace, the API should be able to support it?",False,,,False,,,T,False,,,HN
+SEMEVAL_0_1952,tech_software,It would be nice to have an indicator on the Chrome extension icon to remind me if I have saved items to review.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_988_9,tech_software,"3) Verify that while the application loads, it does not pause, resume or stop the actively playing music.",False,,,False,,,T,False,,,HN
+SEMEVAL_0_1688,tech_software,(Pages created with Wordpress allow this.),False,,,False,,,T,False,,,HN
+SEMEVAL_926_3,tech_software,"I love one note because of its fast cross platform sync, i feel when i am on a call and want to take notes, adding a button in the dialer (Loudspeaker, mute, hold, add call.. ) to open OneNote will help me open it easily.",False,,,False,,,T,False,,,HN
+SEMEVAL_643,tech_software,Unable to prevent auto close of InputPane which is creating issue due to a possible bug of InputPane in UWP with target version 16299 on Tablet.,False,,,False,,,T,False,,,HN
+SEMEVAL_0_911,tech_software,"And offers advanced timing and perfect synchronization between animations and sound effects, something very rare even in closed and proprietary software animation formats.",False,,,False,,,T,False,,,HN
+SEMEVAL_575,tech_software,Tested in both c++ and c#.,False,,,False,,,T,False,,,HN
+SEMEVAL_1460,tech_software,So what is the suggestion?,False,,,False,,,T,False,,,HN
+SEMEVAL_1198,tech_software,That is fine if we are being kept out by other Xbox apps - but we released an app last week and currently there are about 2 dozens apps ahead of us - half that won't even work on an Xbox with a controller.,False,,,False,,,T,False,,,HN
+SEMEVAL_0_613,tech_software,It's ridiculous that we cannot specify InputScope for AutoCompleteBox.,False,,,False,,,T,False,,,HN
+SEMEVAL_848_1,tech_software,"I understand you have security considerations to consider, however i cannot think of any reason we should not be able to check if a sms is received.",False,,,False,,,T,False,,,HN
+SEMEVAL_0_1859,tech_software,I'd like to have feedly integrate with bit.ly.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_3869,tech_software,I'm developing a Windows Universal App and I'm sicked and tired of finding a way to implement encrypted local DB support.,False,,,False,,,T,False,,,HN
+SEMEVAL_972_3,tech_software,This will stay until the parent types in their password.,False,,,False,,,T,False,,,HN
+SEMEVAL_1759_2,tech_software,I would like to schedule a job to 'POST' a url every 10min to keep alive UNTANGLE authentication.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_753_1,tech_software,Lockscreen: -Should be able to chose a tiny black outline around lettering so you can see what's written properly when you have a Clear/White lock screen.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_781,tech_software,Using an BLE-Dongle via HCI where it is(!),False,,,False,,,T,False,,,HN
+SEMEVAL_0_1866,tech_software,"Essentially, I'd like to see the ability to add ""All"" to an external application, such as Desktop Ticker by Mike Batt ",False,,,False,,,T,True,explicit,,P1
+SEMEVAL_0_647,tech_software,"If the point is outside, we have to divide the result by RawPixelsPerViewPixel.",False,,,False,,,T,False,,,HN
+SEMEVAL_4141,tech_software,from an accessory device (like a smartwatch) possible.,False,,,False,,,T,False,,,HN
+SEMEVAL_1208_2,tech_software,"I just want to tell you that it will be good if you give option to lock the applications specifically,like sms,..",False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1832_1,tech_software,Even there should be a option to delete the MPNS certificate .,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1099,tech_software,This is so ridiculous that windows update doesn't have any rule and there is no way (believe me I googled a lot) to allow it securely (without allowing whole svhost.exe) even spotify has a default rule!,False,,,False,,,T,False,,,HN
+SEMEVAL_1450_1,tech_software,It would be great to have this feature.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_925_1,tech_software,Add coloured backgrounds,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1509_4,tech_software,View in normal and flick a cross screen to view slides.,False,,,False,,,T,False,,,HN
+SEMEVAL_64,tech_software,A container for starting applications inside it on Windows 10 IoT Core instead of full-screen.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1353,tech_software,Currently we have no notifying system to the developers when the customer add new feedback to the feedback hub.,False,,,False,,,T,False,,,HN
+SEMEVAL_1035_2,tech_software,Add the ability to connect to WindowsShare/Samba servers.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_697_1,tech_software,That could be automatic too.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_0_726,tech_software,"Of course they can come back, but they'll have to re-pay the registration fee again, and when being banned again every week, it won't pay out for them anymore.",False,,,False,,,T,False,,,HN
+SEMEVAL_977_1,tech_software,Enabling developers to access a the data sent to the device screen for displaying.,False,,,False,,,T,False,,,HN
+SEMEVAL_1225,tech_software,These APIs ought to be allowed for any UWP application but are most useful when working with runtime code generation:,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_2508,tech_software,The DirectManipulationCompleted event of the ScrollViewer fires too late - it only gets called when the animation of the scrolling finishes.,False,,,False,,,T,False,,,HN
+SEMEVAL_1769_2,tech_software,the encrypted dabase file generated by WPDT can't be open with VS2010 or SQL server 2008.Hope you can fix this,False,,,False,,,T,False,,,HN
+SEMEVAL_1008_7,tech_software,"However, Internet Explorer doesn't let us upload anything!",False,,,False,,,T,False,,,HN
+SEMEVAL_744,tech_software,I would like to ask Microsoft Developers to fix this issue and provide couple extra degrees of freedom going through the RDC.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1273_22,tech_software,This would open the way for developers to create applications that will allow users to add unique colors to customize their device.,False,,,False,,,T,False,,,HN
+SEMEVAL_5100,tech_software,It would be nice to have a command-line tool to submit apps to the store.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1380_13,tech_software,There does not seem to be a way to control newlines in the application descriptions on the Marketplace.,False,,,False,,,T,False,,,HN
+SEMEVAL_0_1935,tech_software,"It would be nice to have a similar feature on mobile, except the way it would work would be to add all of the articles to Pocket or an alternative read-it-later app, """"Pocket all"""" or something like that.",False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1999,tech_software,It looks like the tooltip is not perfectly aligned to the device pixels but rather half a pixel off vertically.,False,,,False,,,T,False,,,HN
+SEMEVAL_0_614,tech_software,Please add it ASAP,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_0_2128,tech_software,"When I open a feed within the internal browser (and it does load the full webpage), I'd like to share it via email client having it imported as it is (just as a reference, under win8 using another feed reader, feedly-enabled, and opening the mail app it does import the page so I can mail it out as it is (or if you like, as if I sent it to onenote or evernote as simple article).	",False,,,False,,,T,True,explicit,,P1
+SEMEVAL_716_3,tech_software,Now we want to bundle these Apps.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1748_2,tech_software,"Add API for access point configuration, so server could send needed data via push notification and application would create new corporate WLAN access point.",False,,,False,,,T,True,explicit,,P1
+SEMEVAL_0_1396,tech_software,Could you install something like that under the sharing options?,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_0_700,tech_software,Then user can choose his own to be saved and use.,False,,,False,,,T,False,,,HN
+SEMEVAL_0_394,tech_software,"Without this feature definitely not all windows apps will be ported to UWP for the simple reason - """"We don't want to write another AZURE service to handle DB activity"""".",False,,,False,,,T,False,,,HN
+SEMEVAL_0_1930,tech_software,open in new external browser tab;,False,,,False,,,T,False,,,HN
+SEMEVAL_0_1001,tech_software,"
+
+
+
+Further, SPlitview should have option to display only the button in compact mode.",False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1201,tech_software,You cannot use it it cannot access files and it has absolutely no viable function on Xbox One.,False,,,False,,,T,False,,,HN
+SEMEVAL_0_277,tech_software,"
+Unfortunately, neither the SmartCard class nor the SmartCardProvisioning class (nor any other related class) provides a means of retrieving the friendly name later.",False,,,False,,,T,False,,,HN
+SEMEVAL_0_932,tech_software,One solution would be that XAML finally switches to Direct2D for the rendering of shapes and controls.,False,,,False,,,T,False,,,HN
+SEMEVAL_2582,tech_software,It was inspired by NotificationExtensions where you can create the Cortana VCD.xml using C# instead of figuring out how to define the XML yourself.,False,,,False,,,T,False,,,HN
+SEMEVAL_1235_3,tech_software,"As an app developer working with custom Bluetooth devices, I need to be able to communicate with them in an unpaired scenario.",False,,,False,,,T,True,explicit,,P1
+SEMEVAL_774,tech_software,We use MediaComposition to generate thumbnails for mp4 video files.,False,,,False,,,T,False,,,HN
+SEMEVAL_0_547,tech_software,Please make support for setting set AutomationId on CoreWindows and MessageDialog!,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_5636,tech_software,This suggestion is for the Windows Blog and is asking to improve its current commenting system by replacing it with Disqus: https://disqus.com/,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_2169,tech_software,The safe area is removed... and it looks like the following: https://1drv.ms/i/s!AqT0PAFUIw04htwdhtSgx38PFkcWeQ,False,,,False,,,T,False,,,HN
+SEMEVAL_1760_9,tech_software,"Some power hungry tasks are high priority and should run as soon as external power is available, not wait an hour while the battery charges to 90%.",False,,,False,,,T,False,,,HN
+SEMEVAL_0_949,tech_software,We should have an option in the API to know whether to search for the app in store or just return error if not installed.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_793_5,tech_software,I think it should have been thought more to be like BB10 Hub.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_8244,tech_software,Everything is fine up until that point but if you want to serialize that class so that you can store it and load it directly instead of traversing the filesystem and opening up each file to read its ID3 tags every time you open the app (which can be a lot of unnecessary work especially for larger libraries) (or so you can send which book to play to an audio background task) you really don't have many options.,False,,,False,,,T,False,,,HN
+SEMEVAL_3692,tech_software,Currently it is nearly impossible to create a custom virtualizing panel.,False,,,False,,,T,False,,,HN
+SEMEVAL_1208_1,tech_software,It's so boring that you need do that also for microsoft apps like photosynth and skype !!,False,,,False,,,T,False,,,HN
+SEMEVAL_966_13,tech_software,"Like XE5 from Embarcadero, get Visual Studio to create IOS and Android apps.",False,,,False,,,T,False,,,HN
+SEMEVAL_26,tech_software,Pornographic and sexually explicit needs to be well defined.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_0_1851,tech_software,Add the number of followers to your subscribe button (like Bloglovin already does) to be displayed on blogs.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_930,tech_software,I am active Windows Insider users currently enrolled to receive the fastest Windows Inside Builds.,False,,,False,,,T,False,,,HN
+SEMEVAL_5598,tech_software,Since most of us don't have a trademark on app names this should be forced by the store (everybody will benefit with this Developers and Microsoft with a cleaner app store).,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_0_1996,tech_software,"I'd like to suggest reverting the change that was made in last version, regarding the safari browser stuff.",False,,,False,,,T,True,explicit,,P1
+SEMEVAL_3950,tech_software,It would really be great if there was a control which allows to move forward an backward like the Microsoft Edge Browser does with touch input or touchpad input.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_0_2163,tech_software,I noticed several of my Facebook pages weren't updating and then saw this announcement that Facebook has stopped updating RSS feeds.,False,,,False,,,T,False,,,HN
+SEMEVAL_1515_11,tech_software,Lets say you have a library A that the developer strongly signed.,False,,,False,,,T,False,,,HN
+SEMEVAL_7214,tech_software,We want access to every camera available at same tima.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_0_361,tech_software,"I just wanted to say well done to Microsoft for offering a very good browsing experience on wp8.1 with ie11.
+
+With ie11 was able to watch e.g Putlocker videos with no interference such as ads popping up.
+
+On a friends Android doing the same thing it kept popping up saying """"""""your phone has a virus"""""""".",False,,,False,,,T,False,,,HN
+SEMEVAL_1845_1,tech_software,I imagine the default setup could simply default to news and sports from MSN (or one of MS' other affiliates) then allow RSS feeds to be added.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1277_14,tech_software,Market it more as a visual assistant.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_664_3,tech_software,The store randomly gives the old xap or the new xap version of my app.,False,,,False,,,T,False,,,HN
+SEMEVAL_4292,tech_software,There are many devices (like a USB-Madi or Dante Virtual Soundcard) which use at least 64 channels.,False,,,False,,,T,False,,,HN
+SEMEVAL_1505_3,tech_software,This is limiting me to provide customers to fully use my app for stuff like removing entries on their objects.,False,,,False,,,T,False,,,HN
+SEMEVAL_2745,tech_software,Then Appium will happily use the native locator.,False,,,False,,,T,False,,,HN
+SEMEVAL_855,tech_software,Add an option to let user do so.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_0_1552,tech_software,Import RSS from other readers,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_669_2,tech_software,I've been working on an LOB for my field of engineering (civil/structural).,False,,,False,,,T,False,,,HN
+SEMEVAL_0_337,tech_software,"In Silverlight, it's maintained merely with different Urls.",False,,,False,,,T,False,,,HN
+SEMEVAL_1692_2,tech_software,If I dont like someone elses idea allow my 1-3 votes to takes votes OFF their vote count on a 1:1 vote basis.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1595_4,tech_software,"Now it is not possible to accept tcp connection, ie to build an internal web server or tcp socket server.",False,,,False,,,T,False,,,HN
+SEMEVAL_1864_8,tech_software,This makes apps that use these formats extremely hard to debug.,False,,,False,,,T,False,,,HN
+SEMEVAL_7588,tech_software,Currently need to generate a bitmap image which not works well for list etc,False,,,False,,,T,False,,,HN
+SEMEVAL_2587,tech_software,They are very unfriendly to Machine Vision developers.,False,,,False,,,T,False,,,HN
+SEMEVAL_275,tech_software,I now avoid logging in until absolutely required.,False,,,False,,,T,False,,,HN
+SEMEVAL_1376_1,tech_software,_________Marketplace___AppHub__________________________________________________________________________________________________________________ ___________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________ ____Ç______________________________________________________________________________________________________________________________App Hub___Marketplace___________________________________________________,False,,,False,,,T,False,,,HN
+SEMEVAL_4084,tech_software,Currently the ScrollViewer's content can be overpanned.,False,,,False,,,T,False,,,HN
+SEMEVAL_0_1448,tech_software,Pushbullet is an amazing sharing app.	,False,,,False,,,T,False,,,HN
+SEMEVAL_0_558,tech_software,Thanks for reading I hope some of the points I made are clear and can be of help to you and your community :) Thankyou.,False,,,False,,,T,False,,,HN
+SEMEVAL_0_97,tech_software,"As a Windows app consumer, I want to be able to search for apps by name, so that I can find and download the specific app I am looking for.",False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1195,tech_software,It used to be that there was a really high standard to get certified on Xbox which was tough to get through but at least the standard of apps was pretty high.,False,,,False,,,T,False,,,HN
+SEMEVAL_919_2,tech_software,Please give me info.,False,,,False,,,T,False,,,HN
+SEMEVAL_0_1658,tech_software,Let the content creators see that their content is viewed in your service.; Like: http://feedburner.google.com/,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_678,tech_software,Not having these APIs means I cannot as a developer make an app that uses the Surface touch screen to control music software.,False,,,False,,,T,False,,,HN
+SEMEVAL_1867,tech_software,In stack overflow or any other forums we have option to add multiple tags related to our question.,False,,,False,,,T,False,,,HN
+SEMEVAL_1298,tech_software,It creates a test.log file.,False,,,False,,,T,False,,,HN
+SEMEVAL_0_1646,tech_software,"So in case you switch to https do use that in the manifest , too.",False,,,False,,,T,True,explicit,,P1
+SEMEVAL_0_195,tech_software,"The current design of the CameraCaptureUI on Windows 10 desktop/tablet renders it useless.
+",False,,,False,,,T,False,,,HN
+SEMEVAL_1292,tech_software,In visual studio if I select the container (a grid) and change something like the flow from horizontal to vertical the redraw fixes the issue which leads me to believe that it's the render.,False,,,False,,,T,False,,,HN
+SEMEVAL_0_980,tech_software,And I would gladly pay for that.Forcing a phone toy on my PC and forcing me to_____ more,False,,,False,,,T,False,,,HN
+SEMEVAL_1877,tech_software,I reported that since studio 15.4.3 the designer crash due to attached properties,False,,,False,,,T,False,,,HN
+SEMEVAL_572,tech_software,The new API for Windows 1803 to create DisplayMonitor instance always fails with ERROR_FILE_NOT_FOUND exception.,False,,,False,,,T,False,,,HN
+SEMEVAL_468,tech_software,Unfortunately there are no more details available from the certification process.,False,,,False,,,T,False,,,HN
+SEMEVAL_2406,tech_software,The WebView control doesn't allow printing embedded PDFs etc.,False,,,False,,,T,False,,,HN
+SEMEVAL_1658_9,tech_software,It would be similar to Win8's charms.,False,,,False,,,T,False,,,HN
+SEMEVAL_1506_1,tech_software,WP need video calls to be able !,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1264_4,tech_software,Mobile teethering (I WOULD APPRECIATE THIS TO BE ON A NEW WP UPDATE FOR WP 8 AND WP 7) BUT 8 WOULD BE FINE 1.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_5130,tech_software,It would be very useful to add this feature into Hosted Web Apps so that native textboxes in a web application can inherit this capability when converted into a Hosted Web App.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_0_1749,tech_software,It would be great if you could add a link / bookmark right into your Diigo account while reading in Feedly.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_854,tech_software,I have an always on background Desktop Bridge app that some users might want to be elevated when it starts at logon.,False,,,False,,,T,False,,,HN
+SEMEVAL_2521,tech_software,Your changes from 1 are lost because the selection in the ListView changes before the LostFocus-event of the TextBox was raised.,False,,,False,,,T,False,,,HN
+SEMEVAL_7787,tech_software,Microsoft should include a good UI for the dashboard and to make some arrangement to display total downloads in the main page.like that of google Android dashboardthe windows developer dashboard is simply boring stuff,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_815,tech_software,The new WinRT MIDI APIs are broken and have been since their introduction with no sign of plans to be fixed.,False,,,False,,,T,False,,,HN
+SEMEVAL_1346,tech_software,Can't the reason of revocation of extended execution be a little more specific than SystemPolicy (ApplicationClosing ApplicationSuspended...)?,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1868,tech_software,Currently is not possibile to create a new Calendar inside an Enterprise Exchange user account.,False,,,False,,,T,False,,,HN
+SEMEVAL_1864_13,tech_software,"When I see the Palm pre's multitask switch, I know there is something MS can do better.",False,,,False,,,T,False,,,HN
+SEMEVAL_1262_1,tech_software,Make it so the Xbox app has smart glass in it without having to install the app directly but put the games in a different folder 5.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_369,tech_software,API uses a WebView-based auth.,False,,,False,,,T,False,,,HN
+SEMEVAL_1451,tech_software,But it would be even better if we could configure the compiler somehow through a special screen in the properties or through an optional configuration file.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_7924,tech_software,Suggestion: Show exactly that error message in the Windows Store dashboard.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_0_905,tech_software,It's good to have window.open (window object) references stored in browser session.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_858_6,tech_software,"On the other hand, if my goal is as much common code___ more",False,,,False,,,T,False,,,HN
+SEMEVAL_2121,tech_software,As a self-learner it is very hard to find a tutorial to learn new things.,False,,,False,,,T,False,,,HN
+SEMEVAL_2659,tech_software,Currently I developinng an application based on Xamarin.Forms and it is not possible on UWP to access files in the local folder.,False,,,False,,,T,False,,,HN
+SEMEVAL_1792_1,tech_software,"Bulk publishers should be made to consolidate their apps, and the rest should not pass.",False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1251_1,tech_software,"It's not exposed by the SDK, please fix it!",False,,,False,,,T,True,explicit,,P1
+SEMEVAL_0_431,tech_software,- Extensions don't work consistently on various versions/builds of Windows.,False,,,False,,,T,False,,,HN
+SEMEVAL_2794,tech_software,Initially if I have rtf text in first line and then after adding bullets to the same line the bullets does not appears in same color font and font family.,False,,,False,,,T,False,,,HN
+SEMEVAL_1782_1,tech_software,Let the user decide what he wants (concerning battery life etc).,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_0_1679,tech_software,"A typical example: If article subject contains """"this week in"""", mark it as read.",False,,,False,,,T,False,,,HN
+SEMEVAL_560,tech_software,WinRT is littered with Async getters that greatly impede porting code and add unnecessary complexity for many cases.,False,,,False,,,T,False,,,HN
+SEMEVAL_4915,tech_software,can you add a new property in OCR library so that the developers can tell the engine which direction the text was written in?,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_693_1,tech_software,Provide access to CPU & GPU data in C#,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_4384,tech_software,Keeping this in mind was thinking of making some of my products donationware.,False,,,False,,,T,False,,,HN
+SEMEVAL_0_1316,tech_software,"We want it to be between Feedly and us only, especially now that the government is working to get open access to our Google accounts.",False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1428_1,tech_software,".net should support zip, system can use, why not give developers?",False,,,False,,,T,True,explicit,,P1
+SEMEVAL_3387,tech_software,So my opinion is to create two new controls.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_0_2137,tech_software,Any way you can fix this?,False,,,False,,,T,False,,,HN
+SEMEVAL_0_664,tech_software,"Do not uninstall this App case, how to download again the latest file in real time from the same FTP URI ?",False,,,False,,,T,False,,,HN
+SEMEVAL_0_183,tech_software,"Allow an API to cause the window to be always on top.
+",False,,,False,,,T,True,explicit,,P1
+SEMEVAL_735_1,tech_software,"Provide an API to use Cortana services within apps as well as provide implementable Interface(s) which expose App-Services to Cortana, then Cortana can call these methods and developers worldwide can extends it's functionality.",False,,,False,,,T,True,explicit,,P1
+SEMEVAL_674_2,tech_software,This needs fixing as a number 1 priority.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1749_14,tech_software,It would be great to provide a new launcher/task which uses this new existing funtionality to get a string from an image.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1355,tech_software,It's tooo painful.,False,,,False,,,T,False,,,HN
+SEMEVAL_1285_3,tech_software,Sometimes phone is getting stucked while unlocking phone on my HTC 8S.,False,,,False,,,T,False,,,HN
+SEMEVAL_1728_6,tech_software,but it lacks the capability to increase volume of the device or costomize live tiles or backround.,False,,,False,,,T,False,,,HN
+SEMEVAL_4386,tech_software,The ability for an end user to donate allows me to make the app free.,False,,,False,,,T,False,,,HN
+SEMEVAL_2891,tech_software,This UI application should have pure UI logic with all xaml files instead of html to support running on all devices and all OS (linuxwindows 10 onwards).,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_8731,tech_software,It would be great if you would add a RemoteId to the calendars.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1028_1,tech_software,Allow background images under the tiles,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1358_11,tech_software,"If the screen turned off, pressing the unlock button would again display my page, maybe with a built-in label at the bottom,___ more",False,,,False,,,T,False,,,HN
+SEMEVAL_0_1603,tech_software,SoundGecko is a great way to be able to listen to articles that you want to read later while in the car or on the go.,False,,,False,,,T,False,,,HN
+SEMEVAL_1394,tech_software,This can be a very powerful control/page yet looking very good to the eye as well.,False,,,False,,,T,False,,,HN
+SEMEVAL_4768,tech_software,This behavior should be fixed or a new property should be made available in the SDK to enable us to get the user defined settings for regional format.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_7086,tech_software,PubCenter users should be able to decide how much they want to receive when they get a payment.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_0_311,tech_software,Update image control to support animated gifs.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_2133,tech_software,Win32 apps still dominate because they're so robust and developed.,False,,,False,,,T,False,,,HN
+SEMEVAL_0_1493,tech_software,I assume there was problems with it but some of us really use it and it would be great to have it back.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_0_1499,tech_software,It is really annoying to remember every interesting site until I can use a desktop computer.,False,,,False,,,T,False,,,HN
+SEMEVAL_1535_1,tech_software,"This approach will provide an elegant way of accessing constants both in code and XAML pages in Silverlight, and for my immediate need in Windows Phone 7.",False,,,False,,,T,True,explicit,,P1
+SEMEVAL_0_360,tech_software,Please bring the DependencyProperty.RegisterReadOnly method in Universal Apps just like in WPF.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_109,tech_software,Please make the (Fluent) design toolkits available for Affinity Designer.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1358_9,tech_software,"Maybe the normal screen timeout would apply here as well, rather than the lock screen timeout.",False,,,False,,,T,False,,,HN
+SEMEVAL_980_1,tech_software,Please share thoughts.,False,,,False,,,T,False,,,HN
+SEMEVAL_482,tech_software,So the native tool chain compiles against the wrong entry point which causes the app crash at startup.,False,,,False,,,T,False,,,HN
+SEMEVAL_0_1966,tech_software,Having a pop-up window open is pretty clunky.,False,,,False,,,T,False,,,HN
+SEMEVAL_1856_5,tech_software,Increase webbrowser control function,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_2928,tech_software,Both TimePicker and TimePickerFlyout support Hour and Minute and Period (AM / PM) selection.,False,,,False,,,T,False,,,HN
+SEMEVAL_834_5,tech_software,"Selecting ""Apps updated"" message in Windows Phone 8.1 notification center should jump directly to app download history, instead of jumping to the Store app but not showing the history.",False,,,False,,,T,True,explicit,,P1
+SEMEVAL_392,tech_software,Also I think NuGut should maintain User Comments for each package...and a 4 star rating...so that people can get an idea if the package is any good without installing....,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_0_20,tech_software,"The Problem: The apps are accessible with the Store link: e.g. https://www.microsoft.com/store/apps/9WZDNCRFJ323 But if you try to search for it, e.g. Announcements for Windows, the app is not listed.",False,,,False,,,T,False,,,HN
+SEMEVAL_1033_3,tech_software,"Bring back ""Local"" in Bing search!!",False,,,False,,,T,True,explicit,,P1
+SEMEVAL_916,tech_software,I was able to finally build an app package that I can manually move o the device in the portal but I shouldn't have to do that and it breaks the debug chain.,False,,,False,,,T,False,,,HN
+SEMEVAL_939,tech_software,However I would still appreciate being able to see a text message notification I have received on my iPhone from Cortana.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1827_2,tech_software,We need a beta store for windows 10 apps for selected internal testers only.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_0_867,tech_software,Please support webcrypto so that pkijs scenarios work,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_8481,tech_software,With MaxNumberOfColums you can limit the number of columns.,False,,,False,,,T,False,,,HN
+SEMEVAL_853_1,tech_software,It would be cool to allow the ApplicationBar to have more icons available.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1038_2,tech_software,"hey plz give some file manager apps,mx player,swype keyboard...................",False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1343_2,tech_software,"0,99$)'.",False,,,False,,,T,False,,,HN
+SEMEVAL_1498_2,tech_software,Change orientation of the device.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1476,tech_software,ContentDialog is currently far too difficult to use for two reasons: locking and placement.,False,,,False,,,T,False,,,HN
+SEMEVAL_7357,tech_software,Allow changing the country and name after registration on Windows Phone Store PubCenter and Windows Store.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_852_2,tech_software,"Potential scenarios: - Developer doesn't have SLAT on their machine and wants to run the VM on a SLAT capable machine/server - Developer is running their dev environment in a virtual environment (e.g., local Hyper-V, remote Hyper-V, Parallels) and wants to run the emulator in another child VM on the same physical host they are running on (since she can't run a VM inside of a VM) - The ability to run a dev environment fully remote A developer should be able to run an emulator instance outside of the developer's environment, and be able to connect/deploy/debug into that remote VM.",False,,,False,,,T,False,,,HN
+SEMEVAL_0_1518,tech_software,"Furthermore if I am careless and click somewhere else like to read another article, Feedly will stop the playback and go to the place I clicked.",False,,,False,,,T,False,,,HN
+SEMEVAL_1848,tech_software,The VM is able to ping both public addresses and corporate addresses; however it is unable to resolve names on either the public internet or corporate network.,False,,,False,,,T,False,,,HN
+SEMEVAL_891_2,tech_software,BatteryManager should provide mechanism to tell us whether phone is plugged in AC or using USB.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_680_4,tech_software,It would be great if you would add a RemoteId to the calendars.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1761_5,tech_software,Please provide an API that provides access to the texts to allow developers to implement an application to enable scenarios such as reading or archiving SMS messages.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_3712,tech_software,Parsing the PRI is only possible in unencrypted appx scenarios.,False,,,False,,,T,False,,,HN
+SEMEVAL_0_1340,tech_software,I would like to have the possibility to link Readability to Feedly.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1802_1,tech_software,UX is much better and,False,,,False,,,T,False,,,HN
+SEMEVAL_0_826,tech_software,A property should be available to bypass 5.1 audio to receivers.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1010_6,tech_software,Allow us developers to renew our expired subscriptions.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_853_3,tech_software,"It would be also cool to allow for more than one application bar per page, so you could specify one at the top, left, bottom or right.",False,,,False,,,T,True,explicit,,P1
+SEMEVAL_8406,tech_software,it is better if developers can start their app from background i mean one develops an app that has permission to start itself when it receives a notification.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_791_7,tech_software,Currently a file is simply flagged as deleted.,False,,,False,,,T,False,,,HN
+SEMEVAL_3238,tech_software,If white background scrollbar should be a different color so it is fully visible,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1798_3,tech_software,What Would Improve Usability?,False,,,False,,,T,False,,,HN
+SEMEVAL_919_7,tech_software,"Want to add an image (like Radar, Cloud layer, drone image, etc) to a Phone Map and have it scale relative to the zoom layer.",False,,,False,,,T,False,,,HN
+SEMEVAL_1020,tech_software,But there are still times when you want to install some things.,False,,,False,,,T,False,,,HN
+SEMEVAL_1366_1,tech_software,Will this feature included in WP8?,False,,,False,,,T,False,,,HN
+SEMEVAL_0_1337,tech_software,"I believe HTC Blinkfeed is getting a lot of users as well, and it'll be nice if you guys can reach out to HTC to get your APIs working with their Blinkfeed :) ",False,,,False,,,T,True,explicit,,P1
+SEMEVAL_0_2127,tech_software,Swiping the title would be a good solution.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1264_3,tech_software,Keyboard is nice but when you do landscape mode on the keyboard the whole screen is not covered by the keyboard the status bar sort of shortens the keyboard so it would be nice if the status bar didn't interfere 10.,False,,,False,,,T,False,,,HN
+SEMEVAL_2333,tech_software,And 50 objects that are triangle meshes (TM),False,,,False,,,T,False,,,HN
+SEMEVAL_0_1953,tech_software,I need Huffduffer integration to send selected audiofiles from within my rss-feeds to this service.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_926_21,tech_software,Add right to left orientation for text and pages support in windows phone studio app website.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_6603,tech_software,For exemple the close button could be a top right triangle or larger cube.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_743_1,tech_software,"So, acutally how the get / respect the Users Regional Format settings?",False,,,False,,,T,False,,,HN
+SEMEVAL_647,tech_software,Please check these links where users discussed similar issue.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_745_2,tech_software,"It allows third-party apps to integrate into the People Hub's 'What's New' feed, etc.",False,,,False,,,T,False,,,HN
+SEMEVAL_1490_6,tech_software,"Are you serious, Microsoft?",False,,,False,,,T,False,,,HN
+SEMEVAL_3456,tech_software,In fact we can use 0xE7D Share with FontIcon element without the enumeration.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_0_78,tech_software,x.x IP address of the emulator - but I can find no way to get that programmatically either.,False,,,False,,,T,False,,,HN
+SEMEVAL_9473,tech_software,I think Placement should be splitted in HorizontalPlacement (Left Center Right) and VerticalPlacement (Top Bottom) to have more flexibility.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_960_3,tech_software,So those folders could be downloaded completely to the phone when a Wi-Fi is available to access them offline later.,False,,,False,,,T,False,,,HN
+SEMEVAL_2063,tech_software,In many scenarios 3rd party author may provide some code actable with the main app for example decoding another file format.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_3990,tech_software,text and parts of graphs are not wisible because it disappears below.,False,,,False,,,T,False,,,HN
+SEMEVAL_1296_1,tech_software,"The fact that we have to go through C++ to exploit such key resources as DX, D2D, DrawingSurfaces in W8, WPF, WP8 is _NOT_ acceptable.",False,,,False,,,T,False,,,HN
+SEMEVAL_1600_11,tech_software,You shouldn't be charging $99 for service like this.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_468,tech_software,Unfortunately there are no more details available from the certification process.,False,,,False,,,T,False,,,HN
+SEMEVAL_1008_3,tech_software,Because we cannot pay for an expensive Azure cloud service everytime we need to connect to a database...,False,,,False,,,T,False,,,HN
+SEMEVAL_2537,tech_software,I moved from Saudi Arabia to Egypt and I can't add my new bank account in Egypt because country in account is Saudi Arabia,False,,,False,,,T,False,,,HN
+SEMEVAL_850_6,tech_software,Why doesn't WP create albums?,False,,,False,,,T,False,,,HN
+SEMEVAL_0_2138,tech_software,is this a problem that Hacker Vision needs to address?,False,,,False,,,T,False,,,HN
+SEMEVAL_0_186,tech_software,Is this maybe a typo in the documentation?,False,,,False,,,T,False,,,HN
+SEMEVAL_1267_1,tech_software,Please make an option like windows phone 8 to mark several messages at the time of deletion... As tapping and holding of every message and deleting take more time and it makes angry ....,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_793_14,tech_software,"And voor Android devices you open Chrome and go to ""about:devices"".",False,,,False,,,T,False,,,HN
+SEMEVAL_0_966,tech_software,"Photos, email, internet, games, and stability in their learning curve.",False,,,False,,,T,False,,,HN
+SEMEVAL_1268_1,tech_software,Allow the use of desktop keyboard to interact with WP8 emulator similar to the current mouse functionality.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_960_10,tech_software,"The GZipStream class should be available for Windows Phone developers, so we don't have to rely on 3rd party libraries to compress and decompress streams.",False,,,False,,,T,True,explicit,,P1
+SEMEVAL_947_3,tech_software,"Our MDM solution allows users to do this for iOS and Anroid, would be nice if we could do it for WP8 too.",False,,,False,,,T,True,explicit,,P1
+SEMEVAL_7710,tech_software,We need a background task system event to update the wide tile (and the lock screen) message when the device wakes up (the lock screen becomes visible) on Windows Phone 8.1 (universal apps).,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_0_1353,tech_software, Allow a new version of NewsRob to use the feedly backend API.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_812_1,tech_software,Seems that the body is included in the image attached.,False,,,False,,,T,False,,,HN
+SEMEVAL_0_197,tech_software,So it's possible to hold the Surface with 2 hands while being able to click on the button (like the Camera app...).,False,,,False,,,T,False,,,HN
+SEMEVAL_840_1,tech_software,It would be nice to be able to load XAML from string without freezing UI - it could easily take over 200ms to load a short bit of XAML.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_744_4,tech_software,Apps on Windows Phone were able to run under the lock screen for quite some time.,False,,,False,,,T,False,,,HN
+SEMEVAL_793_12,tech_software,Platforms like iOS and Android now feature means to debug your webview via the desktopbrowser.,False,,,False,,,T,False,,,HN
+SEMEVAL_945_12,tech_software,Even with native code support on WP8 it is very time consuming to port existing libraries to do this.,False,,,False,,,T,False,,,HN
+SEMEVAL_4824,tech_software,To do so it is crucial we can remove the Close button or complete TitleBar from the TabTip keyboard.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1278_2,tech_software,"Scan it and Bing Vision give u a list of the nearest theatres and show times, or post a reminder in your calendar.",False,,,False,,,T,True,explicit,,P1
+SEMEVAL_6799,tech_software,It is great that we can Schedule Tile updates so that I can always show the latest timings on the tile itself but I would love it if I could do the same thing with Badges.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_3957,tech_software,(An optional bonus would be to allow the user to rotate the items.),False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1893,tech_software,However when using the result in a Drag+Drop or Clipboard operation Windows Explorer errors out with 0x80004002 No such interface supported.,False,,,False,,,T,False,,,HN
+SEMEVAL_1425,tech_software,If this is a privacy constraint then please consider to add a capability that can be declared in the app manifest.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1273_12,tech_software,This rigid rule makes it impossible to make a functional 3rd party calendar app.,False,,,False,,,T,False,,,HN
+SEMEVAL_1222,tech_software,In UWP applications with the codeGeneration manifest capability allow the use of the existing exception table APIs currently marked desktop-only.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_5633,tech_software,Adding Disqus to the Windows Blog would be a great way to improve developer engagement and build the Windows Developer community.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_907,tech_software,provide a lock to the tiles so that the tiles won't get collapsed accidentally.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1770_3,tech_software,I suggest to make it back 30.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1030_3,tech_software,"It would be great if as we have the apps menu to the right of ""home"" we have another menu to the left with notifications and shortcuts or simply the possibility of turn on/off WiFi and other things like the bright, the sound, etc.",False,,,False,,,T,True,explicit,,P1
+SEMEVAL_789_8,tech_software,Unequal judging process based on friendship merits rather than app quality.,False,,,False,,,T,False,,,HN
+SEMEVAL_4560,tech_software,Please set a limit and if you are going to ask for a description make it at least 100 or 255 characters long.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_0_6,tech_software,"There is a very annoying bug in the Windows 10 Store that hides apps form listing.
+
+
+
+
+
+",False,,,False,,,T,False,,,HN
+SEMEVAL_8748,tech_software,I think there should be a casual genre section as a lot of apps don't fall into any specific section already listed.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1809,tech_software,UWP should include a Augmented reality SDK simlar to Apple ARKit and Google AR Dev Kit,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_9244,tech_software,Allow the phone to be used as a mini presentation device.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1441,tech_software,Include the mouse and keyboard support.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_840,tech_software, - resize the windows explorer window to something like 300px to 300px,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1296_2,tech_software,"SharpDX proves that those key technologies can be made available to CSharp: I would suggest to either support the project, or to provide your own interface.",False,,,False,,,T,False,,,HN
+SEMEVAL_945_6,tech_software,And adding new text function: add text from reading QR-code.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_5701,tech_software,It might make sense to have another method alongside RequestVerificationAsync that allows consent verification via PIN or password but there needs to be a way to request biometric-only consent verification.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_4745,tech_software,My suggestion is to change the behavior of that triggers or add another pair which will fire on Lock/Unlock transitions.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_791_1,tech_software,Change the Cellular+sim back to auto switch to wifi as preferred network the new manual data connection management is very annoying and result in hi data usage on the cellular network.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1297_6,tech_software,Can you please fully unlock windows phone 7.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_197,tech_software,This is helpful for layout debugging.,False,,,False,,,T,False,,,HN
+SEMEVAL_3898,tech_software,This data should be accessible from secure key storage immediately after app install and keys should be installed into secure key storage as part of app installation process.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_0_1581,tech_software,"On Feedly Android App, when I share something through email, it goes straight to Gmail app, when I rather want to use the Regular Email App on that plataform.",False,,,False,,,T,True,explicit,,P1
+SEMEVAL_3728,tech_software,You need to provide CoreWindow.Minimise() api in this case.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_3288,tech_software,Aside from my personal dilemma of a missing device it would definitely make sense to be able testing code in an emulator first instead of having lots of hardware around all the time.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_0_1753,tech_software,Sina weibo is a service like twitter in China(It has biggest market share).	,False,,,False,,,T,False,,,HN
+SEMEVAL_1784_5,tech_software,Launchers should have a callback that returns a string error message.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_371,tech_software,There are a lot of ms-settings:*** commands to launch different settings pages from code on HoloLens but there is no way to call the utilities page under the sysem settings.,False,,,False,,,T,False,,,HN
+SEMEVAL_2574,tech_software,I'm considering rewriting it as a Queue for Dialogs as currently it will only display one Dialog and queue one dialog meaning if you try to queue two it will fail.,False,,,False,,,T,False,,,HN
+SEMEVAL_789_4,tech_software,"This capability would not only enhance the submission experience, but it would also allow for Store submissions to be added and tracked in___ more",False,,,False,,,T,False,,,HN
+SEMEVAL_6902,tech_software,It would be great to have the option for creating Publisher’s shared roaming folder as well.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_792_15,tech_software,So I have to stick to sliverlight8.1.,False,,,False,,,T,False,,,HN
+SEMEVAL_0_709,tech_software,"Since the above code does not set a """"well known header"""", the above code results in an exception: """"Misused header name.",False,,,False,,,T,False,,,HN
+SEMEVAL_939_5,tech_software,Just remove the timeouts completely or at least increase all timeouts by a factor of at least 5 - its not a big deal to implement.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_3092,tech_software,If you have relocated your user folder somewhere else and the older Downloads folder remains if you add the old StorageFolder to the StorageApplicationPermissions.FutureAccessList.,False,,,False,,,T,False,,,HN
+SEMEVAL_8378,tech_software,Allow JSON and/or XML to pass data between apps.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_0_57,tech_software,"The SVG data may be inline or loaded from a source (local file or remote from the web) There are few current tools for converting SVG to WPF/Silverlight-based XAML but they fall short when dealing with more complex SVG data.
+
+This should work just like any other kind of image data.",False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1004,tech_software,Add a 'switch' statement for XAML which allows app developers to modify parts of a layout based on a value.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_0_1886,tech_software,simple timeline were you can add content from twitter-accounts & facebook sites/profiles (in a own categorie?),False,,,False,,,T,False,,,HN
+SEMEVAL_4547,tech_software,Sometimes the previous frame's RelativeTime is 00:00:01.500 but the next frame's RelativeTime is 00:00:01.300.,False,,,False,,,T,False,,,HN
+SEMEVAL_1034_2,tech_software,Bring back ability to copy/paste addresses from Bing search so people can text each other addresses to meet up at!,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_921_4,tech_software,Add podcasts as new data resource in windows phone studio app website.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1498_1,tech_software,"Select ""Delete"".",False,,,False,,,T,False,,,HN
+SEMEVAL_0_761,tech_software,Use DirextX interop.,False,,,False,,,T,False,,,HN
+SEMEVAL_1228_9,tech_software,Please take this into consideration and make the ID public (maybe with a new capability requirement).,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_0_1757,tech_software,the button to subscribe to rss with feedly in Firefox actually does nothing,False,,,False,,,T,False,,,HN
+SEMEVAL_429,tech_software,I reproduced this on Mobile Emulator 10.0.14393.0 WXGA 4.5 inch 1GB and on a Lumia 640 running 10.0.15063.1088.,False,,,False,,,T,False,,,HN
+SEMEVAL_1809_19,tech_software,The implementation of the SQL Compact was a pretty steap learning curve for me as i was used to the .net GUI Implementation that made it very easy to use.,False,,,False,,,T,False,,,HN
+SEMEVAL_693,tech_software,This is contrary to the docs and to expected behavior.,False,,,False,,,T,False,,,HN
+SEMEVAL_684_2,tech_software,"So although in, e.g., .NET-based store apps, the System.Diagnostics.Tracing.EventSource class is available and can be used to generate custom ETW events, there doesn't appear to be any point to this at the moment because you___ more",False,,,False,,,T,False,,,HN
+SEMEVAL_1483_2,tech_software,Pls fix it ASAP!,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_3727,tech_software,You can only allow an app to catch close button event and minimise it to task bar programatically.,False,,,False,,,T,False,,,HN
+SEMEVAL_750_3,tech_software,"This would extend the power already available with share pickers to perform more generic tasks, and would result in a better experience for the user.",False,,,False,,,T,False,,,HN
+SEMEVAL_8338,tech_software,What I want is the ability to record those alongside system-provided ETW events so that I can see how my code's activity fits in with system behaviour.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_4466,tech_software,CoreIndependentInputSource has it's own Dispatcher does that mean it has it's own HWND/message queue?,False,,,False,,,T,False,,,HN
+SEMEVAL_0_1416,tech_software,Can you get them?,False,,,False,,,T,False,,,HN
+SEMEVAL_0_604,tech_software,appxupload).,False,,,False,,,T,False,,,HN
+SEMEVAL_2184,tech_software,Having a safe-area within a media element's transport controls when not full-screen is definitely a bug.,False,,,False,,,T,False,,,HN
+SEMEVAL_1727_1,tech_software,in which it will pick up the address from the map and gets the turn by turn voice direction and it works like a charm.,False,,,False,,,T,False,,,HN
+SEMEVAL_667_1,tech_software,"But if I press power button and unlock device and open phone and say ""call <person name, device start calling correctly!",False,,,False,,,T,False,,,HN
+SEMEVAL_0_2068,tech_software,Add integration with Toodledo,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1701_5,tech_software,"There should be a way of registering for this, without paying, only for publishment you have to pay.",False,,,False,,,T,True,explicit,,P1
+SEMEVAL_7896,tech_software,Well I think that the devcenter app should be updated/extended so that the app can show the windows store apps as well as the phone apps (which it currently does) Ideally it should also use the live tiles to show the current stats on your apps.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1210,tech_software,Currently desktop bridge supports in app purchases.,False,,,False,,,T,False,,,HN
+SEMEVAL_0_417,tech_software,"4, Allowing third-party Apps to manipulate DOM elements.",False,,,False,,,T,False,,,HN
+SEMEVAL_1714_2,tech_software,There should be a random id instead after every reset.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_7346,tech_software,If you think about productivity this is not a way to do it.,False,,,False,,,T,False,,,HN
+SEMEVAL_391,tech_software,Further I think nuget should maintain a set of tags on all their properties one of these tags should be Font-Icons so that when you click Download New Font its going to search nuget for this Font-Icon tag and list the packages for fonts from most popular to least popular...,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_0_1777,tech_software,"I currently use NewsBlur, but I'd love to transfer all my feeds via OPML to Feedly.",False,,,False,,,T,True,explicit,,P1
+SEMEVAL_3874,tech_software,Surprisingly NO ONE OF THEM supports Universal App implementation.,False,,,False,,,T,False,,,HN
+SEMEVAL_0_208,tech_software,"I know """"retirement"""" is a keyword and is also in our description but if I search with retirement our app does not show up.",False,,,False,,,T,False,,,HN
+SEMEVAL_1571,tech_software,It's 21 century.,False,,,False,,,T,False,,,HN
+SEMEVAL_1740_1,tech_software,"We need to have a way by which applications can register the type of content they handle so that when user is downloading a content using IE, they can choose installed application to open with.",False,,,False,,,T,True,explicit,,P1
+SEMEVAL_2062,tech_software,Current appextension only supports loading assets and scripts.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1263_2,tech_software,"Better people app, I like the people app with the UI and the Facebook, twitter, LinkedIn integration but the thing I would like most is if you made the top thing that said people was a smaller text, it take to much space on the app 7.",False,,,False,,,T,True,explicit,,P1
+SEMEVAL_0_757,tech_software,Create your own 3d library.,False,,,False,,,T,False,,,HN
+SEMEVAL_3609,tech_software, ** I think this could be made simpler by support for example a HeaderStyle-Property on the Pivot,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_1760_4,tech_software,_______________MediaElement_________HTTP__________________Cookie_________________________________________MediaElement___CookieContainer____________________________________,False,,,False,,,T,False,,,HN
+SEMEVAL_3519,tech_software,I know Microsoft already has the digital ink recognition technology for math formulas.,False,,,False,,,T,False,,,HN
+SEMEVAL_597,tech_software,However we can't do the same thing in map control or in photos app.,False,,,False,,,T,False,,,HN
+SEMEVAL_2078,tech_software,Keyboard remains NumericPin.,False,,,False,,,T,False,,,HN
+SEMEVAL_379,tech_software,Our app is using MenuFlyout with shadow effect a lot so it's causing us lot of headache right now.,False,,,False,,,T,False,,,HN
+SEMEVAL_311,tech_software,Upon a person next logging into the device it would be nice to be able to have the app restart automatically too.,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_939_2,tech_software,"Yes my internet upload speed is slow, but the site should function for slow upload speeds also, why not.",False,,,False,,,T,False,,,HN
+SEMEVAL_1258_2,tech_software,The majority of apps I see at the marketplace doesn't have any review's.,False,,,False,,,T,False,,,HN
+SEMEVAL_1436,tech_software,MarkdownTextClock should provide LinkCommand alongside LinkClicked event,False,,,False,,,T,True,explicit,,P1
+SEMEVAL_927_9,tech_software,Apps should get at least 60 seconds of background processing time to complete such network transfers and process the response.,False,,,False,,,T,True,explicit,,P1

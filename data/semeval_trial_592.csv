@@ -1,0 +1,593 @@
+entry_id,domain,raw_text,has_image,image_description,gold_image_description,has_audio,audio_description,gold_audio_description,modality_combo,is_suggestion,suggestion_type,suggestion_text,extraction_path
+SEMTRIAL_1310_1,tech_software,"I'm not asking Microsoft to Gives permission like Android so any app can take my data, but don't keep it restricted like iPhone.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1312_1,tech_software,somewhere between Android and iPhone.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1313_1,tech_software,And in the Windows Store you can flag the App [Requires Trust] for example.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1313_2,tech_software,"Many thanks Sameh Hi, As we know, there is a lot of limitations is WP8 OS due the high security in the OS itself which is very good, but some time we need to allow some apps to do extra works, apps which we trust i.e: hotmail app, facebook app, skype app ....",False,,,False,,,T,False,,,HN
+SEMTRIAL_1313_3,tech_software,"The idea is that we can develop a regular app and we request our permissions in the manifest, OR the app can ASK FOR TRUST_�_ more",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1316_1,tech_software,Please add this simple and extremely helpful feature.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1318_2,tech_software,Why not let us have several pages that we can put tiles on and name whatever we want to .,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1319_1,tech_software,The Idea is if user running our app and by any reason he rebooted the phone so in that case once reboot happen there should be some event so that we can detect that phone is rebooted and we can handle our application accordingly,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1319_2,tech_software,Add support for the biometric framework from windows 7/8 to allow hardware manufactures to add fingerprint sensors for device login (login allows standard user & guest/kid mode) and for wallet (WP8) transaction activation.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1319_6,tech_software,"It would be more natural to allow the physical search key to activate the search function on the active application, rather than loading Bing which is rarely the goal.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1319_7,tech_software,Allow platform built-in camera and video apps to use increase and decrease volume hardware keys for picture optical and digital zoom of camera.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1319_8,tech_software,"On WP8 add optional support to hook these hardware keys press events for the lens (plug-in) features...hardware keys should include vol+, vol-, stage 1 (light press) camera shutter, stage 2 (deep press) camera shutter.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1319_9,tech_software,I believe there needs to be a marking system in the OS like the option of marking several emails in the pop mails.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1319_10,tech_software,"If I intend to delete several files(photos, songs) there should be an easier way to do it.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1319_12,tech_software,"You can put other apps in one folder, and put on startscreen like a tile.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1320_1,tech_software,"This is total uncomfortably, i think about give to user, a choose what he want to bind on search button.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1321_1,tech_software,It would be awesome.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1321_2,tech_software,Make it so that you have to enter a password for apps of your choice,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1324_1,tech_software,"Big files can't be transfered using skydrive, it is not praticle!",False,,,False,,,T,False,,,HN
+SEMTRIAL_1325_3,tech_software,It would be an improvement if they displayed as graphic Smilies instead.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1328_1,tech_software,"The UserControl should run in the context of the application that created the Alarm or Reminder, and as such would have access to the appropriate view models.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1328_3,tech_software,Need an option to remove unused variables in cs file for re factoring.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1329_1,tech_software,Use the usb as removeable disk,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1329_2,tech_software,Pls introduce pattern lockscreen like android.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1330_4,tech_software,Only after repairing the installation will the emulator work.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1330_5,tech_software,If I close the emulator and try to run it again.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1330_6,tech_software,It fails with a uninformative message indicating deployment failed.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1330_7,tech_software,"information on the screen locked, temperature, news of facebook and Twitter and lock with letters and numbers",False,,,False,,,T,False,,,HN
+SEMTRIAL_1330_8,tech_software,Search text,False,,,False,,,T,False,,,HN
+SEMTRIAL_1330_9,tech_software,"I wish api's for save photos in camera roll in png format; not only as ""lossy"" jpeg format.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1330_10,tech_software,"Having native access to OpenCL or C++ AMP support would be nice to have, especially with the newer hardware arriving with WP8.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1330_11,tech_software,Please help me I'm Ahmed from Iraq I wanna get Arabic keyboard in my WP please !!!,False,,,False,,,T,False,,,HN
+SEMTRIAL_1330_12,tech_software,"When an application has problems or when a problem is detected in advance by the developer, until the publication of the correction version the client is without knowing what is happening.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1330_13,tech_software,This way we can give a satisfaction to all who buy or evaluate our applications.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1330_14,tech_software,This communication channel can use the Bing Translator to generate the statement in the languages in which the application has been translated.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1330_15,tech_software,I believe it is a feature that will cherish Microsoft to customers and that demonstrates respect for the consumer.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1330_16,tech_software,"In some cases missing answer key after unlock, when phone is locked, also missing call alert network enable/disable (network code is *#43# for verify, *43# for enable and #43# for disable).",False,,,False,,,T,False,,,HN
+SEMTRIAL_1330_24,tech_software,What I am asking for is some key that will act like the Screenshot->Capture command without me having to change tabs in the Emulator window or release the Accelerometer.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1330_25,tech_software,Even something as simple as ctrl+S would be a godsend for me.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1331_1,tech_software,"If I am lucky I can do it before my character dies, even then though the player is just moving in a straight line to nowhere_�_ more",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1332_1,tech_software,"Please allow users to view ""comments"" in office docs i.e word, ppt, excel....also allow user to add comments on these docs",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1335_1,tech_software,Provide a single link to retrieve all the applications by a specific Publisher like the Android Market.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1336_2,tech_software,Please show the scrollbars in the WebBrowser control.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1337_2,tech_software,There are times when this is greatly needed!,False,,,False,,,T,False,,,HN
+SEMTRIAL_1337_3,tech_software,"The other smartphone platforms like Android, iOS and Blackberry supports launching one App from another and passing data between them.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1338_1,tech_software,This is really important when a same organisation develops multiple apps and wants them to interact with each other.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1338_2,tech_software,"If this feature will be implemented without affecting the security model of WP, then it will be great for the WP developer world.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1338_3,tech_software,I keep getting birthday notifications a day too early.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1339_1,tech_software,the date in the peoplehub does not align with the calendar.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1339_2,tech_software,"With WP7 we have the unique ability to offer Trails for Paid Apps, which is great.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1342_1,tech_software,"However, it would be nice if developers could offer Free Apps with a possibility to users for voluntary donations.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1342_2,tech_software,"Some devs do the workaround and offer a Paid app, with the trial version having no restrictions at all (if the user clicks 'buy', he essentially donates to the dev).",False,,,False,,,T,False,,,HN
+SEMTRIAL_1342_3,tech_software,"However, this workaround has the disadvantage of the app not apprearing in the 'free' category, though they are actually free.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1343_1,tech_software,"Therefore, it would be great if devs could put apps in the marketplace offering two buttons: 'install (free)' and 'install and donate (e.g.0,99$)'.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1343_3,tech_software,"The price could be splitted 30-70 just like with paid apps, just with the difference of the app appearing in the 'free' category.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1344_2,tech_software,The current process is very lengthy and costly for non US developers.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1344_3,tech_software,Why can't Microsoft simplify it?,False,,,False,,,T,False,,,HN
+SEMTRIAL_1345_1,tech_software,Make it similar if not the same as Google!?!?!,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1346_1,tech_software,"Having read through the cumbersome process, I am more incline to build FREE apps with subscription rather than getting any money through the Marketplace.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1348_1,tech_software,Having to deal with physical paperwork (sending it back and forth) is a step backwards... we are living in a digital world!,False,,,False,,,T,False,,,HN
+SEMTRIAL_1348_2,tech_software,"There are heaps and HEAPS of really good developers outside of US who really want to contribute to making Windows Phone a preferred choice, so please Microsoft; make it simplier and make it DIGITAL!",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1348_4,tech_software,"It would be really helpful if, for example, a developer makes an app that takes advantage of the schedule alarm API, and would like to enable the user to select a custom ringtone for that alarm.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1349_1,tech_software,"This API proposal would enable the user to select from many ringtones already available on the phone, and save developers the trouble of having to implement their own custom ringtones.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1350_1,tech_software,"If you try to copy-paste multiple recipient number to the ""To:"" box in the messaging, the 2nd until the last number will be duplicated.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1353_3,tech_software,Even as a developer we can create most of the apps for individual users that is standalone.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1353_4,tech_software,"If we need to target corporates then then we would need more APIs for device management, also like Zune (for a single user), we would need an Enterprise Server Application which can control the devices (of employees) remotely where we can apply corporate policies on the device as well.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1353_5,tech_software,Make some usefull app that run ussd code....,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1353_6,tech_software,Please allow the access to Gmail's Todo list sync when a google account is added on the windows phone.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1353_7,tech_software,"Under calendar I see the todo list of hotmail and I like it, it would be great if I can add the gmail's ones too and have the ability to make changes when sync happens or just have the ability to add todo items and those get sync to the phone.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1353_8,tech_software,"Hi, the biggest icon size requited is 200x200 bit in the Marketplace single App page this is resized to 240x240 losing quality.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1353_9,tech_software,You can't add/update/delete alarms or reminders from a BackgroundAgent.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1353_10,tech_software,It'd be great if we at least has the ability to change/edit reminders and alarms that were created by that app.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1356_2,tech_software,And I want to get that response to my app to hanle it.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1357_2,tech_software,It would be very useful to be able to change the names that my apps appear as when I check the App Hub dashboard.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1358_5,tech_software,"Developers must be given additional enumeration values in Socketype and ProtocolType to create variety of sockets like raw sockets based on ICMP, IGMP... etc.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1358_6,tech_software,Allow to create Alert and Reminder from Background Task execution.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1358_13,tech_software,"Allow Orientation=""horizontal"" on a listbox I would like to use the selectionchanged event handler to create a menu using the listbox control.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1359_6,tech_software,As the heading says provide tools to prevent users from reinstalling apps rather than buy the full version and stop devs from being deprived of purchases that they deserve.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1361_2,tech_software,"As half the point of my app is the information on the live tile, I'd like to have a polite reminder show every so often if they haven't pinned it, but I simply don't know whether they have or not.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1361_8,tech_software,Disable the feature entirely.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1361_10,tech_software,"Detect when there is a screen shot attempt so we can programmatically not display, obscure, or watermark our graphics.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1361_15,tech_software,"Like Android we need Phone level events like (SMS received/sent event, Camera ON/OFF event, Phone turned ON/OFF event, Keypad lock event etc.)",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1363_3,tech_software,"I would like a ""phone remote"" in windows 8.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1366_2,tech_software,"Once a application is installed in WP, there should be some way to run that application without user input i.e.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1368_1,tech_software,"Specifically, we will want the ability to have selective enabling of application features so that when the WP7 are run (after server-side conversion?)",False,,,False,,,T,False,,,HN
+SEMTRIAL_1369_1,tech_software,"on newer hardware, they switch to the newer profile.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1369_2,tech_software,"Barring that, at least allow for merged listings for WP7 and WP8 versions so that customers have a clear upgrade path for the same application.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1370_1,tech_software,"Or, you could just support the native SDK/Direct X on WP7.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1371_1,tech_software,I'll take that over the previous two.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1372_1,tech_software,"Barring that, at least allow for merged listings for WP7 and WP8 versions so that customers have a clear upgrade path for_�_ more",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1373_1,tech_software,The concept explains itself well in below blogpost: WinRT Transitions _�_ Creating Fast and Fluid Metro UIs http://www.scottlogic.co.uk/blog/colin/2011/10/winrt-transitions-creating-fast-and-fluid-metro-uis/,False,,,False,,,T,False,,,HN
+SEMTRIAL_1374_1,tech_software,Using Vodafone GSM and the used data includes Unicode characters thus whole message is failed.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1374_2,tech_software,"i could imagine, that in the same way the sms-icon is shown on the lockscreen, a 'mini app icon' is shown aswell, from apps that got notifications (facebbok, whatsapp....)",False,,,False,,,T,False,,,HN
+SEMTRIAL_1375_1,tech_software,"Add an option to delete future appointment in Calendar and preserve previous, when used the option to repeat",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1375_2,tech_software,Platform should provide access to call log so you can create applications which for example retrive unknown numbers from call log and find their information from public directories.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1375_3,tech_software,"The customized unlock apps are very popular on android and symbian, we hope that we could do the same on WP7.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1376_2,tech_software,"At the moment, there is 1-to-1 relation between companies and countries.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1376_3,tech_software,It's OK for small business but what about bigger one?,False,,,False,,,T,False,,,HN
+SEMTRIAL_1376_4,tech_software,We have several dev-centers in 3 countries and extra sales-offices in more countries.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1376_5,tech_software,"Same time, WP7 registration intends we MUST use 1 country only.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1380_14,tech_software,"These descriptions also appear differently depending on where they are being viewed (web, zune on PC or device).",False,,,False,,,T,False,,,HN
+SEMTRIAL_1380_15,tech_software,"The Update Description field has a documented purpose, but then in the forums I read that this field does not appear in the Marketplace.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1380_16,tech_software,Please provide a way to 1) predictably introduce newlines into the description fields 2) let me see how these fields will render in the different environments (WYSIWYG) 3) show me how the Update Description will be used in my updated app There does not seem to be a way to control newlines in the application descriptions on the Marketplace.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1380_17,tech_software,Please provide a way to 1) predictably introduce newlines into the description fields 2) let me see how these fields will render in the different environments (WYSIWYG) 3) show me how the Update Description will be used in my updated_�_ more,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1381_1,tech_software,Quicker way to go to the bottom of the metro screen to view tons of pined apps.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1381_2,tech_software,I currently develop for Android and iOS.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1381_3,tech_software,"I am interested in developing for Windows Phone, but would need a device, to pay registration and learn a 3rd platform to do so.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1381_4,tech_software,"That involves a lot of time, which is a large risk to smaller development companies.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1382_1,tech_software,"If Microsoft created some incentives, like a free device (Blackberry did this) and a free year of membership (Amazon did this) it could drive a lot of developers to the platform which is crucial to the platform taking off.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1382_2,tech_software,I would jump at the opportunity to adapt my apps for Windows Phone if Microsoft created incentives for me to try the platfrom.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1383_1,tech_software,Cant use keyboard in landscape mode in some app,False,,,False,,,T,False,,,HN
+SEMTRIAL_1383_2,tech_software,You would finally be able to add and customize your alert and text sounds!,False,,,False,,,T,False,,,HN
+SEMTRIAL_1383_5,tech_software,Of course each app would have permission accepted by user and each app would have own isolated storage for more private.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1383_6,tech_software,It would be nice to see Windows Phone move to optional vector based icons instead of static bitmaps.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1383_7,tech_software,This would allow the application bar (or appbar) to resize if say HD screens were added.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1383_8,tech_software,"Ideally, users would only need 2 icons for the marketplace: 'Tile' (contains the application name), and 'List' (just the icon for the app list).",False,,,False,,,T,False,,,HN
+SEMTRIAL_1383_9,tech_software,Appbars could be created at 48x48 and resized as needed.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1383_10,tech_software,"I know this is a pain on developers that are not designers or have designers, but an option would be nice time saver for the future.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1386_2,tech_software,It would be nice to be able to delete a cert you have uploaded.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1391_1,tech_software,"I'd like to be able to decorate my home screen by pinning my favorite photos, directly from within the pictures application.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1395_1,tech_software,Allow users to organize tiles into separate hubs.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1395_3,tech_software,A secondary start hub I can use to store occasionally used apps would be good.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1395_4,tech_software,An automated hub for recently used apps would also be good.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1398_1,tech_software,Please allow the access to phone filesystem.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1399_1,tech_software,It would be a great benefit if the developers can manipulate the sdcard resources etc etc.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1404_1,tech_software,"HP have the ePrint functionality, Apple the Airprint.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1404_2,tech_software,Can you not make connection to these devices possible?,False,,,False,,,T,False,,,HN
+SEMTRIAL_1404_4,tech_software,I want to give a textbox a placeholder text.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1404_5,tech_software,This now requires creating a custom control.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1404_6,tech_software,I want this to be available out of the box.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1404_7,tech_software,"Oh, and I want the option to create labels for the textbox.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1404_8,tech_software,Provide the access to pictures in PhotoChooser and Camera Roll in emulator,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1404_9,tech_software,Since the easiest way to get hold of files to be used in programs is by downloading them from a network or the internet and saving them in isolated storage it would make the whole thing a lot easier if you could do this with FTP.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1404_10,tech_software,FTP is still one of the most used protocols for retrieving files.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1404_11,tech_software,And using a proxy is not always an options since some of us would like to be able to reach FTP servers that is on a separate network.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1404_12,tech_software,"IMAP idle for ""push"" emails and sync read, forward and answered mails plus sync send folder!",False,,,False,,,T,False,,,HN
+SEMTRIAL_1404_13,tech_software,Email for business is very impotant!,False,,,False,,,T,False,,,HN
+SEMTRIAL_1404_14,tech_software,"For all the guys & girls over the 45 years old, de need a really big clock in the main display.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1404_15,tech_software,Thanks (sorry about my english).,False,,,False,,,T,False,,,HN
+SEMTRIAL_1405_1,tech_software,Positioning cursor is almost imposible,False,,,False,,,T,False,,,HN
+SEMTRIAL_1406_1,tech_software,WP should support ussd menu and umb as well,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1407_1,tech_software,"Once removed the Metro interface looks good from a desktop app, but on the mobile phone is horrible.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1407_2,tech_software,"When the volume is in the rang 01-09, the volume does not decrease.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1407_4,tech_software,"Continuing my prior post about allowing us to explicitly flip secondary live tiles with a tap instead of launching the app, this request would allow such an action to explicitly update the tile by triggering a function call in a background task.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1408_1,tech_software,"Perhaps these two ideas are combined and you define which action to take when creating/updating the tile... Flip the tile, execute a background task (or both), or simply launch the app like normal (possibly with deep toast.)",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1408_2,tech_software,"That would really make LiveTiles 'Live' which now, they kind of aren't and were by *far* the biggest disappointment when we saw the actual SDK.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1409_1,tech_software,"Coming from iOS, when we did see that, we scrapped two apps we were going to release on WP7.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1409_2,tech_software,"(A third was scrapped because of the inability to do location tracking in a background task more frequently than once every 30 minutes, which is sort of the same 'stale data' issue as here.)",False,,,False,,,T,False,,,HN
+SEMTRIAL_1409_3,tech_software,"Since it's user-initiated, it wouldn't drain_�_ more",False,,,False,,,T,False,,,HN
+SEMTRIAL_1409_4,tech_software,"In the Schedule Namespace ist isn't possible to have access to the Media Library to play Songs, User has already on his Device -> Please add this function to get access to the Media Library.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1411_1,tech_software,"Another thing is, to have the possibility to modify the Notification, wich is shown, when the Alarm or Reminder Rings.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1413_1,tech_software,"We need to open our Application, or to overwrite the notify to costumize it to get a better improvement for the user.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1414_1,tech_software,"Extend the API to query phone volume and vibration settings, maybe even set them.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1418_1,tech_software,Please provide validation templates for WindowsPhone controls.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1419_2,tech_software,"However, not everybody has a physical device, so having those experiences in the emulator would be a great addition to the dev tools and resources.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1419_3,tech_software,"Would be nice and useful to have email messages grouped by date, same as contacts grouped by initial letter.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1421_1,tech_software,For sharing audio and video there should be a very plain possibility to share stuff as already encoded package.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1421_3,tech_software,Perhaps that could be available as Toolkit in codeplex.com.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1422_1,tech_software,There needs to be an Alpha Test mechanism available.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1424_1,tech_software,"Since the beta test versions I recently submitted have been waiting for certification for 9 days, there is no way for us to work together on this.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1424_2,tech_software,My boss is not a developer and has no development tools but absolutely needs to see the progress of development in a timely manner.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1425_1,tech_software,If the Beta program certified apps in a day then this might not be a problem.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1425_2,tech_software,"As it is, it is hardly usable as a beta test program since our customers also need to see the app and improvements in a timely manner.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1426_1,tech_software,"We need support special multitasking tasks, like VOIP and IM!",False,,,False,,,T,False,,,HN
+SEMTRIAL_1426_2,tech_software,"We can't create good apps for this services without this API, looks on your Skype client, wtf??",False,,,False,,,T,False,,,HN
+SEMTRIAL_1426_3,tech_software,iOS already has this API's!,False,,,False,,,T,False,,,HN
+SEMTRIAL_1428_2,tech_software,"Volume on headphone, when phone rings while listening to a song, raise to max volume.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1429_1,tech_software,Multi-select on Zune to delete Albums or to create a playlist,False,,,False,,,T,False,,,HN
+SEMTRIAL_1429_2,tech_software,"Read/write accsess to email sync settings could enable applications to create custom sync profiles (based on week-days, time, position, etc).",False,,,False,,,T,False,,,HN
+SEMTRIAL_1429_3,tech_software,Implement Soundwave touchless api on the phone for touch free Metro.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1429_4,tech_software,Microsoft boffins showed how they can use audio via the speaker and microphone and a dopplar computation to detect gestures without touching the screen.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1429_5,tech_software,I want to use that on the Phone for some games.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1429_7,tech_software,"In the submission process, publishers should be able to check a box for apps that are made for individuals 13 or older and 18 or older.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1429_8,tech_software,"This should flag a feature in the marketplace, when an app is being downloaded, to verify the age of the downloader.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1429_9,tech_software,"In WP7 you can add multiple accounts of different types (Live, Google, Facebook, etc).",False,,,False,,,T,False,,,HN
+SEMTRIAL_1430_1,tech_software,It would be nice to be allowed to get basic information about these accounts.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1431_1,tech_software,"For example, get a list of all email accounts and for each account report the number of unread emails.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1431_2,tech_software,I think there are two ways to improve the beta program: 1.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1432_1,tech_software,Make apps available immediately.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1433_1,tech_software,"When developing on iOS (using testflight) or Android, we don't have to wait two hours for beta code to be ""approved"".",False,,,False,,,T,False,,,HN
+SEMTRIAL_1434_1,tech_software,We upload a new version or have the users download an update immediately.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1435_1,tech_software,"If immediate approval is not possible, then apps that have been published should be immediately available.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1435_2,tech_software,"When we receive emails saying the beta application is published, users are not able to download the application with the very own links provided in the email.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1435_3,tech_software,Users are reporting a 1-2 day time between when the app is approved to when it is available for download.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1435_4,tech_software,Users receive a strange marketplace error when trying to download the application.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1437_1,tech_software,When developing apps it is often useful to leverage existing Launchers and Choosers as Tasks to access certain data or perform an operation.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1437_2,tech_software,Currently this is only exposed for system-level data and operations.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1438_1,tech_software,It would be ideal to allow apps to expose certain bits of data or functionality to other apps to provide a complementary experience in terms of reuse of information or performing similar tasks.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1438_2,tech_software,Imagine shopping apps being able to share a set of data such as a wish list or news apps being able to share a list of news feeds.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1440_1,tech_software,"Imagine having an installed app do what it does best for another app, such as perform a series of complex calculations or gather weather data.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1440_2,tech_software,It would be the responsibility of the app to decide what it exposes for data or functionality.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1440_4,tech_software,This can first be alleviated as with other security screening by prompting the user to allow an app to access another app's tasking features.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1440_15,tech_software,"In such case, you'd better make your videos carefully so that it can leave a good user experience to the potential clients.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1440_16,tech_software,"If you convert video to FLV flash video, which features much smaller size than popular formats, your videos will be watched unhinderedly with quick loading.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1443_3,tech_software,select FLV as output format,False,,,False,,,T,False,,,HN
+SEMTRIAL_1443_4,tech_software,"If you are more requirements of your video, such as bit rate, encoder, etc, you are do these settings one by one in the pop-up Formats window.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1443_5,tech_software,"When everything is finished, you can click Start button to start the video to FLV conversion process.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1443_6,tech_software,You are allowed to preview the converting process in slideshow.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1443_7,tech_software,"As 99% computer owners have installed flash plugin in web browser, so it's naturally that FLV or SWF flash videos are more acceptable than popular videos formats, such as MP4, AVI, MPEG or ect.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1443_8,tech_software,"If you convert video to FLV flash video, which features much smaller size than_�_ more",False,,,False,,,T,False,,,HN
+SEMTRIAL_1443_9,tech_software,Allow the BackgroundAudioPlayer to play tracks from the MediaLibrary.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1443_10,tech_software,Or allow applications that implement the XNA MediaPlayer class to run in the background.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1444_2,tech_software,"Please add the possibility to add your own spell check service, or provide the data if a system wide one existed.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1444_3,tech_software,"When I want to build some tiles in my app, I have to use buttons that I give a custom style.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1445_1,tech_software,"But this is ugly since everyone implements this in another way, resulting in odd alignments, bad text colours, etc.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1446_1,tech_software,We need a simple and standardized way to create simple tiles that function as buttons.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1446_2,tech_software,Beta testers test our apps for free.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1446_3,tech_software,It would be nice if when the app/game is published in the marketplace we could include a list of the testers that helped us so they can get the app from free instead of having to buy it.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1448_1,tech_software,"Android,iOs and Blackberry are compatible with this API So why don't we",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1449_1,tech_software,"I would be a really nice gesture to have an option wich can put everything to the other side, so when left handed people scroll, they could also see the content.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1449_2,tech_software,Visual Studio 11 and new Expression Blend.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1449_3,tech_software,Merge products together.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1449_4,tech_software,"Add 'open app in marketplace' in the app menu (rate & review, uninstall, pin to start)",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1449_5,tech_software,It does not look professional when scrolling upward at the end of any page or downward at the top the content of the page regardless of material or application will be stretched down,False,,,False,,,T,False,,,HN
+SEMTRIAL_1449_6,tech_software,It is part of the effect through the whole operating system and does not particularly belong to any application.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1449_7,tech_software,Sometime the stretched content of the page does not look professional.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1449_10,tech_software,We need UPD broadcast to search for our devices in the network.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1449_17,tech_software,"When an exception is thrown and intercepted by the debugger, Edit and Continue permits to change your code right while debugging to make the code continue.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1451_2,tech_software,We can allow music that is not copyrighted to be accessible if that is a huge issue.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1452_3,tech_software,"Link to sql is not efficient at all, could they include sql , sqlight or other library.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1454_1,tech_software,"It s impossible to connect easily to ftp network, I suggest to include it in the future sdk.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1455_1,tech_software,We want an Office Hub that open Openoffice document.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1456_4,tech_software,Currently for dynamic data binding controlls like listbox  is recommended.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1459_1,tech_software,Why can't I change phone search and IE search to Google or another provider that actually work?,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1460_6,tech_software,Fix Bing or fix the phone.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1464_2,tech_software,"At best this is unclear, but should the user pan or zoom they lose the frame of reference for the place we're trying ot show them.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1464_3,tech_software,You can sometimes work around this behaviour by specifying a search for the place you're trying to indicate but this is dependent upon the search results.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1465_1,tech_software,If the search finds nothing you get no pin.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1465_2,tech_software,Or if the search finds something other than what you intended you can end up with a pin (or pins) far from where you want them.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1466_3,tech_software,If it were possible to tell the task to show a pin (or pins) at a specific point (or points) that that would allow for a better user experience.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1467_1,tech_software,Even if we could just specify a label for the pin that would be better than nothing.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1469_1,tech_software,"Add an option ""Private"" to lock photos, movies, songs, calendar appointments...",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1470_1,tech_software,An exit button should be there on all application software's.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1470_2,tech_software,"Show used volume, so you can see how much MB of your inclusive volume is already used.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1471_1,tech_software,We could just upload a CSR and Microsoft provide a signed certificate via their own CA.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1472_2,tech_software,It would be nice if a choice between vibration and the sound is given for typing,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1473_1,tech_software,Pin settings 'airplane mode' 'wifi' etc in the start screen,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1476_3,tech_software,"Allowing for tester groups or ""profiles"" would allow for efficient test setup in the Marketplace, especially for multiple products, by allowing a group to be assigned to the app as it is entered in the Marketplace as a beta.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1477_1,tech_software,"Additionally, it would be great to have additional support for Enterprise developers that target a specific set of clients as opposed to the public masses of the Marketplace.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1477_2,tech_software,"First, an Enterprise Developer account could be established with a cost of, say $499, which is high enough to deter hobbyists or smaller companies from enrolling, while at the same time providing additional benefits to larger ""enterprise-level"" corporations.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1479_2,tech_software,"Ideally, a mini storefront or splash page for the company and product would help draw in clients.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1479_5,tech_software,"Allowing for tester groups or ""profiles"" would allow for efficient test setup in the Marketplace, especially_�_ more",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1479_6,tech_software,"If the app shows sensitive data when deativated, it would be good to be able to use a different image for fast app switching instead of a screenshot of the application",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1479_7,tech_software,"Daemon service should be turnable on and off per app basis, in the same way like periodic tasks.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1481_2,tech_software,Microsoft should advertise windows phone development APIs in Visual Studio,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1481_4,tech_software,"Please make it instead fire an event, which could be used to open an app's search bar or page.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1485_3,tech_software,At least support displaying static GIF image.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1485_10,tech_software,"Back and forward buttons needed, not the capacitive back button.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1485_12,tech_software,Please consider to enable support for unsafe code in Silverlight and Xna apps.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1488_7,tech_software,Maximizing all current main apps would be better than having 1mil appd in the marketplace.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1490_1,tech_software,Create option to allow Periodic Agents to run even if app has not been opened for x days.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1491_1,tech_software,This gives my family up to four LIVE accounts.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1492_1,tech_software,"On an Xbox, we can log in and play games no problem, yet a W7 phone allows for only one user.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1492_2,tech_software,"I can't even log in to another account to check or edit it, let alone play games with it.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1492_3,tech_software,A certain rival brand of phones allows users to switch between their LIVE equivalent accounts with no problems whatsoever.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1492_4,tech_software,"I bought my WP7 phone with gaming in mind, but there's more than one gamer in this house - please make it possible for several gamertags to be used on one device!",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1498_7,tech_software,Keeping the message as draft when exiting would save me the hassle of having to type it again...,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1499_1,tech_software,Can we have windows phone development using visualstudio lite IDE which includes only phone developement.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1500_8,tech_software,"Start by expanding the number of apps that can use a certain key word, such as ""childrens stories"" so that new apps who innovate can displace those who got their first with potentially crappy apps.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1500_9,tech_software,"Secondly, you need to limit the number of apps that a publisher can submit with a particular key word.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1504_1,tech_software,"We should have some way within our app to get notify that whether user selected call, don't call and when he/she ended call means notification of end call.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1507_6,tech_software,"It would be more useful if specific Service apps could be released that would extend these features by, for example, adding a Google+ option to the sharing interface.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1509_1,tech_software,"Would be nice if in power point, could have same method as in pictures hub for navigation.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1512_6,tech_software,"Received from an MVP this week over email: It would be great to be able to have the emulator location data use the NMEA file format - either via file import/export, or using the files directly as a feed.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1512_8,tech_software,Other devices use this format and it would be great to see it supported by Windows Phone.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1514_3,tech_software,they all use Sip so it would be great to have a native sip client integrated.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1514_11,tech_software,Also a T9 keyboard would be nice too.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1514_16,tech_software,I want to be able to add a picture to the media library and then start the SharePictureTask to let the user see and share it from the Pictures Hub,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1515_2,tech_software,Remove the 50 apps limit from the phone and 100 app limit from the marketplace web site when users search for an app with a search term.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1515_6,tech_software,add a quick access Block button/function to be used when receiving spam over chat,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1515_8,tech_software,I would like to see a monthly/yearly subscription model introduced that let me charge users $5 a year for my app for example.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1515_10,tech_software,We really need Assembly Binding Redirection (or Publisher Policies) in Windows Phone!!,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1519_3,tech_software,It would be great if you could add .png support to the medialibrary so that we can save high quality png files to the picture library.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1519_5,tech_software,"Being able to use simple uncompressed .wav files would open up many possibilities for ring tone editors, and make files recorded from the microphone ready to be used as ringtones.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1519_6,tech_software,It would be great if the Windows Phone development team could allow us to use the RSTP streaming protocol in .NET Compact Framework we use.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1520_2,tech_software,Provide preference setting to categorize apps in the long list by their categories in app store rather than names or alphabetical order...this is extremely helpful for people with lots of apps and provide the ability to maintain the uniformity of the UI while making it more user friendly,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1520_3,tech_software,This will provide more usability of the live tiles on the start menu..especially when one needs to drag multiple tiles through long list,False,,,False,,,T,False,,,HN
+SEMTRIAL_1520_4,tech_software,Please get metequotes to make metatrader for Windows Phone.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1520_5,tech_software,"Need of Logger Class to log error,Info,Verbose and daemon Information.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1521_1,tech_software,As it is available in android.It improves the debugging process.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1521_3,tech_software,"It displays the certificate signer information, but you could easily upload two certificates with different CNs (service names) issued by a single CA and you would have no way of telling them apart.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1522_1,tech_software,"Minimally it should show the CN from the subject which matches the service name you provide in client code, along with the CN of the signer.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1523_1,tech_software,Ideally it would allow you to download the certificate for verification or at least provide a md5 hash of the uploaded certificate.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1523_2,tech_software,Right now you can upload an unsupported certificate or even self-signed cert and apphub will not provide any feedback.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1523_3,tech_software,Allow the user to be able to set a custom reminder time such as 2 hours or 1.5 hours before the Calendar entry.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1523_4,tech_software,At present you only provide fixed values like 1hr or 18hr before!,False,,,False,,,T,False,,,HN
+SEMTRIAL_1523_5,tech_software,tesco club card app shows you points and you have you clubcard bar code avaible on your phone to scan at checkout,False,,,False,,,T,False,,,HN
+SEMTRIAL_1524_1,tech_software,"apps has your nectar that you are able to scan in stores, also shows you your points balance, and allows you to shop online and collect more nectar points.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1525_2,tech_software,I would like a button I can click that will only select the countries for which Microsoft already accounts for any taxes.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1530_1,tech_software,Support file transfer such as PDF files,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1533_2,tech_software,A bevy of restrictions can also be heaped on the said user control in order to maintain performance and not sap battery life.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1533_3,tech_software,"Let Live tiles be live, please.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1533_4,tech_software,when an alarm pops up an option to edit the reminder should be included instead of having to constantly hit snooze or exit the reminder and go into the object itself,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1536_1,tech_software,I need a posibility to set the keyboard language from code.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1536_2,tech_software,"the focus on TextBox1 opens the keyboard with the german layout, the focus on TextBox2 opens the keyboard with a greek layout.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1536_3,tech_software,"on desktop under net 2.0/3.5 is this no problem: Windows Forms: InputLanguage.CurrentInputLanguage = InputLanguage.FromCulture(new System.Globalization.CultureInfo(""ar-EG"")) WPF: (This is exact what i need) InputLanguageManager.SetInputLanguage(textBox1, new System.Globalization.CultureInfo(""en-US"")); InputLanguageManager.SetRestoreInputLanguage(textBox1, true); I have tested this and it works fine.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1536_4,tech_software,"If the keyboard is not installed, nothing changes and the current layout remain.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1537_1,tech_software,"Please implement this, it is important for me for a translation application.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1538_1,tech_software,"I suggest to create hardware ratings, like ones in Winows 7 (WEI), for the smartphone in order to help both users and developers to match hardware with apps or games.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1538_2,tech_software,I think that this ratings will even enable developers to create different versions of the same app pointing to specific hardware.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1538_3,tech_software,It would be nice to be able to use the computer keyboard when using the emulator.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1538_4,tech_software,It's a bit frustrating to type with the mouse.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1538_5,tech_software,"we can't use some important libraries in the background agent like ""Microsoft.devices.sensors"" that limite our power to creat a good application",False,,,False,,,T,False,,,HN
+SEMTRIAL_1538_6,tech_software,"currently you can only pin an album, but it would be useful if you can pin a single image as a tile.. that way you have easy access to a it.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1538_8,tech_software,"school schedule, bus route, or a picture of someone you like...",False,,,False,,,T,False,,,HN
+SEMTRIAL_1538_9,tech_software,The current AdControl crashes any app which uses the silverlight/XNA hybrid mode.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1538_10,tech_software,Apparently this has never worked nor communicated to Devs!,False,,,False,,,T,False,,,HN
+SEMTRIAL_1538_11,tech_software,"I normally wouldn't say ""This is unexceptable"" but given that silverlight/xna hybrid is the new big thing for WP7, this issue needs immediate attention.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1538_12,tech_software,...which is useful if you want to add an appointment with the same time/location/notes as a previous one.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1538_13,tech_software,"Currently when you press and hold an appointment in the calendar, you have the option to Edit or Delete.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1538_14,tech_software,"You either have re-enter all the info, or change the date of the old appointment (but that's not ideal because you lose record of old appointments)",False,,,False,,,T,False,,,HN
+SEMTRIAL_1538_16,tech_software,"local scout should show more than just 20 results, there should be the ability to state the radius from current location and all businesses within that radius should be shown, which could greatly exceed 20. also, if searching a company name for a small business/restaurant, it would be good if that could show within local results.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1538_17,tech_software,"often i try to search for a restaurant and there is no result under local, instead i have to find their website and then their postcode.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1538_18,tech_software,"this would save me that hastle, and make planning journeys much simpler.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1539_1,tech_software,Allow an app to disable text messaging preview.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1542_1,tech_software,Allow users to link their app with the 'me' and 'people' hub directly.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1542_2,tech_software,"Now that we have API access to contact information it would be useful to immediately be able to click on a contact and open it in a related app, e.g.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1542_3,tech_software,"Skype, twitter, etc.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1543_1,tech_software,Add a full support of RegionInfo and add possibility to instanciate one with two letter iso code.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1543_2,tech_software,"SO, we can use it to dispal country name with user language.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1544_1,tech_software,"Add option to hide keyboard: specially when you want to copy a long text.. the keyboard takes around 60% of your LCD space, leaving you with a tiny window to work with.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1544_2,tech_software,Exactly As The Title Says.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1544_3,tech_software,can you please create a tesco clubcard app,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1545_1,tech_software,Allow the ability to view SSL Certificates on HTTPS Connections in IE and have the option to install the CA.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1545_5,tech_software,I suggests to add some kind of Storage to store GPS POI.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1545_6,tech_software,In addition this storage may have integration with contacts to allow user have geographical map of his contacts.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1548_1,tech_software,port Internet Explorer 10 to a mobile version (as soon as ie10 is ready) to get all new ie10 features to our mobile phones so we can build better webapps for windows phone.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1548_2,tech_software,pls support fixed possitioned elements!!,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1549_2,tech_software,I'd like to have tiles of various colours on my start screen.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1549_6,tech_software,"Allow access to raw data such as signal strength imformation to allow creation of indoor location positioning using available wifi, bluetooth or cellular networks when no gps data is available.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1549_14,tech_software,It would be nice if there were an app that logged things that happen on your phone: ie.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1549_15,tech_software,it would be also great if there were an icon in the status bar that indicates that that are new events/notifications..,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1552_1,tech_software,I'd like the ability for an application to be quick loaded from the right-hand corder of the lock keypad.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1552_2,tech_software,"If that's not possible, allow a button to be overriden and pressed during the locked screen process.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1554_1,tech_software,"Also, I want to be able to set the % left of power for when the batterysaver kicks in.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1555_1,tech_software,The default setting is way too late--I'd prefer 50% or more remaining before turning on.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1555_4,tech_software,It'd be very convenient for developers without actual devices to test their apps for the certification requirements if everything could actually be tested with the emulator.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1556_1,tech_software,Please upgrade the YouTube App by Microsoft Corp. with Metro UI instead directing to a mobile site.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1558_5,tech_software,Expose the SongCollection class so we can add and remove song objects from custome song collections.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1558_7,tech_software,Allow the BackgorundAudioAgent to utilise the XNA framework so that the device's song library can be played and manipulated from the background.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1558_8,tech_software,You would also need to provide a conversion mechanism to convert a Song to an AudioTrack - as is the default file type for the BAP.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1558_9,tech_software,Relax the restrictions around application running under a locked screen and/or in the background.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1558_13,tech_software,Unless of course we go with a predetermined SongCollection such as SongCollection limitedPlaylist =_�_ more,False,,,False,,,T,False,,,HN
+SEMTRIAL_1558_15,tech_software,We need the ability to build apps that are capable of video editing for WP!,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1559_1,tech_software,"Please DevGroup make this APIs should enable developers to build apps that include the ability to do video trimming, editing, and saving to the video library.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1559_2,tech_software,This is needed to build VoIP application.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1560_1,tech_software,Playing audio stream in loudspeaker is uncomfortable for users.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1560_2,tech_software,"sir, i have samsung omnia w. its running latest update.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1560_3,tech_software,"when i charged my phone, then the key press becomes laggy and hard",False,,,False,,,T,False,,,HN
+SEMTRIAL_1562_1,tech_software,Allow applications to define custom shaders in HLSL.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1563_1,tech_software,This will allow sophisticated game graphics and real-time image processing.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1563_2,tech_software,Also allow access to MP4 encoder library (hardware accelerated) so apps can generate their own videos.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1564_1,tech_software,"This should also allow apps to read existing videos, modify frames and write them back.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1564_2,tech_software,for gps tracking apps,False,,,False,,,T,False,,,HN
+SEMTRIAL_1566_1,tech_software,"There is an Android app which displays all local wifi connections, with their channel number, strength and, of course, name.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1567_1,tech_software,WPF7 should have one like this too!,False,,,False,,,T,False,,,HN
+SEMTRIAL_1567_2,tech_software,"Currently, I can detect and control what the embedded Zune player is currently playing.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1567_3,tech_software,The same can't be done with 3rd party apps implementing background audio streaming like soundtracker etc.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1567_4,tech_software,"Hello, thank you for this site.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1567_5,tech_software,I was very happy to be able to scan barcodes from the search button and I would like to use this in my application.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1571_4,tech_software,The design guidelines should be the law.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1572_1,tech_software,"Don't allow ugly interfaces, be stricter on things like navigation, general look and feel, even animation.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1573_1,tech_software,"Give developers good explanation what they do wrong, and enforce good design.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1573_2,tech_software,"If something is unresponsive, it should not be allowed unless there is a clear and good reason for it.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1573_3,tech_software,"Apps should take no longer than 2-3 seconds to start, and need to explain why they would take longer.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1573_4,tech_software,Make the marketplace of the highest quality out there!,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1573_5,tech_software,"Support for WEBGL like the rest of the world - Microsoft have done this too many times - we as MS developers are starting to look stupid 5 years behind on the mobile market - Ballmer ""iPad's are just under powered PC's"", Gates ""the internet is just a fad"" enough admit you are wrong early rather than late it's much easier that way.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1573_6,tech_software,The biggest problem I almost exclusively run into when working on WP7 apps is the layout performance of Silverlight.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1574_1,tech_software,It's takes quite some effort to work around that problem.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1575_1,tech_software,And according to web searches about this problem I felt that I'm not a lone with this.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1577_1,tech_software,It'd be great if you would work on a solution to improve the situation.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1577_2,tech_software,too often we come across a word in an app we might not know or we just want to confirm the meaning of it we colud look it up right where u r without the need to exit n go in to another app.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1577_3,tech_software,with this mod we can enjoy the platform more the than ever before is to make in the landscape like the upcoming windows 8 or like the original tile home screen from up to down or down to up,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1578_1,tech_software,An address bar should be added to Calendar items to give the location of your appointment/meeting.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1578_2,tech_software,This address should be visible on the Bing maps showing you the location of your calendar item.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1579_1,tech_software,"Vice versa, you should be able to schedule via the Bing maps, adding a location on the maps and linking it to the Calendar.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1580_1,tech_software,Return back a multi-task support (may be optional?) will significal improve advanced users experience.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1580_3,tech_software,"In current situation its almost impossible to create some kind of applications, such as different trackers, survilence etc",False,,,False,,,T,False,,,HN
+SEMTRIAL_1580_4,tech_software,A color picker control just like the one in the phone's settings would be really useful for apps which want to offer the user a choice of colors.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1580_5,tech_software,"I know I can code one, but it should be one of the standard controls.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1580_6,tech_software,The current IE mobile browser doesn't support keyup correctly.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1580_8,tech_software,I'd like to show Youtube videos in my app.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1581_2,tech_software,"I would like to have control over the size, positioning and playback of a video.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1582_1,tech_software,"there should be an option to change the working of these buttons to double click, so that a slight",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1585_3,tech_software,"Allow for video camera control, start and stop recording from the touch screen instead of just the camera button.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1589_2,tech_software,A demo or prototype category like it exists on Android would solve this issue.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1589_3,tech_software,"As of now the number of contacts that can be added to a group is restricted to 20, please remove the cap.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1589_4,tech_software,Already music streaming is supported but only for single songs.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1589_5,tech_software,would't it be great to add albums to SkyDrive and stream them directly from there.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1589_6,tech_software,Prefferably the albums would be integrated in the music & videos hub similarly to jow SkyDrive pictures are integrated in pictures hub,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1589_7,tech_software,All notifications should exist in a pull down shade in iOS/Android style.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1589_8,tech_software,The pull down shade should take on the color theme you have choosen for your phone.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1589_9,tech_software,"Notifications should exist within the shade as black tiles and will illustrate the notification type and a short phrase from the email, sms text, facebook/twitter mention, etc.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1589_10,tech_software,have a background agent enable all the time to execute an application event not execute them periodically,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1589_11,tech_software,"Ability to add a custom buttons to system call app, like in screenshots http://bit.ly/incomingScreen http://bit.ly/incallScreen click on button will launch some callback which will access to: 1.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1589_12,tech_software,Access to call voice stream in/out 2.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1589_13,tech_software,"Access to call controls, can initiate a new call, end exists, etc, all features provided by standard buttons on call page",False,,,False,,,T,False,,,HN
+SEMTRIAL_1590_1,tech_software,"currenty when you hit the Back button from the Folders (in the Mail app), it takes you back to Homescreen.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1590_2,tech_software,Please fix this so that it goes back to Inbox (and not exit the app!),False,,,False,,,T,False,,,HN
+SEMTRIAL_1590_3,tech_software,"in addition to the current Alphabetical view, add Sorting options like: Sort by last installed, Sort by recently accessed.. Also it would be nice to have a shortcut screen like the fullscreen blue alphabet tiles, but with dates: 1 day ago, 1 week ago, 2 weeks ago...",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1590_4,tech_software,"Doing something like the actual WebBrowserTask, but with Uri pointing to file in IsolatedStorage",False,,,False,,,T,False,,,HN
+SEMTRIAL_1591_1,tech_software,Add a method to run another app passing params.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1591_2,tech_software,there should be a function to costumise the tile depending on mood,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1592_1,tech_software,"if the homescreen's tile automaticaly arranged in recent , most used, favart, and latest updated.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1592_2,tech_software,then it would be better,False,,,False,,,T,False,,,HN
+SEMTRIAL_1594_1,tech_software,"Let us buy internet, free sms or minutes in our career codes.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1595_1,tech_software,Let us call codes *...# I think it's one of the most important things here.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1596_3,tech_software,"Support for word wrap or something would let us give more meaningful titles to our apps, with less app title duplications.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1599_2,tech_software,The ability to broadcast and bind sockets to a port would be handy for making local client <=> server applications where you don't need to specify the server IP.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1600_4,tech_software,We want a clean and simple interface which WORKS.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1600_12,tech_software,"I, for example, wrote four applications in about two days.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1600_13,tech_software,Getting them all published took me over three months.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1602_1,tech_software,It's just not right.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1603_1,tech_software,The process (particularly for someone under the age of 18) of getting a Dreamspark account (particularly now that you've messed up that website) and an App Hub account is absolutely awful._�_ more,False,,,False,,,T,False,,,HN
+SEMTRIAL_1603_2,tech_software,windows phone dev is powerless without low level api to access drivers or add features to phone,False,,,False,,,T,False,,,HN
+SEMTRIAL_1603_3,tech_software,I have developed an app which plays audio using the BackgroundAudioPlayer.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1603_4,tech_software,"If I am listening to audio over Bluetooth and I pause the audio, if the Bluetooth device disconnects, the audio resumes playing.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1603_5,tech_software,"I run continous background processing in my app (frequency analysis of the mic, if anyone cares).",False,,,False,,,T,False,,,HN
+SEMTRIAL_1603_6,tech_software,I'd like to control the priority of this background thread to make the user experience better.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1603_7,tech_software,"We note that microsoft bought Skype, so we need an app that includes Facebook chat, Skype chat, video call and normal calling.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1603_8,tech_software,Enterprise feature,False,,,False,,,T,False,,,HN
+SEMTRIAL_1603_9,tech_software,calendar functionality does not allow for specifying end date for meeting or appointment.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1603_10,tech_software,Bring back reccurrence from wm 6.5 where you could create complex meeting schedules,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1603_11,tech_software,Then i can write an App to simulate a Keyboard or a mouse and don't need software on PC.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1603_12,tech_software,"In SDK give an UI explorer view for Isolated Storage to download, upload isolated storage files from device to desktop.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1603_13,tech_software,This will help in testing out and debugging applications which use Isolated storage significantly.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1604_1,tech_software,"it is not possible to send an email with an attachement, i.e.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1605_1,tech_software,when applying for a job.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1605_2,tech_software,"A faster way to switch between vibration on and off than having to open settings, ringtones+sounds.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1605_3,tech_software,It would be nice with a switcher on the volume control like the button ring/silent.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1606_1,tech_software,"Android gives you the capability to zee how much storage a particular app uses, we could really do with this.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1606_2,tech_software,when ever i make a call my phone's screen goes dark even if im not puting it on my ears.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1606_3,tech_software,Ive read alot of concerns regarding this problem.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1607_1,tech_software,why shouldn't I as user be able to see reviews made by people from other countries??,False,,,False,,,T,False,,,HN
+SEMTRIAL_1607_2,tech_software,"Here in Denmark there aren't that many wp users yet, so a lot of apps will show up in the marketplace without any reviews, -even though you can see in apptracker that there exist some reviews...",False,,,False,,,T,False,,,HN
+SEMTRIAL_1607_3,tech_software,to sell phones with qwerty sliding like HTC 7 Pro Arrive while OS is not providing landscape for all apps is something between ridicolous and unfair.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1607_5,tech_software,When you enter a wrong word in the keyboard dictionary (e.g .while typing in word),False,,,False,,,T,False,,,HN
+SEMTRIAL_1607_6,tech_software,the only way to remove it is to clear the full dictionary (by using keyboard / typing settings/ reset suggestions),False,,,False,,,T,False,,,HN
+SEMTRIAL_1607_7,tech_software,We need a way to select the word(s) we want to delete,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1607_9,tech_software,Control to send desired picture to native pinch to zoom controller.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1607_10,tech_software,One line of code to enable native picture viewer with pinch-to-zoom.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1607_11,tech_software,Instead of having to tap the screen you should have the choice of locking it at the top of the screen.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1607_12,tech_software,"Tuenti is a social network as Facebook (in Spanish or English or Catalan), it would be very useful for spanish people or south americans or people who have signed up on it, to have it (integrated) into the people hub.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1607_13,tech_software,"I have a lot spanish friends who have hesitated to buy a Windows phone (and finally didn't buy it) because their favourite social network wasn't neither on the marketplace, neither on the people hub",False,,,False,,,T,False,,,HN
+SEMTRIAL_1607_14,tech_software,android has the pull down notification area well we should have a live tile where all notifications come in so if ur using an app n its not pin to ur start screen u can still know when u have a notification.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1607_16,tech_software,"possibility of viewer and writter .rar files, and native support .rar would good job",False,,,False,,,T,False,,,HN
+SEMTRIAL_1607_17,tech_software,"The built-in support for some DPWS devices would be nice, especially printing to WSD printers (or capturing images from WSD scanners) would be a significant feature.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1607_18,tech_software,Implementing such protocol is not impossible and printing from applications would be welcome not only by developers but by end users as well - once available in Office applications etc.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1607_19,tech_software,"If phone is lost allow remotely setting custom message on the lock screen, i.e. contact information.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1607_21,tech_software,As for now the PictureDecoder can only decode JPG and run on the UI thread.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1607_22,tech_software,I am especially thinking about tile generation on background agents : I'd like to have an enriched PictureDecoder able to run on any thread and decode PNG as well.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1607_23,tech_software,"extended ability to highlight text or links within apps such as Facebook and Twitter for copy paste, individual text/word highlight of a text bubble with the WP7 txts.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1607_24,tech_software,"improoved text edit cursor positioning, when highlighting text close to the top of the screeb or too far down, the scrolling plays up anf makes it awkward to get it right.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1607_25,tech_software,wifi data transfer wp7 to wp7,False,,,False,,,T,False,,,HN
+SEMTRIAL_1608_1,tech_software,The ability for applications to follow the data connection of the device (especially Edge/3G etc.),False,,,False,,,T,False,,,HN
+SEMTRIAL_1608_2,tech_software,"if they run as background tasks with live tiles, as most carriers provide limited amount of connection",False,,,False,,,T,False,,,HN
+SEMTRIAL_1609_1,tech_software,We can able to call Managed code functionality in silver light 3.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1609_2,tech_software,But in windows Phone for silverlight dosnt provide the dll System Windows Browser.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1610_1,tech_software,Better Multitasking with the ability to have background applications on.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1611_1,tech_software,Example I am playing a game and i pause and want to play later.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1611_2,tech_software,"Then i want to use my phone as usual, go in to other apps and that kind of stuff.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1611_3,tech_software,"Then later when i want to continue playing from where I paused I hold the back button and i see that game is open in the background, not only the 6 latest apps.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1611_4,tech_software,"It would be really cool if developers could get api access to Xbox Live Gamertags, that way they don't have to make users create a new account just to play multiplayer games.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1611_5,tech_software,It would also help a lot for leaderboards too.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1611_6,tech_software,"If you look at all of the most popular programs in any field (Photoshop, Office, Chrome, etc..) one thing is always constant and that is 3rd party extensability.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1612_1,tech_software,Bring this to Windows phone to all native apps.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1613_1,tech_software,"Instead of making a new camera app, allow me to extend the native one.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1613_3,tech_software,"Bring this to all of the native apps including office, the dialer, people hub, etc...",False,,,False,,,T,False,,,HN
+SEMTRIAL_1613_4,tech_software,TAB is usefull to jump from textbox to another e.g.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1615_1,tech_software,in the registration forms using only the keyboard.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1615_2,tech_software,Arrows keys to move easly throught the text!,False,,,False,,,T,False,,,HN
+SEMTRIAL_1619_1,tech_software,When you have more than 5 Groups you need to scroll down in case you want to find a single Contact.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1619_2,tech_software,The [A-Z]-Button should open the Letter-grid to jump to the desired point in the list.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1619_3,tech_software,i would like it to work just like the walgreens app,False,,,False,,,T,False,,,HN
+SEMTRIAL_1619_4,tech_software,The mango way to switch between tab is slow as .... so please implement a quicker way to do that or roll back to the previous IE's chrome.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1619_5,tech_software,greater permission to manage the music.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1619_6,tech_software,"help define the current position of the current music with the mediaplayer Zune ""seek position"".",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1619_7,tech_software,"to obtain another possibilities to move in the music as the default button ""fast forward"".",False,,,False,,,T,False,,,HN
+SEMTRIAL_1619_8,tech_software,"In a windows desktop, ALT+TAB is used to switch quickly between apps.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1619_9,tech_software,We need something just as fast in WP7.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1620_1,tech_software,"One suggestion is: Double tap home icon quickly, to see the list of open apps - as shown currently.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1622_1,tech_software,This is faster than holding down the Back key for some time.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1622_2,tech_software,zune payer should support custome codec plugin so one can play any format.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1622_3,tech_software,Please expand the MessageBoxButton option in Silverlight to include a Yes/No or Yes/No/Cancel option.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1624_1,tech_software,It would be nice to have a modal control that is standard between applications with additional user choices available.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1624_2,tech_software,the mutitasking area should have every app that you have opened in it.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1625_1,tech_software,The last five should be frozen and any more than that should have to restarted.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1625_2,tech_software,To close an app the user should be able to use her/his finger to flick it upwards WebOS style.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1625_4,tech_software,"In addition, the user should be able to take a screenshot within the multitasking area by using a finger gesture to drag the app towarda the bottom of the screen, a screen capture icon should appear and the outer edges of the icon should fill with green and onve the edges are_�_ more",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1625_5,tech_software,It will be very useful if you can asign a static IP,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1625_6,tech_software,IPv6 begins to be widely supported.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1625_7,tech_software,It was available in WM6.5 (and older) so it would be great to see this included in WP7 (and later),False,,,False,,,T,False,,,HN
+SEMTRIAL_1625_8,tech_software,allow sync of ms exchange notes,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1625_9,tech_software,"because push notifications can easily go unnoticeable, there should be a history in the ""me"" tile that will also tell you if you missed something.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1625_10,tech_software,Tile counts are nice but I dont have every app pinned nor do I want it that way.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1625_11,tech_software,Just a history for one days notifications would be enough.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1625_12,tech_software,"It would be really nice to have a ""Share"" task that I could pass a stream to, in order to share an image.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1625_13,tech_software,This task could bring up the same interface when I share an photo from my pictures library.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1625_14,tech_software,It would make it simple to share photos to facebook and twitter if the user already has it setup.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1625_15,tech_software,It would also make it possible to finally share photos via sms and email programmatically.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1625_16,tech_software,"Examples: Google should be able to add Google+ support to me, people hubs.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1625_17,tech_software,Amazon should be able to integrate their cloud music seamlessly with music+video hub.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1625_18,tech_software,Flickr should be able to integrate with picture hub.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1625_19,tech_software,When searching in the market you should be able to open the app if already installed.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1625_20,tech_software,"Please provide APIs for call forwarding and other call management functions(hold/unhold,swap,conference,etc)",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1625_21,tech_software,"As a user, I would like to be able to select songs that I have put on the device (from my library) to wake up to.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1626_1,tech_software,"As a developer, I can only allow the user to choose from songs that I included with the app.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1627_1,tech_software,The main work-around I've seen in the various alarm clock apps is to force the user to keep the app open over night which is not particularly awesome for battery life.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1627_2,tech_software,Add an option to customize the size of Pictures uploaded to Skydrive or send via mail.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1627_3,tech_software,Also add an option to autoupload full images tu Skydrive and not only 718x538 px as preset on the lumia 800.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1627_4,tech_software,"Right now, you can start apps by holding down the Windows button and saying ""start appname"".",False,,,False,,,T,False,,,HN
+SEMTRIAL_1627_5,tech_software,"It would be great if you could start an app while adding some instructions, for example: ""Facebook, show me messages"" ""Office, create new Word document"" ""Prime TV, mark House Season 1 Episode 4 as watched",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1627_6,tech_software,"when holding my phone in one hand, the palm of my hand just below my thumb come very close to the search button and a stretch to far can often send me off to the search function while i am texting or writing an email.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1627_7,tech_software,is there any possibilty that these 3 controls can somehow be made less sensitive or become a more mechanical click?,False,,,False,,,T,False,,,HN
+SEMTRIAL_1627_8,tech_software,"The touchmove event is called only once, when I move my finger across the screen.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1627_9,tech_software,So I can't create complex HTML pages with a fixed header and a scrollable content.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1627_10,tech_software,I will move the content per javascript but I can not because the touchmove event is not triggered.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1627_11,tech_software,Please implement the whole TouchApi in the Internet Explorer and the WebBrowser Control.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1627_12,tech_software,This is VERY IMPORTANT for mobile websites because iPhone and Android support this.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1627_13,tech_software,Emails are non editable while,False,,,False,,,T,False,,,HN
+SEMTRIAL_1627_14,tech_software,Enable picture password as in Windows 8.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1627_15,tech_software,deleting multiple for sms as email services,False,,,False,,,T,False,,,HN
+SEMTRIAL_1627_16,tech_software,"I am thinking about a SDK to allow me to create an ""account app"".",False,,,False,,,T,False,,,HN
+SEMTRIAL_1627_17,tech_software,"So like google, facebook, linkedin I want to create contacts, calendar and access to message hub (also writing messages with my account).",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1627_18,tech_software,Marketplace upload of this kind should be more restricted to avoid problems.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1628_1,tech_software,"When I'm reading a web page or other document, I would find it incredibly useful to be able to jump to the jump of the document without endless swiping.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1629_1,tech_software,if more elements one day.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1630_1,tech_software,We cant see the other:(,False,,,False,,,T,False,,,HN
+SEMTRIAL_1631_1,tech_software,it is slightly fustrating when one or two screenshots take longer to load and you cannot skip them while swiping through the images.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1632_1,tech_software,Like windows mobile 6.5 and older version.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1632_2,tech_software,"Currently, you can only have the review page from the app list with the contextual menu.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1633_1,tech_software,"It will be pleasant to go the main page of the app in the marketplace to see the general pr��sentation, screenshots & the other users reviews",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1633_2,tech_software,add capability to enter manual parametets for visual voicemail,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1633_3,tech_software,currently in the all applications view tge jumplist appears only when there are more than 40 apps.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1633_4,tech_software,i have about 30 apps and it is already difficult to find an app ...i think the jumplist shuld be always available.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1633_5,tech_software,I believe scrolling should be improved.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1633_6,tech_software,"As sometimes when users are viewing a long document, they sometimes might want to skip to the middle/lower section.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1633_7,tech_software,But scrolling seems to take a little long..,False,,,False,,,T,False,,,HN
+SEMTRIAL_1634_1,tech_software,"Thus, this idea is actually for the developers to make scrolling faster after each subsequent scroll, like every 5 scrolls the scrolling speed will increase..",False,,,False,,,T,False,,,HN
+SEMTRIAL_1634_2,tech_software,"ensure that we can buy clips, movies and videos directly to WP7 without necessarily going through a PC",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1634_4,tech_software,Swipe from the top down with two fingers and flick through the last closed app as seen in Windows 8.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1634_5,tech_software,"For instance, email and messaging notifications could be silenced at night, whilst call ringtones would function as normal.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1634_7,tech_software,by benchmarking a developer a good developer work.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1634_8,tech_software,it will encourage a developer to design better apps and it makes very easy for customers to choose the right apps ibstead of selectibg some poorly designed apps and wasting the time..,False,,,False,,,T,False,,,HN
+SEMTRIAL_1634_9,tech_software,I see many developers can be benefited from text2speech api.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1634_10,tech_software,It can also bring in whole range of new apps for windows phone.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1634_11,tech_software,"In Android For C2DM , Google is providing free account and restrict number of messages per day.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1634_12,tech_software,Supporting Windows Authentication could be very usefull for example writing app that interacts with Microsoft Dynamics CRM,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1634_13,tech_software,currently only a defined set of extensions are supported for files to upload to SkyDrive using the new live API which limit really the usage of the API.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1634_14,tech_software,For example my app can export .CSV files and I had to rename their extensions to .TXT to be able to upload them to SkyDrive using the live API.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1634_15,tech_software,The language should be a search critreria for apps and games.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1634_16,tech_software,The non-english marketplaces are filled with apps that support only english and it is hard to find apps in my native language.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1635_1,tech_software,If it's MS Windows Phone then make it as a part of the network.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1635_2,tech_software,Will see all shared resources.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1635_3,tech_software,One shared folder can be set on phone device.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1635_4,tech_software,Easy to access and transfer on both sides PC-Phone.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1635_5,tech_software,A business feature that would be really nice to have support for it the ability to tie into a VoIP network for voip phone calls... the most common architecture is the SIP (Session Initiation Protocol).,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1635_6,tech_software,So I would like the ability to configure a SIP client that ties into our VoIP PBX and phone system.. so my WP7 would basically become my desk phone (extension).,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1635_7,tech_software,The only way this would really work well is if it ran in the background like the phone's native phone functionality.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1635_9,tech_software,If there is an app developer the a customer lukes i'd be good to see everything that they have made.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1635_10,tech_software,"Full (or almost) Entity Framework support, including graphic class designer and interop with regular EF assemblies, making it easy for developers to reuse model and persistence classes in the phone, without the need to redo all the work in Linq and some nasty tricks.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1635_12,tech_software,It would be nice to have the Deployment ability on my home PC able to be done wirelessly.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1637_1,tech_software,"This includes deploying in Visual Studio while developing, and using the Application Deployment Tool that is installed w/ the dev tools.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1638_1,tech_software,"For me, the benefit would be that when I don't have a microUSB cable handy, I can still dev and deploy to my phone to try something out, or deploy my friend's XAP to my phone w/o having to go find a cable first.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1639_1,tech_software,"This could be implemented via WiFi, of course (since Zune does wireless Sync already), or even Bluetooth once we get Bluetooth data transfer ability.",False,,,False,,,T,False,,,HN
+SEMTRIAL_1640_1,tech_software,Wp7.5 lacks USB audio functionality with Microsoft Sync in cars.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1640_2,tech_software,Bluetooth playing audio is very limited.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1640_3,tech_software,Requesting MTP and mass storage functionality since competitors like iPhone are able to do all this already with Sync.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1641_1,tech_software,"In IsolatedStorage ,image file can save to local MediaLibrary,why not record wave file can not?",False,,,False,,,T,False,,,HN
+SEMTRIAL_1642_1,tech_software,too slow and too little possibilities,False,,,False,,,T,False,,,HN
+SEMTRIAL_1644_2,tech_software,I took a while until I realized that I forgot {StaticResource} within the Style attribute...,False,,,False,,,T,False,,,HN
+SEMTRIAL_1645_1,tech_software,It's very hard to create application supporting multiple languages.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1645_2,tech_software,"Give functionalities like Resource manager, as given by IDE of other platforms.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1645_3,tech_software,Managing resources and folder structure for them should be made easier.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1645_4,tech_software,make an EQ for the mp3 player...at the moment the volume it's really low,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1645_5,tech_software,Curently 20 persons max.,False,,,False,,,T,False,,,HN
+SEMTRIAL_1645_7,tech_software,"Please enable pinning of the ""Wi-Fi"" settings on Start page.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1646_1,tech_software,SplashScreenImageLight and SplashScreenImageDark would be great!,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1647_1,tech_software,"After that, it would be great to have the option to select an image from IsolatedStorage so that my app can update its splash screen image as needed.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1650_2,tech_software,Make it so that a meteo style app would only need to adapt its UI to run on Windows phone.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1652_1,tech_software,It would also be nice to have to deploy only one package to the marketplace but only the needed bits would be tranfered.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1653_1,tech_software,Add movies and books would be an excellent addition for the system !,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1653_2,tech_software,"Enable Speech Command to play songs selection by saying ""play song name"", ""play artist"", ""play album"".",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1654_1,tech_software,I believe the single most important thing for Windows Phone to be successful is that users in all countries should have the same services available.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1657_1,tech_software,Now when the marketplace has become available it would be great if users in other countries than US could migrate their accounts to the country they really live in.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1658_1,tech_software,"Since windows phones are selling hot in countries like India, browser should start displaying Indian language characters.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1658_2,tech_software,Allow user to set different accent colors for different tiles.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1658_3,tech_software,"we should have small tiles instead of a long list of apps of which you downloaded, like android and ios.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1658_7,tech_software,An app should be able to publish a service that is disvoerable and consumable by other apps.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1658_8,tech_software,"For example, if I have an app that can process images, I want other apps to be able to dicover my app and submit photos for me to process.",False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1659_1,tech_software,I would like access to a stream for music played via the media library.,False,,,False,,,T,True,explicit,,P1
+SEMTRIAL_1660_1,tech_software,"i wish the functionality to access and synchronize the public folder from exchange, e.g. the public contacts or the calendar.",False,,,False,,,T,True,explicit,,P1

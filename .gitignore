@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+results/
+*.exe
+*.pdb
+# Gold media (images/audio) are released separately, not in git
+media/gold_images/
+media/gold_audio/
