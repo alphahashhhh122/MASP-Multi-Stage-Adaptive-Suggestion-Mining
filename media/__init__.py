@@ -1,1 +1,15 @@
-from .processor import ImageProcessor, AudioProcessor, MediaLoader, AcousticFeatures, ProcessedMedia
+from .processor import (
+    AcousticFeatures,
+    AudioProcessor,
+    ImageProcessor,
+    MediaLoader,
+    ProcessedMedia,
+)
+
+__all__ = [
+    "AcousticFeatures",
+    "AudioProcessor",
+    "ImageProcessor",
+    "MediaLoader",
+    "ProcessedMedia",
+]

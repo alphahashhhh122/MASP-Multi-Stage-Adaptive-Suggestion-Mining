@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
-"""
-eval_semeval_cross.py — Cross-benchmark validation for EMNLP 2026.
+"""Compare MASP and SemEval suggestion-mining baselines.
 
 Proves two things:
   1. MASP benchmark difficulty is comparable to SemEval-2019 Task 9

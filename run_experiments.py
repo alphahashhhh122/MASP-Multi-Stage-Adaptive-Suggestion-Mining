@@ -7,7 +7,6 @@ Usage:
     # Run specific experiment
     python run_experiments.py --main          # Table 2: MASP vs baselines
     python run_experiments.py --switch        # Table 4: switch analysis
-    python run_experiments.py --sensitivity   # Figure 4: tau sensitivity
 """
 
 import json
@@ -208,29 +207,17 @@ def run_switch_analysis():
             specific_preds.append(entry)
 
     print("\n" + "=" * 60)
-    print("TABLE 4: Switch Analysis (KEY RESULT)")
+    print("TABLE 4: Switch Analysis")
     print("=" * 60)
-    print(
-        f"{'Mode':<20} {'#':>4} {'F1 w/ switch':>12} {'F1 w/o switch':>14} {'Delta':>8}"
-    )
-    print("-" * 60)
+    print(f"{'Mode':<20} {'#':>4} {'F1':>8}")
+    print("-" * 36)
 
     for name, preds in [
         ("COMMON (a≥0.6)", common_preds),
         ("SPECIFIC (a<0.6)", specific_preds),
     ]:
         m = compute_metrics(preds)
-        # TODO: compute F1 without switch from A1 ablation results
-        print(f"{name:<20} {m['n']:>4} {m['F1']:>12.3f} {'TBD':>14} {'TBD':>8}")
-
-
-def run_sensitivity():
-    """Figure 4: F1 vs tau."""
-    logger.info("\n" + "=" * 60 + "\nRUNNING SENSITIVITY ANALYSIS\n" + "=" * 60)
-    # TODO: Run pipeline with different tau values
-    # tau_values = [0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
-    print("Sensitivity analysis requires running pipeline with different tau values.")
-    print("Set thresholds.tau in config.yaml and re-run for each value.")
+        print(f"{name:<20} {m['n']:>4} {m['F1']:>8.3f}")
 
 
 def main():
@@ -238,7 +225,6 @@ def main():
     parser.add_argument("--all", action="store_true")
     parser.add_argument("--main", action="store_true")
     parser.add_argument("--switch", action="store_true")
-    parser.add_argument("--sensitivity", action="store_true")
     args = parser.parse_args()
 
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
@@ -247,8 +233,6 @@ def main():
         run_main_experiment()
     if args.all or args.switch:
         run_switch_analysis()
-    if args.all or args.sensitivity:
-        run_sensitivity()
 
 
 if __name__ == "__main__":

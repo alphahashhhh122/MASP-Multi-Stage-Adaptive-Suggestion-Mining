@@ -5,7 +5,6 @@ Cluster Agent — groups canonical suggestions from MULTIPLE reviews into cluste
 cluster_size (how many reviews mentioned this) flows to reranker as the most powerful signal.
 """
 
-import json
 import logging
 import uuid
 from typing import Optional
@@ -29,18 +28,26 @@ class SuggestionCluster:
         return len(self.members)
 
     def add_member(self, suggestion_text: str, sample_id: str, confidence: float):
-        self.members.append({
-            "text": suggestion_text, "sample_id": sample_id,
-            "confidence": confidence, "added_at": datetime.utcnow().isoformat()
-        })
+        self.members.append(
+            {
+                "text": suggestion_text,
+                "sample_id": sample_id,
+                "confidence": confidence,
+                "added_at": datetime.utcnow().isoformat(),
+            }
+        )
         self.updated_at = datetime.utcnow().isoformat()
         self.centroid_text = max(self.members, key=lambda m: m["confidence"])["text"]
 
     def to_dict(self) -> dict:
         return {
-            "cluster_id": self.cluster_id, "centroid_text": self.centroid_text,
-            "domain": self.domain, "size": self.size, "members": self.members,
-            "created_at": self.created_at, "updated_at": self.updated_at,
+            "cluster_id": self.cluster_id,
+            "centroid_text": self.centroid_text,
+            "domain": self.domain,
+            "size": self.size,
+            "members": self.members,
+            "created_at": self.created_at,
+            "updated_at": self.updated_at,
         }
 
 
@@ -54,6 +61,7 @@ class ClusterStore:
         if self._embedder is None:
             try:
                 from sentence_transformers import SentenceTransformer
+
                 self._embedder = SentenceTransformer("all-MiniLM-L6-v2")
             except ImportError:
                 self._embedder = "jaccard"
@@ -66,12 +74,15 @@ class ClusterStore:
             b = set(text_b.lower().split())
             return len(a & b) / len(a | b) if (a | b) else 0.0
         import numpy as np
+
         embs = embedder.encode([text_a, text_b])
         dot = np.dot(embs[0], embs[1])
         norms = np.linalg.norm(embs[0]) * np.linalg.norm(embs[1])
         return float(dot / norms) if norms > 0 else 0.0
 
-    def assign(self, canonical_text: str, sample_id: str, domain: str, confidence: float) -> dict:
+    def assign(
+        self, canonical_text: str, sample_id: str, domain: str, confidence: float
+    ) -> dict:
         domain_clusters = [c for c in self._clusters.values() if c.domain == domain]
         best_cluster, best_sim = None, 0.0
         for cluster in domain_clusters:
@@ -81,7 +92,10 @@ class ClusterStore:
 
         if best_cluster and best_sim >= self.similarity_threshold:
             best_cluster.add_member(canonical_text, sample_id, confidence)
-            return {"cluster_id": best_cluster.cluster_id, "cluster_size": best_cluster.size}
+            return {
+                "cluster_id": best_cluster.cluster_id,
+                "cluster_size": best_cluster.size,
+            }
         else:
             cid = f"cluster_{uuid.uuid4().hex[:8]}"
             cluster = SuggestionCluster(cid, canonical_text, domain)
@@ -97,7 +111,9 @@ class ClusterStore:
         clusters = self._clusters.values()
         if domain:
             clusters = [c for c in clusters if c.domain == domain]
-        return [c.to_dict() for c in sorted(clusters, key=lambda c: c.size, reverse=True)]
+        return [
+            c.to_dict() for c in sorted(clusters, key=lambda c: c.size, reverse=True)
+        ]
 
     def top_clusters(self, n: int = 10, domain: str = None) -> list[dict]:
         return self.get_all_clusters(domain)[:n]
@@ -115,6 +131,7 @@ class ClusterStore:
 
 _cluster_store: Optional[ClusterStore] = None
 
+
 def get_cluster_store() -> ClusterStore:
     global _cluster_store
     if _cluster_store is None:
@@ -129,6 +146,14 @@ def cluster_node(state) -> dict:
     enriched = []
     for s in state.get("canonical_suggestions", []):
         text = s.get("canonical_text") or s.get("text", "")
-        result = store.assign(text, state["sample_id"], domain, s.get("confidence", 0.5))
-        enriched.append({**s, "cluster_id": result["cluster_id"], "cluster_size": result["cluster_size"]})
+        result = store.assign(
+            text, state["sample_id"], domain, s.get("confidence", 0.5)
+        )
+        enriched.append(
+            {
+                **s,
+                "cluster_id": result["cluster_id"],
+                "cluster_size": result["cluster_size"],
+            }
+        )
     return {"canonical_suggestions": enriched, "cluster_stats": store.stats()}

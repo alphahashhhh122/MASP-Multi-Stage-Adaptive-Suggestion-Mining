@@ -26,35 +26,38 @@ logger = logging.getLogger(__name__)
 
 DEFAULT_WEIGHTS = {
     # ── Original 10 features ──
-    "view_agreement_ratio":      1.3,
-    "modality_agreement_score":  1.0,
-    "semantic_memory_hit":       0.7,
-    "canonical_frequency_norm":  0.5,
-    "past_approval_rate":        0.9,
-    "cluster_size_norm":         1.5,   # most powerful signal
-    "avg_confidence":            0.7,
-    "has_urgency_markers":       0.4,
-    "user_segment_importance":   0.5,
-    "modality_alignment":        0.4,
-    "explicit_bonus":            0.4,
+    "view_agreement_ratio": 1.3,
+    "modality_agreement_score": 1.0,
+    "semantic_memory_hit": 0.7,
+    "canonical_frequency_norm": 0.5,
+    "past_approval_rate": 0.9,
+    "cluster_size_norm": 1.5,  # most powerful signal
+    "avg_confidence": 0.7,
+    "has_urgency_markers": 0.4,
+    "user_segment_importance": 0.5,
+    "modality_alignment": 0.4,
+    "explicit_bonus": 0.4,
     # ── NEW: evidence provenance (Q-S-E) ──
-    "grounding_score":           1.0,   # high weight — faithfulness matters
+    "grounding_score": 1.0,  # high weight — faithfulness matters
     # ── NEW: suggestion switch type-aware features ──
-    "actionability_norm":        0.7,   # implicit: 0-1 normalized from 1-5
-    "feasibility_norm":          0.5,   # implicit: 0-1 normalized from 1-5
-    "faithfulness_score":        0.6,   # switch faithfulness check
-    "type_bonus":                0.3,   # +0.3 for explicit (inherently safer)
+    "actionability_norm": 0.7,  # implicit: 0-1 normalized from 1-5
+    "feasibility_norm": 0.5,  # implicit: 0-1 normalized from 1-5
+    "faithfulness_score": 0.6,  # switch faithfulness check
+    "type_bonus": 0.3,  # +0.3 for explicit (inherently safer)
 }
 
 MAX_SCORE = sum(DEFAULT_WEIGHTS.values())
 
 
 def _normalise_cluster_size(cluster_size: int) -> float:
-    if cluster_size <= 1: return 0.0
+    if cluster_size <= 1:
+        return 0.0
     return min(1.0, math.log(cluster_size) / math.log(100))
 
+
 def _normalise_frequency(freq: int) -> float:
-    if freq <= 1: return 0.0
+    if freq <= 1:
+        return 0.0
     return min(1.0, math.log(freq) / math.log(50))
 
 
@@ -65,31 +68,34 @@ def score_suggestion(features: dict, weights: dict = None) -> float:
     w = weights or DEFAULT_WEIGHTS
 
     raw = (
-        w["view_agreement_ratio"]     * features.get("view_agreement_ratio", 0.0)
+        w["view_agreement_ratio"] * features.get("view_agreement_ratio", 0.0)
         + w["modality_agreement_score"] * features.get("modality_agreement_score", 0.5)
-        + w["semantic_memory_hit"]      * (1 if features.get("semantic_memory_hit") else 0)
-        + w["canonical_frequency_norm"] * _normalise_frequency(features.get("canonical_frequency", 1))
-        + w["past_approval_rate"]       * features.get("past_approval_rate", 0.5)
-        + w["cluster_size_norm"]        * _normalise_cluster_size(features.get("cluster_size", 1))
-        + w["avg_confidence"]           * features.get("avg_confidence", 0.5)
-        + w["has_urgency_markers"]      * (1 if features.get("has_urgency_markers") else 0)
-        + w["user_segment_importance"]  * features.get("user_segment_importance", 0.7)
-        + w["modality_alignment"]       * features.get("modality_alignment", 0.5)
-        + w["explicit_bonus"]           * (0 if features.get("is_implied") else 1)
+        + w["semantic_memory_hit"] * (1 if features.get("semantic_memory_hit") else 0)
+        + w["canonical_frequency_norm"]
+        * _normalise_frequency(features.get("canonical_frequency", 1))
+        + w["past_approval_rate"] * features.get("past_approval_rate", 0.5)
+        + w["cluster_size_norm"]
+        * _normalise_cluster_size(features.get("cluster_size", 1))
+        + w["avg_confidence"] * features.get("avg_confidence", 0.5)
+        + w["has_urgency_markers"] * (1 if features.get("has_urgency_markers") else 0)
+        + w["user_segment_importance"] * features.get("user_segment_importance", 0.7)
+        + w["modality_alignment"] * features.get("modality_alignment", 0.5)
+        + w["explicit_bonus"] * (0 if features.get("is_implied") else 1)
         # NEW: evidence provenance (reads evidence_grounding_score set by user's node)
-        + w["grounding_score"]          * features.get("grounding_score",
-                                            features.get("evidence_grounding_score", 0.5))
+        + w["grounding_score"]
+        * features.get("grounding_score", features.get("evidence_grounding_score", 0.5))
         # NEW: suggestion switch type-aware (from pipeline_integration.py SCORER_PATCH)
-        + w["actionability_norm"]       * (features.get("actionability_score", 3) / 5.0)
-        + w["feasibility_norm"]         * (features.get("feasibility_score", 3) / 5.0)
-        + w["faithfulness_score"]       * features.get("faithfulness_score", 0.5)
-        + w["type_bonus"]              * (1 if features.get("suggestion_type") == "explicit" else 0)
+        + w["actionability_norm"] * (features.get("actionability_score", 3) / 5.0)
+        + w["feasibility_norm"] * (features.get("feasibility_score", 3) / 5.0)
+        + w["faithfulness_score"] * features.get("faithfulness_score", 0.5)
+        + w["type_bonus"] * (1 if features.get("suggestion_type") == "explicit" else 0)
     )
 
     return round((raw / MAX_SCORE) * 10, 2)
 
 
 # ─── Phase 2: Learned model ──────────────────────────────────────────────────
+
 
 class LearnedScorer:
     def __init__(self):
@@ -127,6 +133,7 @@ class LearnedScorer:
         try:
             from sklearn.ensemble import GradientBoostingRegressor
             import numpy as np
+
             X = [self._feature_vector(s["features"]) for s in self._training_data]
             y = [s["score"] for s in self._training_data]
             self._model = GradientBoostingRegressor(n_estimators=50, max_depth=3)
@@ -141,11 +148,11 @@ class LearnedScorer:
     def predict(self, features: dict) -> Optional[float]:
         if not self._is_trained or self._model is None:
             return None
-        import numpy as np
         return round(float(self._model.predict([self._feature_vector(features)])[0]), 2)
 
     def feature_importance(self) -> Optional[dict]:
-        if not self._is_trained: return None
+        if not self._is_trained:
+            return None
         names = list(DEFAULT_WEIGHTS.keys())
         return dict(zip(names, self._model.feature_importances_.tolist()))
 
@@ -156,11 +163,13 @@ class LearnedScorer:
 
 _learned_scorer: Optional[LearnedScorer] = None
 
+
 def get_learned_scorer() -> LearnedScorer:
     global _learned_scorer
     if _learned_scorer is None:
         _learned_scorer = LearnedScorer()
     return _learned_scorer
+
 
 def compute_final_score(features: dict) -> tuple[float, str]:
     learned = get_learned_scorer()

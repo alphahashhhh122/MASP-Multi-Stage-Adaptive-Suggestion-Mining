@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
-"""
-baselines_llm.py — LLM-based baselines for MASP EMNLP 2026.
+"""Evaluate the model-based MASP baselines.
 
 B4a: Minimal zero-shot (single short prompt)
 B4b: Detailed zero-shot (definition + CoT + multimodal context)

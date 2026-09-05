@@ -73,7 +73,7 @@ python run_dataset.py --help
 # small pipeline run (needs Ollama running)
 python run_dataset.py --csv data/test.csv --output results/smoke --max-samples 5
 
-# definitive metrics (needs a full results/<run>/pipeline_results.csv)
+# evaluation metrics (defaults to results/test_FINAL_v5/pipeline_results.csv)
 python compute_final_metrics.py
 ```
 

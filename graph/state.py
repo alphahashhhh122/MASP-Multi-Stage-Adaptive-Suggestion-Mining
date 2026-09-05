@@ -39,9 +39,14 @@ class Sentence(TypedDict):
 
 # Eight constructed views used for view_agreement_ratio.
 VIEW_TYPES = [
-    "text_semantic", "text_syntactic", "text_pragmatic",
-    "image_semantic", "image_syntactic", "image_pragmatic",
-    "audio_semantic", "audio_pragmatic",
+    "text_semantic",
+    "text_syntactic",
+    "text_pragmatic",
+    "image_semantic",
+    "image_syntactic",
+    "image_pragmatic",
+    "audio_semantic",
+    "audio_pragmatic",
 ]
 TOTAL_VIEWS = len(VIEW_TYPES)  # 8
 
@@ -54,12 +59,14 @@ class TextSemanticView(TypedDict):
     true_intent: str
     confidence: float
 
+
 class TextSyntacticView(TypedDict):
     negative_evaluations: list[str]
     question_patterns: list[str]
     comparative_patterns: list[str]
     modal_verbs: list[str]
     suggestion_indicators: list[str]
+
 
 class TextPragmaticView(TypedDict):
     communication_type: Literal["direct", "indirect"]
@@ -78,11 +85,13 @@ class ImageSemanticView(TypedDict):
     ui_elements_shown: list[str]
     confidence: float
 
+
 class ImageSyntacticView(TypedDict):
     layout_issues: list[str]
     missing_ui_elements: list[str]
     comparison_references: list[str]
     error_states_shown: list[str]
+
 
 class ImagePragmaticView(TypedDict):
     shows_error: bool
@@ -97,6 +106,7 @@ class AudioSemanticView(TypedDict):
     key_topics: list[str]
     implied_suggestions: list[str]
     confidence: float
+
 
 class AudioPragmaticView(TypedDict):
     tone: Literal["angry", "frustrated", "neutral", "enthusiastic", "sad"]
@@ -162,6 +172,7 @@ class RankedSuggestion(TypedDict):
 # MASTER PIPELINE STATE
 # ═══════════════════════════════════════════════════════════════════════════════
 
+
 class PipelineState(TypedDict):
     # ── Raw Input ──
     sample_id: str
@@ -182,8 +193,8 @@ class PipelineState(TypedDict):
     has_images: bool
     audio_transcript: Optional[str]
     has_audio: bool
-    acoustic_features: Optional[dict]           # raw prosody features from media/processor.py
-    acoustic_description: Optional[str]          # NL description of tone/emphasis/pace
+    acoustic_features: Optional[dict]  # raw prosody features from media/processor.py
+    acoustic_description: Optional[str]  # NL description of tone/emphasis/pace
 
     # ── Layer 2-4: Multi-View ──
     text_semantic_view: Optional[TextSemanticView]
@@ -227,7 +238,7 @@ class PipelineState(TypedDict):
     #   faithfulness_score, actionability_score, feasibility_score,
     #   specificity_score, inference_chain, type_adjusted_score, switch_eval_metrics
     # Failed suggestions are appended to rejected_suggestions.
-    switch_stats: dict   # {total_input, explicit_count, implicit_count, passed_count, failed_count}
+    switch_stats: dict  # {total_input, explicit_count, implicit_count, passed_count, failed_count}
 
     # ── Layer 9: Canonicalisation ──
     canonical_suggestions: list[AcceptedSuggestion]

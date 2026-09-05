@@ -70,9 +70,7 @@ Papers that support this split:
   - Multi-agent sentiment papers show type-specific agents outperform monolithic
 """
 
-import json
 import logging
-import re
 from enum import Enum
 from dataclasses import dataclass, field, asdict
 from typing import Optional
@@ -84,47 +82,95 @@ logger = logging.getLogger(__name__)
 # 1. SUGGESTION TYPE CLASSIFIER
 # ═══════════════════════════════════════════════════════════════════════════════
 
+
 class SuggestionType(Enum):
     EXPLICIT = "explicit"
     IMPLICIT = "implicit"
-    AMBIGUOUS = "ambiguous"    # sent to both paths, merged later
+    AMBIGUOUS = "ambiguous"  # sent to both paths, merged later
 
 
 # Lexical signals for classification
 EXPLICIT_SIGNALS = {
     "strong": [
-        "please add", "you should", "i want", "i need", "can you add",
-        "would be great if", "it would help if", "consider adding",
-        "i wish", "i'd love", "how about adding", "why not add",
-        "implement", "introduce", "provide", "enable", "allow",
-        "make it possible", "add support for", "include",
+        "please add",
+        "you should",
+        "i want",
+        "i need",
+        "can you add",
+        "would be great if",
+        "it would help if",
+        "consider adding",
+        "i wish",
+        "i'd love",
+        "how about adding",
+        "why not add",
+        "implement",
+        "introduce",
+        "provide",
+        "enable",
+        "allow",
+        "make it possible",
+        "add support for",
+        "include",
     ],
     "moderate": [
-        "why can't", "why doesn't", "why isn't there", "how come there's no",
-        "there should be", "it should", "must have", "need to have",
-        "could you", "would you", "is it possible to",
+        "why can't",
+        "why doesn't",
+        "why isn't there",
+        "how come there's no",
+        "there should be",
+        "it should",
+        "must have",
+        "need to have",
+        "could you",
+        "would you",
+        "is it possible to",
     ],
 }
 
 IMPLICIT_SIGNALS = {
     "complaint_to_fix": [
-        "so slow", "too slow", "takes forever", "always crashes",
-        "keeps freezing", "doesn't work", "broken", "terrible",
-        "frustrating", "impossible to", "can't even", "unusable",
+        "so slow",
+        "too slow",
+        "takes forever",
+        "always crashes",
+        "keeps freezing",
+        "doesn't work",
+        "broken",
+        "terrible",
+        "frustrating",
+        "impossible to",
+        "can't even",
+        "unusable",
     ],
     "comparison_to_feature": [
-        "like instagram", "like spotify", "like amazon",
-        "competitors have", "other apps", "unlike", "compared to",
-        "everyone else has", "industry standard",
+        "like instagram",
+        "like spotify",
+        "like amazon",
+        "competitors have",
+        "other apps",
+        "unlike",
+        "compared to",
+        "everyone else has",
+        "industry standard",
     ],
     "rhetorical_question": [
-        "why is there no", "how is it possible that",
-        "am i the only one who", "does no one else",
-        "seriously?", "really?", "come on",
+        "why is there no",
+        "how is it possible that",
+        "am i the only one who",
+        "does no one else",
+        "seriously?",
+        "really?",
+        "come on",
     ],
     "sarcasm_reversal": [
-        "oh great", "wonderful", "love how", "amazing that",
-        "🙄", "/s", "sure, that works",
+        "oh great",
+        "wonderful",
+        "love how",
+        "amazing that",
+        "🙄",
+        "/s",
+        "sure, that works",
     ],
 }
 
@@ -156,7 +202,10 @@ def classify_suggestion_type(
         return SuggestionType.IMPLICIT
 
     # Rule 5: Sarcasm → implicit (the real meaning is hidden)
-    if prag.get("speech_act") == "sarcasm" or prag.get("tone") in ("sarcastic", "ironic"):
+    if prag.get("speech_act") == "sarcasm" or prag.get("tone") in (
+        "sarcastic",
+        "ironic",
+    ):
         return SuggestionType.IMPLICIT
 
     # Rule 1: Labeler says explicit with high confidence
@@ -198,24 +247,28 @@ def classify_suggestion_type(
         return SuggestionType.AMBIGUOUS
     else:
         # No clear signals — use confidence as tiebreaker
-        return SuggestionType.EXPLICIT if confidence >= 0.80 else SuggestionType.IMPLICIT
+        return (
+            SuggestionType.EXPLICIT if confidence >= 0.80 else SuggestionType.IMPLICIT
+        )
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
 # 2. EXPLICIT SUGGESTION PATH
 # ═══════════════════════════════════════════════════════════════════════════════
 
+
 @dataclass
 class ExplicitResult:
     """Output of the explicit suggestion pipeline."""
+
     text: str
     suggestion_type: str = "explicit"
     confidence: float = 0.0
     span_start: Optional[int] = None
     span_end: Optional[int] = None
-    action_verb: str = ""           # "Add", "Fix", "Improve", etc.
-    target_noun: str = ""           # "dark mode", "compression", etc.
-    is_actionable: bool = True      # explicit suggestions are actionable by definition
+    action_verb: str = ""  # "Add", "Fix", "Improve", etc.
+    target_noun: str = ""  # "dark mode", "compression", etc.
+    is_actionable: bool = True  # explicit suggestions are actionable by definition
     is_feasible: bool = True
     faithfulness_score: float = 1.0  # high — directly from user's words
     eval_metrics: dict = field(default_factory=dict)
@@ -258,13 +311,13 @@ def explicit_path(
 
     return ExplicitResult(
         text=text,
-        confidence=conf if passed else conf * 0.5,   # penalize if failed checks
+        confidence=conf if passed else conf * 0.5,  # penalize if failed checks
         span_start=span_s,
         span_end=span_e,
         action_verb=action_verb,
         target_noun=target_noun,
         is_actionable=is_actionable,
-        is_feasible=True,   # explicit requests assumed feasible unless MCP says otherwise
+        is_feasible=True,  # explicit requests assumed feasible unless MCP says otherwise
         faithfulness_score=faithfulness,
         eval_metrics={
             "path": "explicit",
@@ -298,10 +351,27 @@ def _extract_action_target(text: str) -> tuple[str, str]:
     E.g., "Add image compression before upload" → ("Add", "image compression before upload")
     """
     action_verbs = [
-        "add", "implement", "fix", "improve", "enable", "allow",
-        "introduce", "provide", "include", "remove", "reduce",
-        "increase", "decrease", "optimize", "redesign", "update",
-        "create", "build", "support", "make", "integrate",
+        "add",
+        "implement",
+        "fix",
+        "improve",
+        "enable",
+        "allow",
+        "introduce",
+        "provide",
+        "include",
+        "remove",
+        "reduce",
+        "increase",
+        "decrease",
+        "optimize",
+        "redesign",
+        "update",
+        "create",
+        "build",
+        "support",
+        "make",
+        "integrate",
     ]
     words = text.strip().split()
     if not words:
@@ -314,12 +384,14 @@ def _extract_action_target(text: str) -> tuple[str, str]:
     # Try to find action verb elsewhere
     for i, w in enumerate(words):
         if w.lower().rstrip(",.:;") in action_verbs:
-            return (w, " ".join(words[i+1:]))
+            return (w, " ".join(words[i + 1 :]))
 
     return ("", text)
 
 
-def _check_explicit_actionability(text: str, action_verb: str, target_noun: str) -> bool:
+def _check_explicit_actionability(
+    text: str, action_verb: str, target_noun: str
+) -> bool:
     """
     Explicit suggestion is actionable if:
       1. Has a clear action verb (Add/Fix/Improve/etc.)
@@ -330,8 +402,25 @@ def _check_explicit_actionability(text: str, action_verb: str, target_noun: str)
         return False
 
     # "make it better" / "fix everything" are too vague
-    vague_targets = {"it", "this", "that", "everything", "things", "stuff", "better", "worse"}
-    target_words = set(target_noun.lower().split()) - {"the", "a", "an", "to", "for", "in", "on"}
+    vague_targets = {
+        "it",
+        "this",
+        "that",
+        "everything",
+        "things",
+        "stuff",
+        "better",
+        "worse",
+    }
+    target_words = set(target_noun.lower().split()) - {
+        "the",
+        "a",
+        "an",
+        "to",
+        "for",
+        "in",
+        "on",
+    }
     meaningful_words = target_words - vague_targets
 
     return len(meaningful_words) >= 1
@@ -341,21 +430,23 @@ def _check_explicit_actionability(text: str, action_verb: str, target_noun: str)
 # 3. IMPLICIT SUGGESTION PATH
 # ═══════════════════════════════════════════════════════════════════════════════
 
+
 @dataclass
 class ImplicitResult:
     """Output of the implicit suggestion pipeline."""
-    text: str                        # the INFERRED suggestion
+
+    text: str  # the INFERRED suggestion
     suggestion_type: str = "implicit"
-    original_complaint: str = ""     # what the user actually wrote
-    inference_chain: str = ""        # reasoning: complaint → fix
+    original_complaint: str = ""  # what the user actually wrote
+    inference_chain: str = ""  # reasoning: complaint → fix
     confidence: float = 0.0
     source_modality: str = "text"
 
     # THE EXTRA GATES for implicit (not needed for explicit)
-    actionability_score: float = 0.0    # 1-5: can someone act on this?
-    feasibility_score: float = 0.0      # 1-5: is this technically possible?
-    specificity_score: float = 0.0      # 1-5: is it specific enough?
-    faithfulness_score: float = 0.0     # 0-1: is inference grounded in source?
+    actionability_score: float = 0.0  # 1-5: can someone act on this?
+    feasibility_score: float = 0.0  # 1-5: is this technically possible?
+    specificity_score: float = 0.0  # 1-5: is it specific enough?
+    faithfulness_score: float = 0.0  # 0-1: is inference grounded in source?
 
     is_actionable: bool = False
     is_feasible: bool = False
@@ -424,7 +515,7 @@ def implicit_path(
     # Gate: ALL three must pass (>= 3.0 out of 5)
     passed_actionability = actionability >= 3.0
     passed_feasibility = feasibility >= 3.0
-    passed_specificity = specificity >= 2.5   # slightly lower bar
+    passed_specificity = specificity >= 2.5  # slightly lower bar
     passed_faithfulness = faithfulness >= 0.40  # lower than explicit (0.60)
 
     # Confidence adjustment based on gates
@@ -473,7 +564,9 @@ def implicit_path(
     )
 
 
-def _extract_complaint(original_text: str, pragmatic_view: dict, semantic_view: dict) -> str:
+def _extract_complaint(
+    original_text: str, pragmatic_view: dict, semantic_view: dict
+) -> str:
     """Extract the core complaint from the original text."""
     # Use semantic view if available
     complaint = semantic_view.get("complaint_frame")
@@ -482,9 +575,22 @@ def _extract_complaint(original_text: str, pragmatic_view: dict, semantic_view: 
 
     # Fallback: extract negative phrases
     negative_markers = [
-        "slow", "crash", "freeze", "broken", "terrible", "awful",
-        "frustrating", "impossible", "useless", "annoying", "horrible",
-        "doesn't work", "can't", "won't", "never", "always fails",
+        "slow",
+        "crash",
+        "freeze",
+        "broken",
+        "terrible",
+        "awful",
+        "frustrating",
+        "impossible",
+        "useless",
+        "annoying",
+        "horrible",
+        "doesn't work",
+        "can't",
+        "won't",
+        "never",
+        "always fails",
     ]
     sentences = original_text.split(".")
     for sent in sentences:
@@ -544,9 +650,34 @@ def _check_implicit_faithfulness(
     suggestion_tokens = set(inferred_suggestion.lower().split())
 
     # Remove stopwords
-    stopwords = {"the", "a", "an", "is", "are", "was", "it", "i", "my", "to",
-                 "of", "in", "on", "for", "and", "or", "but", "this", "that",
-                 "add", "fix", "improve", "implement", "make", "should", "would"}
+    stopwords = {
+        "the",
+        "a",
+        "an",
+        "is",
+        "are",
+        "was",
+        "it",
+        "i",
+        "my",
+        "to",
+        "of",
+        "in",
+        "on",
+        "for",
+        "and",
+        "or",
+        "but",
+        "this",
+        "that",
+        "add",
+        "fix",
+        "improve",
+        "implement",
+        "make",
+        "should",
+        "would",
+    }
     evidence_meaningful = evidence_tokens - stopwords
     suggestion_meaningful = suggestion_tokens - stopwords
 
@@ -559,7 +690,9 @@ def _check_implicit_faithfulness(
 
     # Complaint-fix alignment: does the fix address the complaint?
     complaint_tokens = set(complaint.lower().split()) - stopwords
-    fix_relevance = len(suggestion_meaningful & complaint_tokens) / max(1, len(complaint_tokens))
+    fix_relevance = len(suggestion_meaningful & complaint_tokens) / max(
+        1, len(complaint_tokens)
+    )
 
     # Combined score
     faithfulness = 0.6 * topic_ratio + 0.4 * fix_relevance
@@ -576,9 +709,24 @@ def _score_actionability(text: str) -> float:
     2 = Vague direction ("Fix the app")
     1 = Not actionable ("This sucks")
     """
-    action_verbs = {"add", "implement", "fix", "improve", "enable", "remove",
-                    "reduce", "increase", "create", "build", "integrate",
-                    "redesign", "optimize", "support", "allow", "introduce"}
+    action_verbs = {
+        "add",
+        "implement",
+        "fix",
+        "improve",
+        "enable",
+        "remove",
+        "reduce",
+        "increase",
+        "create",
+        "build",
+        "integrate",
+        "redesign",
+        "optimize",
+        "support",
+        "allow",
+        "introduce",
+    }
 
     words = text.lower().split()
     first_word = words[0].rstrip(".,!") if words else ""
@@ -589,11 +737,30 @@ def _score_actionability(text: str) -> float:
     meaningful_nouns = set(words) - action_verbs - {"the", "a", "an", "to", "for", "in"}
     has_target = len(meaningful_nouns) >= 2
     # Has quantifier or specific reference?
-    has_specific = any(w in text.lower() for w in [
-        "button", "screen", "page", "menu", "option", "feature", "mode",
-        "speed", "time", "size", "font", "color", "layout", "upload",
-        "download", "notification", "search", "filter", "sort",
-    ])
+    has_specific = any(
+        w in text.lower()
+        for w in [
+            "button",
+            "screen",
+            "page",
+            "menu",
+            "option",
+            "feature",
+            "mode",
+            "speed",
+            "time",
+            "size",
+            "font",
+            "color",
+            "layout",
+            "upload",
+            "download",
+            "notification",
+            "search",
+            "filter",
+            "sort",
+        ]
+    )
 
     score = 1.0
     if has_action:
@@ -619,17 +786,37 @@ def _score_feasibility(text: str) -> float:
     1 = Impossible or nonsensical ("Read my mind")
     """
     # Known infeasible patterns
-    infeasible = ["read my mind", "always work perfectly", "never crash",
-                  "instant", "zero latency", "100% uptime", "free forever"]
+    infeasible = [
+        "read my mind",
+        "always work perfectly",
+        "never crash",
+        "instant",
+        "zero latency",
+        "100% uptime",
+        "free forever",
+    ]
     for pattern in infeasible:
         if pattern in text.lower():
             return 1.5
 
     # Known standard features (high feasibility)
     standard_features = [
-        "dark mode", "filter", "sort", "search", "export", "notification",
-        "font size", "compression", "cancel button", "undo", "bookmark",
-        "offline", "password", "two-factor", "profile", "settings",
+        "dark mode",
+        "filter",
+        "sort",
+        "search",
+        "export",
+        "notification",
+        "font size",
+        "compression",
+        "cancel button",
+        "undo",
+        "bookmark",
+        "offline",
+        "password",
+        "two-factor",
+        "profile",
+        "settings",
     ]
     for feat in standard_features:
         if feat in text.lower():
@@ -668,24 +855,26 @@ def _score_specificity(text: str) -> float:
 # 4. THE SWITCH — Routes suggestions through the right path
 # ═══════════════════════════════════════════════════════════════════════════════
 
+
 @dataclass
 class SwitchResult:
     """Unified output after the switch merges explicit/implicit results."""
+
     text: str
-    suggestion_type: str            # "explicit" | "implicit" | "ambiguous"
+    suggestion_type: str  # "explicit" | "implicit" | "ambiguous"
     confidence: float
     is_actionable: bool
     is_feasible: bool
-    passed: bool                    # did it pass its type-specific pipeline?
+    passed: bool  # did it pass its type-specific pipeline?
     faithfulness_score: float
 
     # Type-specific fields
-    action_verb: str = ""           # explicit only
-    target_noun: str = ""           # explicit only
-    inference_chain: str = ""       # implicit only
+    action_verb: str = ""  # explicit only
+    target_noun: str = ""  # explicit only
+    inference_chain: str = ""  # implicit only
     actionability_score: float = 0  # implicit only (1-5)
-    feasibility_score: float = 0    # implicit only (1-5)
-    specificity_score: float = 0    # implicit only (1-5)
+    feasibility_score: float = 0  # implicit only (1-5)
+    specificity_score: float = 0  # implicit only (1-5)
 
     # For ranking
     type_adjusted_score: float = 0.0
@@ -730,17 +919,23 @@ def run_suggestion_switch(
         result = _route_explicit(suggestion, original_text)
     elif stype == SuggestionType.IMPLICIT:
         result = _route_implicit(
-            suggestion, original_text,
-            image_context, audio_context,
-            pragmatic_view, semantic_view,
+            suggestion,
+            original_text,
+            image_context,
+            audio_context,
+            pragmatic_view,
+            semantic_view,
         )
     else:
         # AMBIGUOUS: run both, pick winner
         explicit_result = _route_explicit(suggestion, original_text)
         implicit_result = _route_implicit(
-            suggestion, original_text,
-            image_context, audio_context,
-            pragmatic_view, semantic_view,
+            suggestion,
+            original_text,
+            image_context,
+            audio_context,
+            pragmatic_view,
+            semantic_view,
         )
         # Pick the one that passed with higher confidence
         if explicit_result.passed and not implicit_result.passed:
@@ -774,20 +969,29 @@ def _route_explicit(suggestion: dict, original_text: str) -> SwitchResult:
         faithfulness_score=er.faithfulness_score,
         action_verb=er.action_verb,
         target_noun=er.target_noun,
-        type_adjusted_score=er.confidence * 1.1 if er.is_actionable else er.confidence * 0.8,
+        type_adjusted_score=er.confidence * 1.1
+        if er.is_actionable
+        else er.confidence * 0.8,
         eval_metrics=er.eval_metrics,
     )
 
 
 def _route_implicit(
-    suggestion, original_text, image_context, audio_context,
-    pragmatic_view, semantic_view,
+    suggestion,
+    original_text,
+    image_context,
+    audio_context,
+    pragmatic_view,
+    semantic_view,
 ) -> SwitchResult:
     """Route through implicit path, convert to SwitchResult."""
     ir = implicit_path(
-        suggestion, original_text,
-        image_context, audio_context,
-        pragmatic_view, semantic_view,
+        suggestion,
+        original_text,
+        image_context,
+        audio_context,
+        pragmatic_view,
+        semantic_view,
     )
     return SwitchResult(
         text=ir.text,
@@ -801,7 +1005,9 @@ def _route_implicit(
         actionability_score=ir.actionability_score,
         feasibility_score=ir.feasibility_score,
         specificity_score=ir.specificity_score,
-        type_adjusted_score=ir.confidence * 1.0 if ir.passed_all_gates else ir.confidence * 0.6,
+        type_adjusted_score=ir.confidence * 1.0
+        if ir.passed_all_gates
+        else ir.confidence * 0.6,
         eval_metrics=ir.eval_metrics,
     )
 
@@ -809,6 +1015,7 @@ def _route_implicit(
 # ═══════════════════════════════════════════════════════════════════════════════
 # 5. TYPE-SPECIFIC EVALUATION METRICS
 # ═══════════════════════════════════════════════════════════════════════════════
+
 
 class ExplicitEvaluator:
     """
@@ -833,7 +1040,10 @@ class ExplicitEvaluator:
     @staticmethod
     def exact_match(pred_text: str, gold_text: str) -> bool:
         """Exact match after normalization."""
-        normalize = lambda t: " ".join(t.lower().strip().split())
+
+        def normalize(text: str) -> str:
+            return " ".join(text.lower().strip().split())
+
         return normalize(pred_text) == normalize(gold_text)
 
     @staticmethod
@@ -849,7 +1059,11 @@ class ExplicitEvaluator:
         exact_matches = 0
         tp, fp, fn = 0, 0, 0
 
-        gold_texts = {g["text"].lower().strip() for g in gold if g.get("suggestion_type") == "explicit"}
+        gold_texts = {
+            g["text"].lower().strip()
+            for g in gold
+            if g.get("suggestion_type") == "explicit"
+        }
 
         for pred in predictions:
             pred_text = pred["text"].lower().strip()
@@ -877,12 +1091,18 @@ class ExplicitEvaluator:
 
         precision = tp / (tp + fp) if (tp + fp) > 0 else 0
         recall = tp / (tp + fn) if (tp + fn) > 0 else 0
-        f1 = 2 * precision * recall / (precision + recall) if (precision + recall) > 0 else 0
+        f1 = (
+            2 * precision * recall / (precision + recall)
+            if (precision + recall) > 0
+            else 0
+        )
 
         return {
             "type": "explicit",
             "avg_span_f1": round(sum(span_f1s) / len(span_f1s), 4) if span_f1s else 0,
-            "exact_match_rate": round(exact_matches / len(predictions), 4) if predictions else 0,
+            "exact_match_rate": round(exact_matches / len(predictions), 4)
+            if predictions
+            else 0,
             "precision": round(precision, 4),
             "recall": round(recall, 4),
             "f1": round(f1, 4),
@@ -961,7 +1181,7 @@ class ImplicitEvaluator:
             if pred.get("passed_all_gates") or metrics.get("passed_all_gates"):
                 gate_passes += 1
 
-            if best_intent_score >= 0.3:   # lower threshold — intent matching is hard
+            if best_intent_score >= 0.3:  # lower threshold — intent matching is hard
                 tp += 1
             else:
                 fp += 1
@@ -969,15 +1189,25 @@ class ImplicitEvaluator:
         fn = len(gold_intents) - tp
         precision = tp / (tp + fp) if (tp + fp) > 0 else 0
         recall = tp / (tp + fn) if (tp + fn) > 0 else 0
-        f1 = 2 * precision * recall / (precision + recall) if (precision + recall) > 0 else 0
+        f1 = (
+            2 * precision * recall / (precision + recall)
+            if (precision + recall) > 0
+            else 0
+        )
 
         n = len(predictions) or 1
         return {
             "type": "implicit",
-            "avg_intent_match": round(sum(intent_scores) / n, 4) if intent_scores else 0,
-            "avg_actionability": round(sum(actionabilities) / n, 2) if actionabilities else 0,
+            "avg_intent_match": round(sum(intent_scores) / n, 4)
+            if intent_scores
+            else 0,
+            "avg_actionability": round(sum(actionabilities) / n, 2)
+            if actionabilities
+            else 0,
             "avg_feasibility": round(sum(feasibilities) / n, 2) if feasibilities else 0,
-            "avg_faithfulness": round(sum(faithfulnesses) / n, 4) if faithfulnesses else 0,
+            "avg_faithfulness": round(sum(faithfulnesses) / n, 4)
+            if faithfulnesses
+            else 0,
             "gate_pass_rate": round(gate_passes / n, 4),
             "precision": round(precision, 4),
             "recall": round(recall, 4),
@@ -1017,7 +1247,8 @@ class UnifiedEvaluator:
 
         # Weighted precision/recall
         unified_prec = (
-            explicit_eval["precision"] * n_explicit + implicit_eval["precision"] * n_implicit
+            explicit_eval["precision"] * n_explicit
+            + implicit_eval["precision"] * n_implicit
         ) / total
         unified_rec = (
             explicit_eval["recall"] * n_explicit + implicit_eval["recall"] * n_implicit
@@ -1040,6 +1271,7 @@ class UnifiedEvaluator:
 # ═══════════════════════════════════════════════════════════════════════════════
 # 6. LANGGRAPH NODE — integrates into your existing pipeline
 # ═══════════════════════════════════════════════════════════════════════════════
+
 
 def suggestion_switch_node(state: dict) -> dict:
     """
@@ -1109,8 +1341,13 @@ def suggestion_switch_node(state: dict) -> dict:
 
     return {
         "accepted_suggestions": passed,
-        "rejected_suggestions": state.get("rejected_suggestions", []) + [
-            {"text": r["text"], "reason": "failed_switch_gates", **r.get("switch_eval_metrics", {})}
+        "rejected_suggestions": state.get("rejected_suggestions", [])
+        + [
+            {
+                "text": r["text"],
+                "reason": "failed_switch_gates",
+                **r.get("switch_eval_metrics", {}),
+            }
             for r in failed
         ],
         "switch_stats": {
@@ -1127,56 +1364,64 @@ def suggestion_switch_node(state: dict) -> dict:
 # 7. DEMO — Run on your dataset
 # ═══════════════════════════════════════════════════════════════════════════════
 
+
 def demo_with_dataset():
     """Demo the switch on sample entries from the dataset."""
     samples = [
         {
             "text": "add split-screen multitasking mode",
-            "confidence": 0.90, "is_implied": False,
+            "confidence": 0.90,
+            "is_implied": False,
             "source_modality": "text",
             "original": "Would be great if the app had a split-screen mode for multitasking.",
         },
         {
             "text": "fix app freezing issue that occurs within 10 minutes of use",
-            "confidence": 0.75, "is_implied": True,
+            "confidence": 0.75,
+            "is_implied": True,
             "source_modality": "text",
             "original": "I literally cannot use this app for more than 10 minutes without it freezing.",
         },
         {
             "text": "add verified purchase review filter",
-            "confidence": 0.70, "is_implied": True,
+            "confidence": 0.70,
+            "is_implied": True,
             "source_modality": "text",
             "original": "Why is there no way to filter reviews by verified purchase?",
         },
         {
             "text": "improve packaging to prevent product damage during shipping",
-            "confidence": 0.65, "is_implied": True,
+            "confidence": 0.65,
+            "is_implied": True,
             "source_modality": "image",
             "original": "Got my package today!",
         },
         {
             "text": "make patient portal accessible on mobile devices",
-            "confidence": 0.88, "is_implied": False,
+            "confidence": 0.88,
+            "is_implied": False,
             "source_modality": "text",
             "original": "Please make the patient portal accessible on mobile.",
         },
         {
             "text": "reduce appointment wait times for elderly patients",
-            "confidence": 0.72, "is_implied": True,
+            "confidence": 0.72,
+            "is_implied": True,
             "source_modality": "text",
             "original": "My mother waited 3 hours past her appointment time. She's 82.",
         },
         {
             "text": "add comprehensive allergen guide to menu",
-            "confidence": 0.92, "is_implied": False,
+            "confidence": 0.92,
+            "is_implied": False,
             "source_modality": "text",
             "original": "The menu needs a proper allergen guide. My daughter has a nut allergy.",
         },
     ]
 
-    print("\n" + "="*80)
+    print("\n" + "=" * 80)
     print("  EXPLICIT / IMPLICIT SUGGESTION SWITCH — DEMO")
-    print("="*80)
+    print("=" * 80)
 
     explicit_preds = []
     implicit_preds = []
@@ -1190,14 +1435,20 @@ def demo_with_dataset():
         icon = "✅" if result.passed else "❌"
         type_icon = "📝" if result.suggestion_type == "explicit" else "🔍"
 
-        print(f"\n{type_icon} [{result.suggestion_type.upper():8s}] {icon} {result.text}")
-        print(f"   Confidence: {result.confidence:.2f} | Faithful: {result.faithfulness_score:.2f}")
+        print(
+            f"\n{type_icon} [{result.suggestion_type.upper():8s}] {icon} {result.text}"
+        )
+        print(
+            f"   Confidence: {result.confidence:.2f} | Faithful: {result.faithfulness_score:.2f}"
+        )
         print(f"   Actionable: {result.is_actionable} | Feasible: {result.is_feasible}")
 
         if result.suggestion_type == "implicit":
-            print(f"   Actionability: {result.actionability_score}/5 | "
-                  f"Feasibility: {result.feasibility_score}/5 | "
-                  f"Specificity: {result.specificity_score}/5")
+            print(
+                f"   Actionability: {result.actionability_score}/5 | "
+                f"Feasibility: {result.feasibility_score}/5 | "
+                f"Specificity: {result.specificity_score}/5"
+            )
             if result.inference_chain:
                 print(f"   Chain: {result.inference_chain[:100]}")
             implicit_preds.append(asdict(result))
@@ -1208,17 +1459,23 @@ def demo_with_dataset():
     # Run evaluation
     gold = [
         {"text": "add split-screen multitasking mode", "suggestion_type": "explicit"},
-        {"text": "make patient portal accessible on mobile devices", "suggestion_type": "explicit"},
-        {"text": "add comprehensive allergen guide to menu", "suggestion_type": "explicit"},
+        {
+            "text": "make patient portal accessible on mobile devices",
+            "suggestion_type": "explicit",
+        },
+        {
+            "text": "add comprehensive allergen guide to menu",
+            "suggestion_type": "explicit",
+        },
         {"text": "fix app freezing issue", "suggestion_type": "implicit"},
         {"text": "add verified purchase review filter", "suggestion_type": "implicit"},
         {"text": "improve packaging quality", "suggestion_type": "implicit"},
         {"text": "reduce appointment wait times", "suggestion_type": "implicit"},
     ]
 
-    print("\n" + "="*80)
+    print("\n" + "=" * 80)
     print("  EVALUATION RESULTS")
-    print("="*80)
+    print("=" * 80)
 
     eval_results = UnifiedEvaluator.evaluate_all(explicit_preds, implicit_preds, gold)
 

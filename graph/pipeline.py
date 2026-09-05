@@ -96,23 +96,23 @@ def build_graph(checkpointer=None):
     graph = StateGraph(PipelineState)
 
     # Register graph nodes.
-    graph.add_node("preprocess",            preprocess_node)
-    graph.add_node("text_views",            text_view_builder_node)
-    graph.add_node("image_views",           image_view_builder_node)
-    graph.add_node("audio_views",           audio_view_builder_node)
-    graph.add_node("cross_modal_align",     cross_modal_align_node)
-    graph.add_node("domain_router",         domain_router_node)
+    graph.add_node("preprocess", preprocess_node)
+    graph.add_node("text_views", text_view_builder_node)
+    graph.add_node("image_views", image_view_builder_node)
+    graph.add_node("audio_views", audio_view_builder_node)
+    graph.add_node("cross_modal_align", cross_modal_align_node)
+    graph.add_node("domain_router", domain_router_node)
     graph.add_node("conservative_labeller", conservative_labeller_node)
-    graph.add_node("liberal_labeller",      liberal_labeller_node)
-    graph.add_node("merge_labels",          merge_labels_node)
-    graph.add_node("arbitration",           arbitration_node)
-    graph.add_node("evidence_provenance",   evidence_provenance_node)   # NEW
-    graph.add_node("suggestion_switch",     suggestion_switch_node)     # NEW
-    graph.add_node("canonicaliser",         canonicaliser_node)
-    graph.add_node("cluster_agent",         cluster_node)
-    graph.add_node("memory_agent",          memory_node)
-    graph.add_node("reranker",              reranker_node)
-    graph.add_node("human_review_gate",     human_review_gate_node)
+    graph.add_node("liberal_labeller", liberal_labeller_node)
+    graph.add_node("merge_labels", merge_labels_node)
+    graph.add_node("arbitration", arbitration_node)
+    graph.add_node("evidence_provenance", evidence_provenance_node)  # NEW
+    graph.add_node("suggestion_switch", suggestion_switch_node)  # NEW
+    graph.add_node("canonicaliser", canonicaliser_node)
+    graph.add_node("cluster_agent", cluster_node)
+    graph.add_node("memory_agent", memory_node)
+    graph.add_node("reranker", reranker_node)
+    graph.add_node("human_review_gate", human_review_gate_node)
 
     # ── Edges ────────────────────────────────────────────────────────────────
 
@@ -124,7 +124,7 @@ def build_graph(checkpointer=None):
     graph.add_edge("preprocess", "audio_views")
 
     # Fan-in to cross-modal
-    graph.add_edge("text_views",  "cross_modal_align")
+    graph.add_edge("text_views", "cross_modal_align")
     graph.add_edge("image_views", "cross_modal_align")
     graph.add_edge("audio_views", "cross_modal_align")
 
@@ -136,25 +136,25 @@ def build_graph(checkpointer=None):
 
     # Fan-in to arbitration
     graph.add_edge("conservative_labeller", "merge_labels")
-    graph.add_edge("liberal_labeller",      "merge_labels")
-    graph.add_edge("merge_labels",          "arbitration")
+    graph.add_edge("liberal_labeller", "merge_labels")
+    graph.add_edge("merge_labels", "arbitration")
 
     # Conditional: accepted → evidence + switch chain, else END
     graph.add_conditional_edges(
         "arbitration",
         _route_after_arbitration,
-        {"evidence_provenance": "evidence_provenance", "end": END}
+        {"evidence_provenance": "evidence_provenance", "end": END},
     )
 
     # NEW: evidence → switch → canonicaliser
     graph.add_edge("evidence_provenance", "suggestion_switch")
-    graph.add_edge("suggestion_switch",   "canonicaliser")
+    graph.add_edge("suggestion_switch", "canonicaliser")
 
     # Continue existing chain
-    graph.add_edge("canonicaliser",     "cluster_agent")
-    graph.add_edge("cluster_agent",     "memory_agent")
-    graph.add_edge("memory_agent",      "reranker")
-    graph.add_edge("reranker",          "human_review_gate")
+    graph.add_edge("canonicaliser", "cluster_agent")
+    graph.add_edge("cluster_agent", "memory_agent")
+    graph.add_edge("memory_agent", "reranker")
+    graph.add_edge("reranker", "human_review_gate")
     graph.add_edge("human_review_gate", END)
 
     if checkpointer:

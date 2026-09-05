@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
-"""
-comprehensive_eval_v2.py — EMNLP-quality 5-level evaluation.
+"""Run the five-part MASP evaluation suite.
 Every metric the paper promises is computed here.
 
 Level 1: Binary detection (P, R, F1, MCC, BalAcc, Acc) + Bootstrap CIs
@@ -232,10 +231,6 @@ def switch_metrics(results_df, test_df):
             total += 1
         elif path in specific_paths or path in common_paths:
             total += 1
-
-    if "alignment" in merged.columns:
-        # Hallucination: suggestion found but alignment very low and no grounding
-        pass  # Would need per-suggestion grounding scores
 
     return {
         "switch_accuracy": round(correct / total, 4) if total else 0,

@@ -26,14 +26,9 @@ Dimensions:
     9. Cost + efficiency                   — tokens/review, latency, $/review
 """
 
-import json
 import logging
 import math
-import time
-import os
 from collections import defaultdict
-from typing import Optional
-from dataclasses import dataclass, field, asdict
 
 logger = logging.getLogger(__name__)
 
@@ -41,6 +36,7 @@ logger = logging.getLogger(__name__)
 # ═══════════════════════════════════════════════════════════════════════════════
 # DIM 1: DATASET QUALITY (IAA)
 # ═══════════════════════════════════════════════════════════════════════════════
+
 
 class DatasetQualityMetrics:
     """
@@ -89,8 +85,8 @@ class DatasetQualityMetrics:
 
         all_labels = set(labels_a + labels_b)
         pe = sum(
-            (labels_a.count(l) / n) * (labels_b.count(l) / n)
-            for l in all_labels
+            (labels_a.count(label) / n) * (labels_b.count(label) / n)
+            for label in all_labels
         )
         if pe == 1.0:
             return 1.0
@@ -124,14 +120,16 @@ class DatasetQualityMetrics:
 # DIM 2: EXTRACTION QUALITY
 # ═══════════════════════════════════════════════════════════════════════════════
 
+
 class ExtractionMetrics:
     """
     Dimension 2: Core detection metrics (SemEval-2019 style).
     """
 
     @staticmethod
-    def compute(predictions: list[dict], gold: list[dict],
-                match_threshold: float = 0.5) -> dict:
+    def compute(
+        predictions: list[dict], gold: list[dict], match_threshold: float = 0.5
+    ) -> dict:
         """
         Compute P, R, F1 for suggestion detection.
         Match is based on token overlap >= threshold.
@@ -163,7 +161,9 @@ class ExtractionMetrics:
             "precision": round(p, 4),
             "recall": round(r, 4),
             "f1": round(f1, 4),
-            "tp": tp, "fp": fp, "fn": fn,
+            "tp": tp,
+            "fp": fp,
+            "fn": fn,
             "n_predictions": len(predictions),
             "n_gold": len(gold),
         }
@@ -172,6 +172,7 @@ class ExtractionMetrics:
 # ═══════════════════════════════════════════════════════════════════════════════
 # DIM 3: EXPLICIT VS IMPLICIT (delegates to user's UnifiedEvaluator)
 # ═══════════════════════════════════════════════════════════════════════════════
+
 
 class TypeSpecificMetrics:
     """
@@ -186,11 +187,14 @@ class TypeSpecificMetrics:
         Returns separate explicit, implicit, and unified metrics.
         """
         try:
-            from agents.suggestion_switch import (
-                ExplicitEvaluator, ImplicitEvaluator, UnifiedEvaluator
-            )
-            explicit_preds = [p for p in predictions if p.get("suggestion_type") == "explicit"]
-            implicit_preds = [p for p in predictions if p.get("suggestion_type") != "explicit"]
+            from agents.suggestion_switch import UnifiedEvaluator
+
+            explicit_preds = [
+                p for p in predictions if p.get("suggestion_type") == "explicit"
+            ]
+            implicit_preds = [
+                p for p in predictions if p.get("suggestion_type") != "explicit"
+            ]
             return UnifiedEvaluator.evaluate_all(explicit_preds, implicit_preds, gold)
         except ImportError:
             # Fallback: basic split
@@ -207,6 +211,7 @@ class TypeSpecificMetrics:
 # ═══════════════════════════════════════════════════════════════════════════════
 # DIM 4: MULTI-VIEW SWITCH METRICS
 # ═══════════════════════════════════════════════════════════════════════════════
+
 
 class SwitchMetrics:
     """
@@ -241,20 +246,20 @@ class SwitchMetrics:
         Every view should contribute > 0.
         """
         return {
-            view: round(full_f1 - abl_f1, 4)
-            for view, abl_f1 in ablation_f1s.items()
+            view: round(full_f1 - abl_f1, 4) for view, abl_f1 in ablation_f1s.items()
         }
 
     @staticmethod
-    def labeller_agreement(conservative_labels: list[dict],
-                           liberal_labels: list[dict]) -> float:
+    def labeller_agreement(
+        conservative_labels: list[dict], liberal_labels: list[dict]
+    ) -> float:
         """
         Cohen's Kappa between conservative and liberal labeller outputs.
         Target: 0.40-0.70 (moderate, not redundant).
         """
         # Match by sample_id or text
-        cons_texts = {l.get("text", "").lower() for l in conservative_labels}
-        lib_texts = {l.get("text", "").lower() for l in liberal_labels}
+        cons_texts = {label.get("text", "").lower() for label in conservative_labels}
+        lib_texts = {label.get("text", "").lower() for label in liberal_labels}
         all_texts = cons_texts | lib_texts
 
         labels_a = [1 if t in cons_texts else 0 for t in all_texts]
@@ -266,6 +271,7 @@ class SwitchMetrics:
 # ═══════════════════════════════════════════════════════════════════════════════
 # DIM 5: MULTIMODAL FUSION
 # ═══════════════════════════════════════════════════════════════════════════════
+
 
 class MultimodalMetrics:
     """
@@ -292,10 +298,10 @@ class MultimodalMetrics:
         Novel metric for MASP.
         """
         image_only = sum(
-            1 for p in predictions
+            1
+            for p in predictions
             if p.get("source_modality") == "image"
-            or (p.get("evidence_modalities") and
-                p["evidence_modalities"] == ["image"])
+            or (p.get("evidence_modalities") and p["evidence_modalities"] == ["image"])
         )
         return round(image_only / max(len(predictions), 1), 4)
 
@@ -313,6 +319,7 @@ class MultimodalMetrics:
 # DIM 6: FAITHFULNESS
 # ═══════════════════════════════════════════════════════════════════════════════
 
+
 class FaithfulnessMetrics:
     """
     Dimension 6: Hallucination and grounding metrics.
@@ -329,8 +336,9 @@ class FaithfulnessMetrics:
             pred_text = pred.get("text", "").lower()
             source_lower = source.lower()
             # Check grounding score from evidence provenance
-            grounding = pred.get("evidence_grounding_score",
-                                 pred.get("grounding_score", None))
+            grounding = pred.get(
+                "evidence_grounding_score", pred.get("grounding_score", None)
+            )
             if grounding is not None:
                 if grounding < 0.20:
                     hallucinated += 1
@@ -362,22 +370,21 @@ class FaithfulnessMetrics:
         Target: >= 40%
         """
         multi_modal = sum(
-            1 for p in predictions
-            if len(p.get("evidence_modalities", [])) >= 2
+            1 for p in predictions if len(p.get("evidence_modalities", [])) >= 2
         )
         return round(multi_modal / max(len(predictions), 1), 4)
 
     @staticmethod
-    def false_positive_rate(predictions: list[dict],
-                            human_rejections: list[str]) -> float:
+    def false_positive_rate(
+        predictions: list[dict], human_rejections: list[str]
+    ) -> float:
         """
         % of accepted suggestions that humans reject.
         Target: < 10%
         """
         rejected = set(r.lower().strip() for r in human_rejections)
         fp = sum(
-            1 for p in predictions
-            if p.get("text", "").lower().strip() in rejected
+            1 for p in predictions if p.get("text", "").lower().strip() in rejected
         )
         return round(fp / max(len(predictions), 1), 4)
 
@@ -386,14 +393,16 @@ class FaithfulnessMetrics:
 # DIM 7: RANKING QUALITY
 # ═══════════════════════════════════════════════════════════════════════════════
 
+
 class RankingMetrics:
     """
     Dimension 7: Ranking and prioritization against human rankings.
     """
 
     @staticmethod
-    def ndcg_at_k(predicted_ranking: list[str], gold_ranking: list[str],
-                  k: int = 10) -> float:
+    def ndcg_at_k(
+        predicted_ranking: list[str], gold_ranking: list[str], k: int = 10
+    ) -> float:
         """
         Normalized Discounted Cumulative Gain at K.
         Target: >= 0.75
@@ -415,14 +424,15 @@ class RankingMetrics:
         return round(dcg / max(idcg, 1e-10), 4)
 
     @staticmethod
-    def kendall_tau(predicted_ranking: list[str],
-                    gold_ranking: list[str]) -> float:
+    def kendall_tau(predicted_ranking: list[str], gold_ranking: list[str]) -> float:
         """
         Kendall's Tau rank correlation.
         Target: >= 0.60
         """
         # Build rank maps
-        pred_rank = {item.lower().strip(): i for i, item in enumerate(predicted_ranking)}
+        pred_rank = {
+            item.lower().strip(): i for i, item in enumerate(predicted_ranking)
+        }
         gold_rank = {item.lower().strip(): i for i, item in enumerate(gold_ranking)}
         common = set(pred_rank.keys()) & set(gold_rank.keys())
         items = sorted(common)
@@ -447,8 +457,7 @@ class RankingMetrics:
         return round((concordant - discordant) / total, 4)
 
     @staticmethod
-    def top_k_precision(predicted_top_k: list[str],
-                        gold_top_k: list[str]) -> float:
+    def top_k_precision(predicted_top_k: list[str], gold_top_k: list[str]) -> float:
         """
         % of system's top-K that appear in human's top-K.
         Target: >= 80%
@@ -462,6 +471,7 @@ class RankingMetrics:
 # ═══════════════════════════════════════════════════════════════════════════════
 # DIM 8: CROSS-DOMAIN + MEMORY (report-only, computed from multiple runs)
 # ═══════════════════════════════════════════════════════════════════════════════
+
 
 class CrossDomainMetrics:
     """
@@ -484,6 +494,7 @@ class CrossDomainMetrics:
 # DIM 9: EFFICIENCY (computed from pipeline run metadata)
 # ═══════════════════════════════════════════════════════════════════════════════
 
+
 class EfficiencyMetrics:
     """
     Dimension 9: Cost, latency, human review rate.
@@ -496,7 +507,9 @@ class EfficiencyMetrics:
         """
         if not run_logs:
             return {}
-        total_tokens = [r.get("tokens_in", 0) + r.get("tokens_out", 0) for r in run_logs]
+        total_tokens = [
+            r.get("tokens_in", 0) + r.get("tokens_out", 0) for r in run_logs
+        ]
         latencies = [r.get("latency_ms", 0) / 1000 for r in run_logs]
 
         # Placeholder per-million-token cost estimate; update rates before use.
@@ -523,18 +536,21 @@ class EfficiencyMetrics:
 # DIM 10: STATISTICAL SIGNIFICANCE
 # ═══════════════════════════════════════════════════════════════════════════════
 
+
 class StatisticalTests:
     """
     Bootstrap confidence intervals and significance tests.
     """
 
     @staticmethod
-    def bootstrap_ci(scores: list[float], n_resamples: int = 10000,
-                     confidence: float = 0.95) -> tuple[float, float, float]:
+    def bootstrap_ci(
+        scores: list[float], n_resamples: int = 10000, confidence: float = 0.95
+    ) -> tuple[float, float, float]:
         """
         Returns (mean, lower_ci, upper_ci).
         """
         import random
+
         n = len(scores)
         if n == 0:
             return 0.0, 0.0, 0.0
@@ -549,21 +565,24 @@ class StatisticalTests:
         return round(sum(scores) / n, 4), round(lo, 4), round(hi, 4)
 
     @staticmethod
-    def paired_bootstrap_test(scores_a: list[float], scores_b: list[float],
-                              n_resamples: int = 10000) -> float:
+    def paired_bootstrap_test(
+        scores_a: list[float], scores_b: list[float], n_resamples: int = 10000
+    ) -> float:
         """
         Paired bootstrap test. Returns p-value.
         Significant if p < 0.05.
         """
         import random
+
         n = len(scores_a)
         if n == 0:
             return 1.0
-        observed_diff = sum(scores_a) / n - sum(scores_b) / n
         count = 0
         for _ in range(n_resamples):
             indices = [random.randint(0, n - 1) for _ in range(n)]
-            diff = (sum(scores_a[i] for i in indices) - sum(scores_b[i] for i in indices)) / n
+            diff = (
+                sum(scores_a[i] for i in indices) - sum(scores_b[i] for i in indices)
+            ) / n
             if diff <= 0:  # null hypothesis: A is not better
                 count += 1
         return round(count / n_resamples, 4)
@@ -572,6 +591,7 @@ class StatisticalTests:
 # ═══════════════════════════════════════════════════════════════════════════════
 # HELPERS
 # ═══════════════════════════════════════════════════════════════════════════════
+
 
 def _token_f1(text_a: str, text_b: str) -> float:
     """Token-level F1 between two strings."""
@@ -590,6 +610,7 @@ def _token_f1(text_a: str, text_b: str) -> float:
 # ═══════════════════════════════════════════════════════════════════════════════
 # FULL EVALUATION RUNNER
 # ═══════════════════════════════════════════════════════════════════════════════
+
 
 def run_full_evaluation(
     predictions: list[dict],
@@ -622,7 +643,9 @@ def run_full_evaluation(
 
     # Dim 5: Multimodal
     results["multimodal"] = {
-        "image_only_discovery_rate": MultimodalMetrics.image_only_discovery_rate(predictions),
+        "image_only_discovery_rate": MultimodalMetrics.image_only_discovery_rate(
+            predictions
+        ),
         "avg_evidence_pieces": MultimodalMetrics.evidence_provenance_score(predictions),
     }
 
@@ -632,24 +655,31 @@ def run_full_evaluation(
         "grounding_coverage": FaithfulnessMetrics.grounding_coverage(predictions),
     }
     if source_texts:
-        results["faithfulness"]["hallucination_rate"] = \
+        results["faithfulness"]["hallucination_rate"] = (
             FaithfulnessMetrics.hallucination_rate(predictions, source_texts)
+        )
     if human_rejections:
-        results["faithfulness"]["false_positive_rate"] = \
+        results["faithfulness"]["false_positive_rate"] = (
             FaithfulnessMetrics.false_positive_rate(predictions, human_rejections)
+        )
 
     # Dim 7: Ranking
     if gold_ranking:
-        pred_ranking = [p["text"] for p in sorted(
-            predictions, key=lambda x: x.get("score", x.get("priority_score", 0)),
-            reverse=True
-        )]
+        pred_ranking = [
+            p["text"]
+            for p in sorted(
+                predictions,
+                key=lambda x: x.get("score", x.get("priority_score", 0)),
+                reverse=True,
+            )
+        ]
         results["ranking"] = {
             "ndcg_5": RankingMetrics.ndcg_at_k(pred_ranking, gold_ranking, k=5),
             "ndcg_10": RankingMetrics.ndcg_at_k(pred_ranking, gold_ranking, k=10),
             "kendall_tau": RankingMetrics.kendall_tau(pred_ranking, gold_ranking),
             "top_5_precision": RankingMetrics.top_k_precision(
-                pred_ranking[:5], gold_ranking[:5]),
+                pred_ranking[:5], gold_ranking[:5]
+            ),
         }
 
     # Dim 8: Memory
@@ -660,8 +690,9 @@ def run_full_evaluation(
     # Dim 9: Efficiency
     if run_logs:
         results["efficiency"] = EfficiencyMetrics.compute(run_logs)
-        results["efficiency"]["human_review_rate"] = \
+        results["efficiency"]["human_review_rate"] = (
             EfficiencyMetrics.human_review_rate(predictions)
+        )
 
     # Dim 10: Bootstrap CIs on main F1
     if len(predictions) >= 10:

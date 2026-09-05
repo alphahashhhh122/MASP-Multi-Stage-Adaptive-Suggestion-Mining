@@ -1,16 +1,23 @@
-"""
-MASP EMNLP 2026 — FINAL METRICS COMPUTATION
-Run ONLY on test_FINAL_v5 results (post all pipeline fixes).
-All numbers in this file are the DEFINITIVE paper numbers.
-"""
+"""Compute detection, extraction, and combined mining metrics for MASP."""
 
+import argparse
 import csv
 import math
 import random
 import re
+from pathlib import Path
 
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.svm import LinearSVC
+
+def parse_args():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--results",
+        type=Path,
+        default=Path("results/test_FINAL_v5/pipeline_results.csv"),
+    )
+    parser.add_argument("--train", type=Path, default=Path("data/train.csv"))
+    parser.add_argument("--test", type=Path, default=Path("data/test.csv"))
+    return parser.parse_args()
 
 
 def stem(word):
@@ -77,10 +84,23 @@ def compute_metrics(subset):
     }
 
 
-# Load results
-with open("results/test_FINAL_v5/pipeline_results.csv") as f:
+def svm_predictions(train_texts, train_labels, test_texts):
+    from sklearn.feature_extraction.text import TfidfVectorizer
+    from sklearn.svm import LinearSVC
+
+    vectorizer = TfidfVectorizer(max_features=5000, ngram_range=(1, 2))
+    training_matrix = vectorizer.fit_transform(train_texts)
+    test_matrix = vectorizer.transform(test_texts)
+    classifier = LinearSVC(max_iter=5000, C=1.0)
+    classifier.fit(training_matrix, train_labels)
+    return classifier.predict(test_matrix).tolist()
+
+
+args = parse_args()
+
+with args.results.open(encoding="utf-8", newline="") as f:
     results = list(csv.DictReader(f))
-with open("data/test.csv") as f:
+with args.test.open(encoding="utf-8", newline="") as f:
     gold = {r["entry_id"]: r for r in csv.DictReader(f)}
 
 preds = []
@@ -102,8 +122,7 @@ for r in results:
     )
 
 print("=" * 70)
-print("MASP FINAL RESULTS — test_FINAL_v5")
-print("(All pipeline fixes applied: audio ctx + SPECIFIC override + tokenizer)")
+print(f"MASP EVALUATION — {args.results.parent.name}")
 print("=" * 70)
 
 # OVERALL
@@ -184,9 +203,9 @@ mining_f1 = (
 print(f"\nMINING F1: Det={det_f1:.3f} Ext={ext_quality:.3f} Mining={mining_f1:.3f}")
 
 # BASELINES COMPARISON (recompute on same splits)
-with open("data/train.csv") as f:
+with args.train.open(encoding="utf-8", newline="") as f:
     train = list(csv.DictReader(f))
-with open("data/test.csv") as f:
+with args.test.open(encoding="utf-8", newline="") as f:
     test_data = list(csv.DictReader(f))
 
 train_texts = [r["raw_text"] for r in train]
@@ -194,14 +213,8 @@ train_labels = [1 if r["is_suggestion"] == "True" else 0 for r in train]
 test_texts = [r["raw_text"] for r in test_data]
 test_labels = [1 if r["is_suggestion"] == "True" else 0 for r in test_data]
 
-tfidf = TfidfVectorizer(max_features=5000, ngram_range=(1, 2))
-X_train = tfidf.fit_transform(train_texts)
-X_test = tfidf.transform(test_texts)
-
 # B3: SVM
-svm = LinearSVC(max_iter=5000, C=1.0)
-svm.fit(X_train, train_labels)
-svm_preds = svm.predict(X_test).tolist()
+svm_preds = svm_predictions(train_texts, train_labels, test_texts)
 svm_tp = sum(1 for p, g in zip(svm_preds, test_labels) if p == 1 and g == 1)
 svm_fp = sum(1 for p, g in zip(svm_preds, test_labels) if p == 1 and g == 0)
 svm_fn = sum(1 for p, g in zip(svm_preds, test_labels) if p == 0 and g == 1)
@@ -258,4 +271,4 @@ print(
 print(f"{'MASP (ours)':<25} {det_f1:>8.3f} {ext_quality:>8.3f} {mining_f1:>10.3f}")
 
 print(f"\n{'=' * 70}")
-print("SAVE THIS FILE AS THE DEFINITIVE PAPER NUMBERS")
+print("Review these metrics alongside the saved run configuration and dataset hash.")
