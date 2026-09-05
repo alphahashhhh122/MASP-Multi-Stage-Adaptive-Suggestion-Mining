@@ -11,17 +11,16 @@ All prompts are documented with published sources.
 No dataset-specific tuning.
 
 Usage:
-    python3 baselines_llm.py --dataset ../data/test.csv --baseline B4a
-    python3 baselines_llm.py --dataset ../data/test.csv --baseline B4b
-    python3 baselines_llm.py --dataset ../data/test.csv --baseline B7
-    python3 baselines_llm.py --dataset ../data/test.csv --baseline all
+    python baselines_llm.py --dataset data/test.csv --baseline B4a
+    python baselines_llm.py --dataset data/test.csv --baseline B4b
+    python baselines_llm.py --dataset data/test.csv --baseline B7
+    python baselines_llm.py --dataset data/test.csv --baseline all
 
 Author: Anonymous
 """
 
 import pandas as pd
 import math
-import re
 import time
 import argparse
 import logging
@@ -40,12 +39,15 @@ def evaluate(y_true, y_pred, name):
     f1 = 2 * p * r / (p + r) if p + r else 0
     den = (tp + fp) * (tp + fn) * (tn + fp) * (tn + fn)
     mcc = (tp * tn - fp * fn) / math.sqrt(den) if den > 0 else 0
-    bal = 0.5 * (tp / (tp + fn) if tp + fn else 0) + \
-          0.5 * (tn / (tn + fp) if tn + fp else 0)
+    bal = 0.5 * (tp / (tp + fn) if tp + fn else 0) + 0.5 * (
+        tn / (tn + fp) if tn + fp else 0
+    )
     print(f"\n{name}:")
     print(f"  P={p:.3f} R={r:.3f} F1={f1:.3f} MCC={mcc:.3f} BalAcc={bal:.3f}")
     print(f"  TP={tp} FP={fp} FN={fn} TN={tn}")
-    print(f"  Predicted positive: {sum(y_pred)}/{len(y_pred)} ({sum(y_pred)/len(y_pred)*100:.0f}%)")
+    print(
+        f"  Predicted positive: {sum(y_pred)}/{len(y_pred)} ({sum(y_pred) / len(y_pred) * 100:.0f}%)"
+    )
     return {"P": p, "R": r, "F1": f1, "MCC": mcc}
 
 
@@ -60,6 +62,7 @@ B4A_USER = 'Does this review contain an actionable suggestion? Review: "{text}"\
 def baseline_b4a(df):
     """B4a: Minimal zero-shot — single short prompt, no examples."""
     from llm_backend import call_llm
+
     preds = []
     errors = 0
     for i, (_, row) in enumerate(df.iterrows()):
@@ -73,7 +76,7 @@ def baseline_b4a(df):
             if errors <= 3:
                 log.warning(f"  B4a ERROR: {type(e).__name__}: {str(e)[:80]}")
         if (i + 1) % 20 == 0:
-            log.info(f"  B4a: {i+1}/{len(df)} done | {errors} errors")
+            log.info(f"  B4a: {i + 1}/{len(df)} done | {errors} errors")
     return preds
 
 
@@ -106,6 +109,7 @@ Respond ONLY with valid JSON: {"is_suggestion": 0 or 1, "reasoning": "brief expl
 def baseline_b4b(df):
     """B4b: Detailed zero-shot — full definition, CoT, multimodal context."""
     from llm_backend import call_llm
+
     preds = []
     errors = 0
     start = time.time()
@@ -115,9 +119,11 @@ def baseline_b4b(df):
         if mc in ["", "nan", "—", "None"]:
             user_msg = f'Review: "{text}"\n\nDoes this review contain an actionable suggestion?'
         else:
-            user_msg = (f'Review: "{text}"\n\nAdditional context '
-                        f'(image/audio description): {mc}\n\n'
-                        f'Does this review contain an actionable suggestion?')
+            user_msg = (
+                f'Review: "{text}"\n\nAdditional context '
+                f"(image/audio description): {mc}\n\n"
+                f"Does this review contain an actionable suggestion?"
+            )
         try:
             result, _ = call_llm(B4B_SYSTEM, user_msg)
             preds.append(int(result.get("is_suggestion", 0)))
@@ -129,7 +135,9 @@ def baseline_b4b(df):
         if (i + 1) % 20 == 0:
             elapsed = time.time() - start
             eta = (len(df) - i - 1) / ((i + 1) / elapsed) / 60
-            log.info(f"  B4b: {i+1}/{len(df)} done | {errors} errors | ETA: {eta:.1f} min")
+            log.info(
+                f"  B4b: {i + 1}/{len(df)} done | {errors} errors | ETA: {eta:.1f} min"
+            )
     return preds
 
 
@@ -146,6 +154,7 @@ Label 0 = the text does not contain a suggestion."""
 def baseline_b6(df):
     """B6: BERT-style NLI — "Does this text entail a suggestion?" """
     from llm_backend import call_llm
+
     preds = []
     errors = 0
     for i, (_, row) in enumerate(df.iterrows()):
@@ -159,13 +168,14 @@ def baseline_b6(df):
             if errors <= 3:
                 log.warning(f"  B6 ERROR: {type(e).__name__}: {str(e)[:80]}")
         if (i + 1) % 20 == 0:
-            log.info(f"  B6: {i+1}/{len(df)} done | {errors} errors")
+            log.info(f"  B6: {i + 1}/{len(df)} done | {errors} errors")
     return preds
 
 
 # ════════════════════════════════════════════════════════════════
 # B7: Keyword + Sentiment (published sources only)
 # ════════════════════════════════════════════════════════════════
+
 
 def baseline_b7(df):
     """B7: Keyword + Sentiment heuristic.
@@ -179,19 +189,51 @@ def baseline_b7(df):
     NO dataset-specific keywords.
     """
     NEGI_CUES = [
-        "suggest", "recommend", "advise", "propose",
-        "should", "could", "would", "might", "ought",
-        "why not", "how about", "what about",
-        "better if", "would be nice", "wish", "hope",
-        "need to", "have to", "must",
-        "please", "try to", "consider",
-        "it would help", "you may want",
+        "suggest",
+        "recommend",
+        "advise",
+        "propose",
+        "should",
+        "could",
+        "would",
+        "might",
+        "ought",
+        "why not",
+        "how about",
+        "what about",
+        "better if",
+        "would be nice",
+        "wish",
+        "hope",
+        "need to",
+        "have to",
+        "must",
+        "please",
+        "try to",
+        "consider",
+        "it would help",
+        "you may want",
     ]
     HU_LIU_NEG = [
-        "bad", "terrible", "awful", "horrible", "poor", "worst",
-        "annoying", "frustrating", "disappointed", "disappointing",
-        "useless", "waste", "mediocre", "inferior", "unacceptable",
-        "defective", "faulty", "unreliable", "inconvenient",
+        "bad",
+        "terrible",
+        "awful",
+        "horrible",
+        "poor",
+        "worst",
+        "annoying",
+        "frustrating",
+        "disappointed",
+        "disappointing",
+        "useless",
+        "waste",
+        "mediocre",
+        "inferior",
+        "unacceptable",
+        "defective",
+        "faulty",
+        "unreliable",
+        "inconvenient",
     ]
     preds = []
     for _, row in df.iterrows():
@@ -206,11 +248,13 @@ def baseline_b7(df):
 # MAIN
 # ════════════════════════════════════════════════════════════════
 
+
 def main():
     parser = argparse.ArgumentParser(description="LLM baselines for MASP")
     parser.add_argument("--dataset", required=True)
-    parser.add_argument("--baseline", required=True,
-                        choices=["B4a", "B4b", "B6", "B7", "all"])
+    parser.add_argument(
+        "--baseline", required=True, choices=["B4a", "B4b", "B6", "B7", "all"]
+    )
     args = parser.parse_args()
 
     test = pd.read_csv(args.dataset)
@@ -232,8 +276,9 @@ def main():
         evaluate(y_true, preds, name)
         # Save predictions
         pd.DataFrame({"entry_id": test["entry_id"], f"{key}_pred": preds}).to_csv(
-            f"../results/{key.lower()}_preds.csv", index=False)
-        log.info(f"Saved: ../results/{key.lower()}_preds.csv")
+            f"results/{key.lower()}_preds.csv", index=False
+        )
+        log.info(f"Saved: results/{key.lower()}_preds.csv")
 
 
 if __name__ == "__main__":

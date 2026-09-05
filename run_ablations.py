@@ -24,9 +24,9 @@ Ablations:
                      Tests: Grounding verification
 
 Usage:
-    python3 run_ablations.py --dataset ../data/test.csv --ablation A1
-    python3 run_ablations.py --dataset ../data/test.csv --ablation all
-    python3 run_ablations.py --dataset ../data/test.csv --ablation A1 --quick 10
+    python run_ablations.py --dataset data/test.csv --ablation A1
+    python run_ablations.py --dataset data/test.csv --ablation all
+    python run_ablations.py --dataset data/test.csv --ablation A1 --quick 10
 
 Author: Anonymous
 """
@@ -40,9 +40,11 @@ Author: Anonymous
 # paper's A4 switch-off condition. Other legacy A2-A7 options are
 # exploratory and are not reported in the final paper table.
 
-import os, sys, json, time, math, logging, argparse, copy
+import time
+import math
+import logging
+import argparse
 import pandas as pd
-from pathlib import Path
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s | %(message)s")
 log = logging.getLogger(__name__)
@@ -54,17 +56,21 @@ log = logging.getLogger(__name__)
 # (or with minimal modification to keep the graph valid)
 # ════════════════════════════════════════════════════════════════
 
+
 def make_passthrough(name):
     """Generic pass-through: returns empty dict (no state changes)."""
+
     def _passthrough(state):
         log.debug(f"[ABLATION] {name} skipped (pass-through)")
         return {}
+
     return _passthrough
 
 
 def make_force_common_align(original_node):
     """A1: Runs cross-modal alignment but forces alignment=1.0
     so the Switch always uses COMMON mode (no adaptive weighting)."""
+
     def _forced_common(state):
         result = original_node(state)
         # Override alignment to 1.0 → always COMMON mode
@@ -72,11 +78,13 @@ def make_force_common_align(original_node):
             result["cross_modal_alignment"]["overall_alignment"] = 1.0
             result["cross_modal_alignment"]["_ablation"] = "A1_forced_common"
         return result
+
     return _forced_common
 
 
 def make_accept_all_arbitration(original_node):
     """A4: Runs arbitration but accepts ALL labels (no HN filtering)."""
+
     def _accept_all(state):
         # Accept everything from merged labels
         all_labels = state.get("all_labels", [])
@@ -84,20 +92,24 @@ def make_accept_all_arbitration(original_node):
             "accepted_suggestions": all_labels,
             "rejected_suggestions": [],
         }
+
     return _accept_all
 
 
 def make_liberal_only_merge():
     """A3: Merge node that only uses liberal labels (skips conservative)."""
+
     def _liberal_only(state):
         liberal = state.get("_liberal_labels", [])
         return {"all_labels": liberal}
+
     return _liberal_only
 
 
 # ════════════════════════════════════════════════════════════════
 # ABLATION GRAPH BUILDERS
 # ════════════════════════════════════════════════════════════════
+
 
 def build_ablation_graph(ablation_id):
     """Build a LangGraph pipeline with one component ablated."""
@@ -211,8 +223,9 @@ def build_ablation_graph(ablation_id):
     graph.add_edge("liberal_labeller", "merge_labels")
     graph.add_edge("merge_labels", "arbitration")
     graph.add_conditional_edges(
-        "arbitration", _route_after_arbitration,
-        {"evidence_provenance": "evidence_provenance", "end": END}
+        "arbitration",
+        _route_after_arbitration,
+        {"evidence_provenance": "evidence_provenance", "end": END},
     )
     graph.add_edge("evidence_provenance", "suggestion_switch")
     graph.add_edge("suggestion_switch", "canonicaliser")
@@ -229,9 +242,9 @@ def build_ablation_graph(ablation_id):
 # ABLATION RUNNER
 # ════════════════════════════════════════════════════════════════
 
+
 def run_ablation_on_dataset(ablation_id, test_csv, quick=None):
     """Run one ablation on the test set."""
-    import uuid
 
     # Build ablated pipeline
     app = build_ablation_graph(ablation_id)
@@ -246,29 +259,54 @@ def run_ablation_on_dataset(ablation_id, test_csv, quick=None):
 
     # Empty state template (same as main.py)
     _EMPTY = dict(
-        raw_images=[], raw_audio=None, source_metadata={},
-        clean_text="", sentences=[], language="en",
-        sentiment="neutral", has_angry_markers=False,
-        word_count=0, image_captions=[], image_base64=[],
-        has_images=False, audio_transcript=None, has_audio=False,
-        text_semantic_view=None, text_syntactic_view=None,
-        text_pragmatic_view=None, text_view_confidence=0.0,
-        image_semantic_view=None, image_syntactic_view=None,
-        image_pragmatic_view=None, image_view_confidence=0.0,
-        audio_semantic_view=None, audio_pragmatic_view=None,
-        audio_view_confidence=0.0, cross_modal_alignment=None,
-        domain="general", domain_jargon=[],
-        all_labels=[], _conservative_labels=[], _liberal_labels=[],
-        accepted_suggestions=[], rejected_suggestions=[],
-        canonical_suggestions=[], memory_hits={}, memory_context={},
-        ranked_suggestions=[], uncertain_cases=[],
-        needs_human_review=False, messages=[],
-        error=None, processing_time=0.0,
+        raw_images=[],
+        raw_audio=None,
+        source_metadata={},
+        clean_text="",
+        sentences=[],
+        language="en",
+        sentiment="neutral",
+        has_angry_markers=False,
+        word_count=0,
+        image_captions=[],
+        image_base64=[],
+        has_images=False,
+        audio_transcript=None,
+        has_audio=False,
+        text_semantic_view=None,
+        text_syntactic_view=None,
+        text_pragmatic_view=None,
+        text_view_confidence=0.0,
+        image_semantic_view=None,
+        image_syntactic_view=None,
+        image_pragmatic_view=None,
+        image_view_confidence=0.0,
+        audio_semantic_view=None,
+        audio_pragmatic_view=None,
+        audio_view_confidence=0.0,
+        cross_modal_alignment=None,
+        domain="general",
+        domain_jargon=[],
+        all_labels=[],
+        _conservative_labels=[],
+        _liberal_labels=[],
+        accepted_suggestions=[],
+        rejected_suggestions=[],
+        canonical_suggestions=[],
+        memory_hits={},
+        memory_context={},
+        ranked_suggestions=[],
+        uncertain_cases=[],
+        needs_human_review=False,
+        messages=[],
+        error=None,
+        processing_time=0.0,
         multimodal_context="",
         acoustic_features=None,
         acoustic_description=None,
         cluster_stats={},
-        evidence_maps=[], switch_stats={},
+        evidence_maps=[],
+        switch_stats={},
     )
 
     results = []
@@ -288,9 +326,21 @@ def run_ablation_on_dataset(ablation_id, test_csv, quick=None):
         audio_transcript = None
         if mc:
             mc_lower = mc.lower()
-            if any(kw in mc_lower for kw in ["audio:", "tone", "voice", "frustrated",
-                                              "monotone", "sarcastic", "emphatic",
-                                              "resigned", "agitated", "disappointed"]):
+            if any(
+                kw in mc_lower
+                for kw in [
+                    "audio:",
+                    "tone",
+                    "voice",
+                    "frustrated",
+                    "monotone",
+                    "sarcastic",
+                    "emphatic",
+                    "resigned",
+                    "agitated",
+                    "disappointed",
+                ]
+            ):
                 if "Audio:" in mc:
                     audio_desc = mc.split("Audio:")[1].strip()
                 elif "audio:" in mc:
@@ -304,22 +354,33 @@ def run_ablation_on_dataset(ablation_id, test_csv, quick=None):
         domain = str(row.get("domain", "tech_software"))
         if domain not in ("tech_software", "restaurant"):
             domain = "tech_software"
-        
+
         # C4 FIX: Pass image/audio descriptions separately
         img_desc = str(row.get("image_description", ""))
         aud_desc = str(row.get("audio_description", ""))
-        if img_desc in ("", "nan", "None", "—"): img_desc = ""
-        if aud_desc in ("", "nan", "None", "—"): aud_desc = ""
-        
-        state = {**_EMPTY,
+        if img_desc in ("", "nan", "None", "—"):
+            img_desc = ""
+        if aud_desc in ("", "nan", "None", "—"):
+            aud_desc = ""
+
+        state = {
+            **_EMPTY,
             "sample_id": entry_id,
             "raw_text": text,
             "domain": domain,
             "multimodal_context": mc,
-            "source_metadata": {"multimodal_context": mc, "domain": domain,
-                                "image_description": img_desc, "audio_description": aud_desc}
-                               if mc else {"domain": domain,
-                                           "image_description": img_desc, "audio_description": aud_desc},
+            "source_metadata": {
+                "multimodal_context": mc,
+                "domain": domain,
+                "image_description": img_desc,
+                "audio_description": aud_desc,
+            }
+            if mc
+            else {
+                "domain": domain,
+                "image_description": img_desc,
+                "audio_description": aud_desc,
+            },
             "acoustic_description": audio_desc,
             "has_audio": has_audio,
             "audio_transcript": audio_transcript,
@@ -327,21 +388,27 @@ def run_ablation_on_dataset(ablation_id, test_csv, quick=None):
 
         try:
             result = app.invoke(state)
-            n_sugg = len(result.get("ranked_suggestions", []) or
-                         result.get("canonical_suggestions", []) or
-                         result.get("accepted_suggestions", []))
-            results.append({
-                "entry_id": entry_id,
-                "num_suggestions": n_sugg,
-                "ablation": ablation_id,
-            })
+            n_sugg = len(
+                result.get("ranked_suggestions", [])
+                or result.get("canonical_suggestions", [])
+                or result.get("accepted_suggestions", [])
+            )
+            results.append(
+                {
+                    "entry_id": entry_id,
+                    "num_suggestions": n_sugg,
+                    "ablation": ablation_id,
+                }
+            )
         except Exception as e:
             errors += 1
-            results.append({
-                "entry_id": entry_id,
-                "num_suggestions": 0,
-                "ablation": ablation_id,
-            })
+            results.append(
+                {
+                    "entry_id": entry_id,
+                    "num_suggestions": 0,
+                    "ablation": ablation_id,
+                }
+            )
             if errors <= 5:
                 log.warning(f"  ERROR {entry_id}: {type(e).__name__}: {str(e)[:100]}")
 
@@ -349,16 +416,20 @@ def run_ablation_on_dataset(ablation_id, test_csv, quick=None):
             elapsed = time.time() - start_all
             rate = (i + 1) / elapsed
             eta = (len(test) - i - 1) / rate / 60
-            log.info(f"  {ablation_id}: {i+1}/{len(test)} done | "
-                     f"{errors} errors | ETA: {eta:.1f} min")
+            log.info(
+                f"  {ablation_id}: {i + 1}/{len(test)} done | "
+                f"{errors} errors | ETA: {eta:.1f} min"
+            )
 
     elapsed = time.time() - start_all
-    log.info(f"{ablation_id} complete: {len(test)} samples in "
-             f"{elapsed/60:.1f} min | {errors} errors")
+    log.info(
+        f"{ablation_id} complete: {len(test)} samples in "
+        f"{elapsed / 60:.1f} min | {errors} errors"
+    )
 
     # Save results
     results_df = pd.DataFrame(results)
-    out_path = f"../results/ablation_{ablation_id}.csv"
+    out_path = f"results/ablation_{ablation_id}.csv"
     results_df.to_csv(out_path, index=False)
 
     # Compute metrics
@@ -377,15 +448,15 @@ def run_ablation_on_dataset(ablation_id, test_csv, quick=None):
     den = (tp + fp) * (tp + fn) * (tn + fp) * (tn + fn)
     mcc = (tp * tn - fp * fn) / math.sqrt(den) if den > 0 else 0
 
-    print(f"\n{'='*60}")
+    print(f"\n{'=' * 60}")
     print(f"ABLATION {ablation_id} RESULTS")
-    print(f"{'='*60}")
+    print(f"{'=' * 60}")
     print(f"  P={p:.3f} R={r:.3f} F1={f1:.3f} MCC={mcc:.3f}")
     print(f"  TP={tp} FP={fp} FN={fn} TN={tn}")
-    print(f"  (Compare against MASP full-pipeline run on same test set)")
+    print("  (Compare against MASP full-pipeline run on same test set)")
 
     # Per-path breakdown
-    print(f"\n  Per-path F1:")
+    print("\n  Per-path F1:")
     for path in sorted(merged["extraction_path"].unique()):
         pm = merged[merged["extraction_path"] == path]
         yt = pm["is_suggestion"].tolist()
@@ -406,17 +477,28 @@ def run_ablation_on_dataset(ablation_id, test_csv, quick=None):
 # MAIN
 # ════════════════════════════════════════════════════════════════
 
+
 def main():
     parser = argparse.ArgumentParser(description="MASP ablation experiments")
     parser.add_argument("--dataset", required=True, help="Path to test.csv")
-    parser.add_argument("--ablation", required=True,
-                        choices=["A1", "A2", "A3", "A4", "A5", "A6", "A7", "all"])
-    parser.add_argument("--quick", type=int, default=None,
-                        help="Run on first N samples only (for testing)")
+    parser.add_argument(
+        "--ablation",
+        required=True,
+        choices=["A1", "A2", "A3", "A4", "A5", "A6", "A7", "all"],
+    )
+    parser.add_argument(
+        "--quick",
+        type=int,
+        default=None,
+        help="Run on first N samples only (for testing)",
+    )
     args = parser.parse_args()
 
-    ablations = ["A1", "A2", "A3", "A4", "A5", "A6", "A7"] \
-                if args.ablation == "all" else [args.ablation]
+    ablations = (
+        ["A1", "A2", "A3", "A4", "A5", "A6", "A7"]
+        if args.ablation == "all"
+        else [args.ablation]
+    )
 
     all_results = []
     for abl in ablations:
@@ -424,9 +506,9 @@ def main():
         all_results.append(r)
 
     if len(all_results) > 1:
-        print(f"\n{'='*60}")
+        print(f"\n{'=' * 60}")
         print("COMPONENT ABLATION SUMMARY")
-        print(f"{'='*60}")
+        print(f"{'=' * 60}")
         print(f"{'Ablation':<12} {'F1':>6} {'MCC':>6}")
         print("-" * 30)
         for r in all_results:

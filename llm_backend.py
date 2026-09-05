@@ -81,7 +81,9 @@ def _ollama_generate(model, prompt, images=None):
             return data.get("response", "").strip()
 
         except requests.exceptions.Timeout:
-            logger.warning(f"Ollama timeout (attempt {attempt+1}/{_config['max_retries']})")
+            logger.warning(
+                f"Ollama timeout (attempt {attempt + 1}/{_config['max_retries']})"
+            )
             if attempt == _config["max_retries"] - 1:
                 raise
             time.sleep(_config["retry_delay"] * (attempt + 1))
@@ -93,7 +95,7 @@ def _ollama_generate(model, prompt, images=None):
             time.sleep(_config["retry_delay"] * (attempt + 1))
 
         except Exception as e:
-            logger.warning(f"Ollama error (attempt {attempt+1}): {e}")
+            logger.warning(f"Ollama error (attempt {attempt + 1}): {e}")
             if attempt == _config["max_retries"] - 1:
                 raise
             time.sleep(_config["retry_delay"])
@@ -107,7 +109,7 @@ def _parse_json(raw):
     raw = re.sub(r"^```(?:json)?\s*", "", raw)
     raw = re.sub(r"\s*```$", "", raw)
     # Try full response first
-    m = re.search(r'\{[\s\S]*\}', raw)
+    m = re.search(r"\{[\s\S]*\}", raw)
     if m:
         try:
             return json.loads(m.group())
@@ -121,15 +123,15 @@ def _parse_json(raw):
     depth = 0
     start = None
     for i, c in enumerate(raw):
-        if c == '{':
+        if c == "{":
             if depth == 0:
                 start = i
             depth += 1
-        elif c == '}':
+        elif c == "}":
             depth -= 1
             if depth == 0 and start is not None:
                 try:
-                    return json.loads(raw[start:i+1])
+                    return json.loads(raw[start : i + 1])
                 except json.JSONDecodeError:
                     pass
                 break
@@ -184,16 +186,23 @@ def call_llm_vision(system, user_text, image_b64, mime="image/jpeg"):
     images = [image_b64] if image_b64 and len(image_b64) > 100 else None
 
     if images:
-        logger.info(f"[vision] Sending actual image ({len(image_b64)//1024}KB) to {model}")
+        logger.info(
+            f"[vision] Sending actual image ({len(image_b64) // 1024}KB) to {model}"
+        )
     else:
-        logger.info(f"[vision] No image data — text-only fallback")
+        logger.info("[vision] No image data — text-only fallback")
 
     raw = _ollama_generate(model, prompt, images=images)
     parsed = _parse_json(raw)
 
     messages = [
         {"role": "system", "content": system},
-        {"role": "user", "content": f"{user_text}\n[Image: {len(image_b64)//1024 if image_b64 else 0}KB {mime}]" if images else user_text},
+        {
+            "role": "user",
+            "content": f"{user_text}\n[Image: {len(image_b64) // 1024 if image_b64 else 0}KB {mime}]"
+            if images
+            else user_text,
+        },
         {"role": "assistant", "content": raw},
     ]
     return parsed, messages
@@ -215,19 +224,19 @@ def check_ollama():
         found = any(needed in m or m in needed for m in models)
 
         if found:
-            print(f"\n✓ Required model '{needed}' is available")
+            print(f"\nOK: required model '{needed}' is available")
             return True
         else:
-            print(f"\n✗ Required model '{needed}' NOT found")
+            print(f"\nERROR: required model '{needed}' was not found")
             print(f"  Install with: ollama pull {needed}")
             return False
 
     except requests.exceptions.ConnectionError:
-        print(f"✗ Cannot connect to Ollama at {_config['ollama_base_url']}")
+        print(f"ERROR: cannot connect to Ollama at {_config['ollama_base_url']}")
         print("  Start with: ollama serve")
         return False
     except Exception as e:
-        print(f"✗ Ollama check failed: {e}")
+        print(f"ERROR: Ollama check failed: {e}")
         return False
 
 

@@ -3,7 +3,7 @@
 > Draft. Numbers reported here are taken from the accompanying materials: the
 > dataset files under `data/`, the recorded RoBERTa re-evaluation in
 > `roberta_reeval_log.txt`, and the MASP detection/mining scores recorded in the
-> evaluation harness (`code/compute_final_metrics.py`). Per-path, per-modality,
+> evaluation harness (`compute_final_metrics.py`). Per-path, per-modality,
 > and per-type MASP breakdowns are produced by that harness from a full
 > `results/<run>/pipeline_results.csv`; fill the marked cells from your run.
 
@@ -102,15 +102,15 @@ a shortcut model should fail on. `HN` items look suggestion-like but are not.
 **Annotation.** Items are labelled for `is_suggestion`, `suggestion_type`
 (explicit/implicit), and `suggestion_text`. Sampled inter-annotator-agreement
 items are released in `data/IAA_annotation_samples.csv`
-(`code/compute_iaa.py`); a 50-item human-evaluation sample is in
+(`compute_iaa.py`); a 50-item human-evaluation sample is in
 `data/human_eval_50_samples.csv`. Raw annotator sheets are withheld for
 anonymity.
 
 ## 4. Method
 
-MASP is a 12-layer LangGraph state graph (`code/graph/pipeline.py`); each node is
-a pure `PipelineState → partial-state` function (`code/agents/nodes.py`). All LLM
-calls route through `code/llm_backend.py` (Ollama `gemma3:27b-it-qat`, text and
+MASP is a 12-layer LangGraph state graph (`graph/pipeline.py`); each node is
+a pure `PipelineState → partial-state` function (`agents/nodes.py`). All LLM
+calls route through `llm_backend.py` (Ollama `gemma3:27b-it-qat`, text and
 vision, temperature 0); audio is transcribed with Whisper.
 
 ```
@@ -155,7 +155,7 @@ extracted, typed, grounded suggestion text — full mining, not classification.
 
 ## 5. Experimental setup
 
-**Task and metrics** (`code/compute_final_metrics.py`). We report **Detection
+**Task and metrics** (`compute_final_metrics.py`). We report **Detection
 F1** (did the system surface any suggestion?), **Extraction quality** (stemmed
 token-overlap between the top predicted suggestion and the gold), and their
 harmonic mean, **Mining F1**. We add a 1,000-sample bootstrap 95% CI and break
@@ -164,7 +164,7 @@ suggestion type. MASP is evaluated zero-shot (no task training).
 
 **Baselines.** TF-IDF + Linear SVM and a supervised **RoBERTa-base** classifier,
 both trained on the 1,486-item train split; and prompt-only LLM baselines
-(`code/baselines_llm.py`, `code/baseline_single_prompt.py`). RoBERTa is trained
+(`baselines_llm.py`, `baseline_single_prompt.py`). RoBERTa is trained
 for 5 epochs at lr 2e-5, three seeds (42/123/456), majority vote
 (`roberta_reeval.py`). Baselines are text-only and produce detection only (the
 SVM/RoBERTa classifiers have no extraction head), so their Mining F1 is
@@ -215,13 +215,13 @@ performance and extraction are visible rather than absorbed into one number.
 
 ### 6.3 MASP breakdowns
 
-*From the full MASP `pipeline_results.csv` via `code/compute_final_metrics.py`:*
+*From the full MASP `pipeline_results.csv` via `compute_final_metrics.py`:*
 
 - Per-path recall (P1–P8, HN): *[fill]*
 - Per-modality F1 (T, T+I, T+A, T+I+A): *[fill]* — quantifies the multimodal gain.
 - Per-type recall (explicit vs. implicit): *[fill]*
 - Extraction quality overall and on P5/P7/P8: *[fill]*
-- SemEval cross-domain transfer (`data/semeval_*`, `code/eval_semeval_cross.py`):
+- SemEval cross-domain transfer (`data/semeval_*`, `eval_semeval_cross.py`):
   *[fill]*
 
 ### 6.4 Ablations
@@ -271,6 +271,6 @@ evaluation harness are released for reproduction.
 python roberta_reeval.py
 
 # MASP full run + definitive metrics (needs Ollama gemma3:27b)
-python code/run_dataset.py --csv data/test.csv --output results/test_FINAL_v5
-python code/compute_final_metrics.py
+python run_dataset.py --csv data/test.csv --output results/test_FINAL_v5
+python compute_final_metrics.py
 ```

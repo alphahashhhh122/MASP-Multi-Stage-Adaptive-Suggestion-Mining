@@ -1,8 +1,4 @@
-"""
-run_experiments.py — Run ALL experiments for EMNLP paper.
-
-Orchestrates: full pipeline, 4 baselines, 7 ablations, sensitivity analysis.
-Outputs all tables needed for the paper.
+"""Run the main MASP experiment and supporting analyses.
 
 Usage:
     # Run everything (takes several hours)
@@ -10,27 +6,23 @@ Usage:
 
     # Run specific experiment
     python run_experiments.py --main          # Table 2: MASP vs baselines
-    python run_experiments.py --ablations     # Table 3: ablation study
-    python run_experiments.py --switch        # Table 4: switch analysis (KEY)
+    python run_experiments.py --switch        # Table 4: switch analysis
     python run_experiments.py --sensitivity   # Figure 4: tau sensitivity
-    python run_experiments.py --crossdomain   # Table 5: cross-domain
-    python run_experiments.py --perpath       # Table 6: per-path breakdown
 """
 
 import json
-import time
 import argparse
 import logging
 import numpy as np
 import pandas as pd
 from pathlib import Path
-from collections import defaultdict
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s | %(message)s")
 logger = logging.getLogger(__name__)
 
-RESULTS_DIR = Path("../results")
-TEST_DATA = Path("../data/test.csv")
+RESULTS_DIR = Path("results")
+TEST_DATA = Path("data/test.csv")
+TRAIN_DATA = Path("data/train.csv")
 
 
 def load_test_data():
@@ -47,8 +39,16 @@ def compute_metrics(predictions: list) -> dict:
     p = tp / (tp + fp) if (tp + fp) > 0 else 0
     r = tp / (tp + fn) if (tp + fn) > 0 else 0
     f1 = 2 * p * r / (p + r) if (p + r) > 0 else 0
-    return {"P": round(p, 4), "R": round(r, 4), "F1": round(f1, 4),
-            "tp": tp, "fp": fp, "fn": fn, "tn": tn, "n": len(predictions)}
+    return {
+        "P": round(p, 4),
+        "R": round(r, 4),
+        "F1": round(f1, 4),
+        "tp": tp,
+        "fp": fp,
+        "fn": fn,
+        "tn": tn,
+        "n": len(predictions),
+    }
 
 
 def bootstrap_ci(predictions: list, n_bootstrap=1000, alpha=0.05) -> tuple:
@@ -81,7 +81,7 @@ def paired_bootstrap_test(preds_a: list, preds_b: list, n_bootstrap=1000) -> flo
 
 def run_main_experiment():
     """Table 2: MASP vs B1-B4."""
-    logger.info("\n" + "="*60 + "\nRUNNING MAIN EXPERIMENT (Table 2)\n" + "="*60)
+    logger.info("\n" + "=" * 60 + "\nRUNNING MAIN EXPERIMENT (Table 2)\n" + "=" * 60)
     df = load_test_data()
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -89,18 +89,15 @@ def run_main_experiment():
 
     # Run MASP full pipeline
     logger.info("Running MASP (full)...")
-    from run_dataset import run_single_sample
-    from graph.pipeline import build_graph
     from main import run_pipeline
-        # Pipeline built inside run_pipeline()
     # v5: description-first, no media files
 
     masp_preds = []
     for _, row in df.iterrows():
         mc_parts = []
-        if row.get("has_image") == True and row.get("image_description"):
+        if row.get("has_image") and row.get("image_description"):
             mc_parts.append(f"Image: {row['image_description']}")
-        if row.get("has_audio") == True and row.get("audio_description"):
+        if row.get("has_audio") and row.get("audio_description"):
             mc_parts.append(f"Audio: {row['audio_description']}")
         metadata = {
             "domain": row.get("domain", "general"),
@@ -114,65 +111,78 @@ def run_main_experiment():
             metadata=metadata,
         )
         ranked = result.get("ranked_suggestions", [])
-        masp_preds.append({
-            "entry_id": row["entry_id"],
-            "pred": 1 if ranked else 0,
-            "gold": row["is_suggestion"],
-            "path": row["extraction_path"],
-        })
+        masp_preds.append(
+            {
+                "entry_id": row["entry_id"],
+                "pred": 1 if ranked else 0,
+                "gold": row["is_suggestion"],
+                "path": row["extraction_path"],
+            }
+        )
     systems["MASP"] = masp_preds
 
     # Run baselines
     from baselines_comprehensive import baseline_rules, baseline_tfidf_logreg
-    for name, func in [("B1", run_b1), ("B2", run_b2)]:
+
+    train_df = pd.read_csv(TRAIN_DATA)
+    baseline_predictions = {
+        "B1": baseline_rules(df),
+        "B2": baseline_tfidf_logreg(train_df, df),
+    }
+    for name, raw_predictions in baseline_predictions.items():
         logger.info(f"Running {name}...")
-        preds = []
-        for _, row in df.iterrows():
-            result = func(row.to_dict())
-            preds.append({
+        preds = [
+            {
                 "entry_id": row["entry_id"],
-                "pred": result["predicted_is_suggestion"],
+                "pred": int(prediction),
                 "gold": row["is_suggestion"],
                 "path": row["extraction_path"],
-            })
+            }
+            for (_, row), prediction in zip(df.iterrows(), raw_predictions)
+        ]
         systems[name] = preds
 
     # B3: text-only (run MASP with no images/audio)
     logger.info("Running B3 (text-only MASP)...")
     b3_preds = []
     for _, row in df.iterrows():
-        from main import run_pipeline
         result = run_pipeline(text=row["raw_text"], sample_id=f"B3_{row['entry_id']}")
         ranked = result.get("ranked_suggestions", [])
-        b3_preds.append({
-            "entry_id": row["entry_id"],
-            "pred": 1 if ranked else 0,
-            "gold": row["is_suggestion"],
-            "path": row["extraction_path"],
-        })
+        b3_preds.append(
+            {
+                "entry_id": row["entry_id"],
+                "pred": 1 if ranked else 0,
+                "gold": row["is_suggestion"],
+                "path": row["extraction_path"],
+            }
+        )
     systems["B3"] = b3_preds
 
     # Print Table 2
-    print("\n" + "="*60)
+    print("\n" + "=" * 60)
     print("TABLE 2: Main Results")
-    print("="*60)
+    print("=" * 60)
     print(f"{'System':<25} {'P':>6} {'R':>6} {'F1':>6} {'95% CI':>14}")
-    print("-"*60)
+    print("-" * 60)
     for name, preds in systems.items():
         m = compute_metrics(preds)
         ci = bootstrap_ci(preds)
-        print(f"{name:<25} {m['P']:>6.3f} {m['R']:>6.3f} {m['F1']:>6.3f} [{ci[0]:.3f}, {ci[1]:.3f}]")
+        print(
+            f"{name:<25} {m['P']:>6.3f} {m['R']:>6.3f} {m['F1']:>6.3f} [{ci[0]:.3f}, {ci[1]:.3f}]"
+        )
 
     # Save
     with open(RESULTS_DIR / "table2_main.json", "w") as f:
-        json.dump({name: compute_metrics(preds) for name, preds in systems.items()}, f, indent=2)
+        json.dump(
+            {name: compute_metrics(preds) for name, preds in systems.items()},
+            f,
+            indent=2,
+        )
 
 
 def run_switch_analysis():
-    """Table 4: COMMON vs SPECIFIC mode — THE KEY RESULT."""
-    logger.info("\n" + "="*60 + "\nRUNNING SWITCH ANALYSIS (Table 4)\n" + "="*60)
-    df = load_test_data()
-
+    """Compare COMMON and SPECIFIC routing modes."""
+    logger.info("\n" + "=" * 60 + "\nRUNNING SWITCH ANALYSIS (Table 4)\n" + "=" * 60)
     # This needs actual pipeline outputs with alignment scores
     # Load from results if available
     results_file = RESULTS_DIR / "masp_full_outputs.json"
@@ -197,13 +207,18 @@ def run_switch_analysis():
         else:
             specific_preds.append(entry)
 
-    print("\n" + "="*60)
+    print("\n" + "=" * 60)
     print("TABLE 4: Switch Analysis (KEY RESULT)")
-    print("="*60)
-    print(f"{'Mode':<20} {'#':>4} {'F1 w/ switch':>12} {'F1 w/o switch':>14} {'Delta':>8}")
-    print("-"*60)
+    print("=" * 60)
+    print(
+        f"{'Mode':<20} {'#':>4} {'F1 w/ switch':>12} {'F1 w/o switch':>14} {'Delta':>8}"
+    )
+    print("-" * 60)
 
-    for name, preds in [("COMMON (a≥0.6)", common_preds), ("SPECIFIC (a<0.6)", specific_preds)]:
+    for name, preds in [
+        ("COMMON (a≥0.6)", common_preds),
+        ("SPECIFIC (a<0.6)", specific_preds),
+    ]:
         m = compute_metrics(preds)
         # TODO: compute F1 without switch from A1 ablation results
         print(f"{name:<20} {m['n']:>4} {m['F1']:>12.3f} {'TBD':>14} {'TBD':>8}")
@@ -211,7 +226,7 @@ def run_switch_analysis():
 
 def run_sensitivity():
     """Figure 4: F1 vs tau."""
-    logger.info("\n" + "="*60 + "\nRUNNING SENSITIVITY ANALYSIS\n" + "="*60)
+    logger.info("\n" + "=" * 60 + "\nRUNNING SENSITIVITY ANALYSIS\n" + "=" * 60)
     # TODO: Run pipeline with different tau values
     # tau_values = [0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
     print("Sensitivity analysis requires running pipeline with different tau values.")

@@ -7,14 +7,17 @@ conservative/liberal labelling, arbitration, evidence grounding, an
 explicit/implicit suggestion switch, canonicalisation, clustering, memory, and a
 view-weighted reranker, with a final human-review gate for uncertain cases.
 
-This is the supplementary package for the EMNLP submission: source code,
-datasets, gold media, and evaluation scripts.
+This repository contains the research prototype, evaluation scripts, dataset
+splits, and an accompanying paper draft. The default workflow uses the text,
+image-description, and audio-description columns in the included CSV files;
+raw media is optional and is not committed to the repository.
 
 ## Contents
 
 | Path | Description |
 |---|---|
-| `code/` | Pipeline (`graph/`, `agents/`, `memory/`, `prompts/`, `media/`), baselines, ablations, and evaluation scripts |
+| `graph/`, `agents/`, `memory/`, `prompts/` | Pipeline implementation |
+| Root-level Python scripts | Baselines, ablations, dataset runners, and evaluation |
 | `data/` | Dataset splits, SemEval cross-eval sets, IAA and human-eval samples |
 | `media/` | Gold images and audio + `MEDIA_MANIFEST.csv` |
 | `roberta_reeval.py`, `roberta_reeval_log.txt` | Supervised RoBERTa baseline re-evaluation and its recorded log |
@@ -23,7 +26,7 @@ datasets, gold media, and evaluation scripts.
 
 ## Method
 
-The pipeline is a 12-layer LangGraph state graph (`code/graph/pipeline.py`):
+The pipeline is a 12-layer LangGraph state graph (`graph/pipeline.py`):
 
 ```
 preprocess → {text, image, audio} views → cross-modal align → domain router
@@ -33,14 +36,14 @@ preprocess → {text, image, audio} views → cross-modal align → domain route
 ```
 
 Every agent is a pure `PipelineState -> partial-state` function
-(`code/agents/nodes.py`). Dual labelling (conservative = explicit only, liberal
+(`agents/nodes.py`). Dual labelling (conservative = explicit only, liberal
 = explicit + implied) mitigates single-model bias; arbitration applies
 cross-modal boosting; the suggestion switch routes explicit vs. implicit
 suggestions to type-specific evaluators.
 
 ## Backend
 
-All LLM calls route through `code/llm_backend.py`. Default local configuration:
+All LLM calls route through `llm_backend.py`. Default local configuration:
 
 - Provider: Ollama HTTP API
 - Text + vision model: `gemma3:27b-it-qat`
@@ -64,19 +67,19 @@ pip install -r requirements.txt
 
 ```bash
 # smoke checks
-python code/llm_backend.py
-python code/run_dataset.py --help
+python llm_backend.py
+python run_dataset.py --help
 
 # small pipeline run (needs Ollama running)
-python code/run_dataset.py --csv data/test.csv --output results_safe --max-samples 5
+python run_dataset.py --csv data/test.csv --output results/smoke --max-samples 5
 
 # definitive metrics (needs a full results/<run>/pipeline_results.csv)
-python code/compute_final_metrics.py
+python compute_final_metrics.py
 ```
 
 ## Evaluation
 
-`code/compute_final_metrics.py` reports **Detection F1** (was any suggestion
+`compute_final_metrics.py` reports **Detection F1** (was any suggestion
 found?), **Extraction quality** (stemmed token overlap of the top suggestion
 with the gold), and their harmonic mean, **Mining F1**, with a 1000-sample
 bootstrap 95% CI. It breaks results down per extraction path (P1–P8, HN), per

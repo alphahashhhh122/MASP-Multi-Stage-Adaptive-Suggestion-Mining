@@ -1,19 +1,18 @@
 # MASP Reproducibility Notes
 
-This supplementary package contains the source code, prompts, datasets, and
-gold media used for the MASP EMNLP 2026 submission.
+This repository contains the source code, prompts, dataset splits, and media
+manifest used by the MASP research prototype.
 
 ## Core Pipeline Modules
 
 The runnable pipeline depends on the following code directories:
 
-- `code/graph/`
-- `code/agents/`
-- `code/memory/`
-- `code/prompts/`
+- `graph/`
+- `agents/`
+- `memory/`
+- `prompts/`
 
-These directories are included in this package. The main entry point is
-`code/run_dataset.py`, which calls `code/main.py`.
+The main entry point is `run_dataset.py`, which calls `main.py`.
 
 ## Paper Table 5 Ablation Mapping
 
@@ -21,14 +20,14 @@ The paper reports four ablation conditions:
 
 - A1 no-image input: run the pipeline on `data/test_A1_no_image.csv`.
 - A2 no-audio input: run the pipeline on `data/test_A2_no_audio.csv`.
-- B5 text-only pipeline: run `code/baselines_comprehensive.py --baseline B5`.
-- A4 switch-off: run `code/run_ablations.py --ablation A1`.
+- B5 text-only pipeline: run `baselines_comprehensive.py --baseline B5`.
+- A4 switch-off: run `run_ablations.py --ablation A1`.
 
 The last command uses a legacy code-level name. In `run_ablations.py`,
 legacy `A1` means "force COMMON mode", which corresponds to the paper's
 A4 switch-off condition.
 
-Optional extension: `code/run_b5_extraction.py` reruns B5 with extraction
+Optional extension: `run_b5_extraction.py` reruns B5 with extraction
 logging and reports Detection F1, extraction overlap, and Mining F1. This
 was not part of the original paper tables, but it is included so future
 users can fill the B5 extraction gap directly.
